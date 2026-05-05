@@ -46,114 +46,178 @@
 </body>
 </html>
 <html lang="ar" dir="rtl">
-    <head>
-        <meta charset="utf-8">
-        <title>المرشدين</title>
-        <style>
-            body{font-family:arial;
-                 background: #f5f5f5;
-                }
-            h1 {text-align: center;
-                margin: 20PX;
-               }
-            .mentors{
-                display:flex;
-                justify-content: center;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-            .card{
-                background: white;
-                padding:15px;
-                width:200px;
-                text-align:center;
-                border-radius:10px;
-                box-shadow: 0 0 10px #ccc;
-            }
-            .card button{
-                margin-top: 10px;
-                padding: 8px;
-                background:#4caf50;
-                color: white;
-                border: none;
-                cursor:pointer;
-            }
-            .chat-box{
-                width: 400px;
-                height:400px;
+<head>
+    <meta charset="utf-8">
+    <title>المرشدين</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .mentors {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
             background: white;
-            margin: 30px auto;
+            padding: 15px;
+            width: 230px;
+            text-align: center;
             border-radius: 10px;
-            display: none;
-            flex-direction: column;
-            box-shadow: 0 0 10px #aaa;
-            }
-            .messages {
-                flex:1;
-                padding: 10px;
-                overflow-y: auto;
-            }
-            .input-area {
-                display: flex:
-            }
-            .input-area input {
-                flex:1;
-                padding: 10px;
-                border: none;
-            }
-            .input-area button {
-                padding: 10px;
-                background: green;
-                color: white;
-                border: none;
-            }
-            .message{
-                margin:5px;
-                padding:8px;
-                background:#e0f2f1;
-                border-radius:5px;
-            }
-            </style>
-    </head>
-    <body>
-     <h1>اختر مرشدك</h1>
-        <div class="mentors">
-            <div class="card">
-                <h3>مرشد تقنية </h3>
-                <p>تخصص برمجة</p>
-                <button onclick="openchat('مرشد تقنية')">توصل</button>
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        .card button {
+            margin-top: 10px;
+            padding: 8px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .tech-chat {
+            margin-top: 15px;
+        }
+
+        .messages {
+            height: 150px;
+            overflow-y: auto;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: right;
+        }
+
+        .input-area {
+            display: flex;
+            margin-top: 10px;
+            gap: 5px;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 8px;
+        }
+
+        .input-area button {
+            padding: 8px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .message {
+            margin: 5px 0;
+            padding: 6px 8px;
+            background: #e0f2f1;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>اختر مرشدك</h1>
+
+
+<div class="mentors">
+
+    <!-- بطاقة مرشد تقنية مع شات داخلي -->
+    <div class="card">
+        <h3>مرشد تقنية</h3>
+        <p>تخصص برمجة</p>
+
+        <button onclick="toggleTechChat()">تواصل</button>
+
+        <div class="tech-chat" id="techChat" style="display: none;">
+
+            <div class="messages" id="techMessages">
+                <div class="message">بدأت المحادثة مع مرشد التقنية 👨‍💻</div>
             </div>
-            <div class="card">
-                <h3>مرشد طبي</h3>
-                <p>تخصص طب</p>
-                <button onclick="openchat(' مرشد طبي')">توصل</button>
-            </div>
-            <div class="card">
-                <h3>مرشد ادارة</h3>
-                <p>ادارة اعمال</p>
-                <button onclick="openchat(' مرشد ادارة')">توصل</button>
-            </div>
-        </div>
-        <div class="chat-box" id="chatbox">
-            <div class="messages" id="messages"></div>
+
             <div class="input-area">
-                <input type="text" id="msginput" placehoider="اكتب رسالتك...">
-                <button onclick="sendMessage()">ارسال</button>
+                <input type="text" id="techInput" placeholder="اكتب رسالتك...">
+                <button onclick="sendTechMessage()">ارسال</button>
             </div>
+
         </div>
-        <script>
-          function openchat (name ){
-              document.getelementbyld("chatbox").style.display="flex";
-              document.getelementbyld("messages").innerHTML=
-                  "<div class='message' > بدات المحادثة مع " + name + "</div>";
-          }
-          function sendMessage (){
-              let input = document. getElementByid("msginput");
-              let msg =input.value;
-              if (msg.trim() === "") return;
-              let messages = document. getElemenById("messages");
-              messages.innerHTML+="<div class='message'>"+msg+ "</div>";
-              input.value="";}
-        </script>
-                </body>
+    </div>
+
+    <!-- باقي البطاقات عادي بدون شات الآن -->
+    <div class="card">
+        <h3>مرشد طبي</h3>
+        <p>تخصص طب</p>
+       <button onclick="toggleTechChat()">تواصل</button>
+
+        <div class="tech-chat" id="techChat" style="display: none;">
+
+            <div class="messages" id="techMessages">
+                <div class="message">بدأت المحادثة مع مرشد طبي 👨‍💻</div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="techInput" placeholder="اكتب رسالتك...">
+                <button onclick="sendTechMessage()">ارسال</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3>مرشد إدارة</h3>
+        <p>إدارة أعمال</p>
+     <button onclick="toggleTechChat()">تواصل</button>
+
+        <div class="tech-chat" id="techChat" style="display: none;">
+
+            <div class="messages" id="techMessages">
+                <div class="message">بدأت المحادثة مع مرشد اداري 👨‍💻</div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="techInput" placeholder="اكتب رسالتك...">
+                <button onclick="sendTechMessage()">ارسال</button>
+            </div>
+
+        </div>
+    </div>
+
+
+<script>
+    function toggleTechChat() {
+        const box = document.getElementById("techChat");
+        if (box.style.display === "none" || box.style.display === "") {
+            box.style.display = "block";
+        } else {
+            box.style.display = "none";
+        }
+    }
+
+    function sendTechMessage() {
+        const input = document.getElementById("techInput");
+        const msg = input.value.trim();
+        if (msg === "") return;
+
+        const messages = document.getElementById("techMessages");
+        messages.innerHTML += "<div class='message'>" + msg + "</div>";
+
+        input.value = "";
+        messages.scrollTop = messages.scrollHeight;
+    }
+</script>
+
+</body>
 </html>
