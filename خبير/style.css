@@ -56,3 +56,78 @@ nav a {
     padding: 10px;
     width: 100%;
 }
+body {
+    font-family: Arial;
+    background: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+}
+
+.mentors {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 8px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-box {
+    width: 400px;
+    height: 400px;
+    background: white;
+    margin: 30px auto;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 0 10px #aaa;
+}
+
+.messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.input-area {
+    display: flex;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+}
+
+.input-area button {
+    padding: 10px;
+    background: green;
+    color: white;
+    border: none;
+}
+
+.message {
+    margin: 5px;
+    padding: 8px;
+    background: #e0f2f1;
+    border-radius: 5px;
+}
