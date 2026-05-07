@@ -1,223 +1,237 @@
 <!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <title>خبير</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-    <h1>منصة خبير</h1>
-    <nav>
-        <a href="#">الرئيسية</a>
-        <a href="#">تسجيل الدخول</a>
-        <a href="#">إنشاء حساب</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <h2>خبرتك تصنع مستقبلاً</h2>
-   <p>منصة تربط الطلاب بالخبراء والمعلمين لتبادل الخبرات والمساعدة الأكاديمية</p>
-    <button>ابدأ الآن</button>
-</section>
-
-<section class="features">
-    <div class="card">
-        <h3>طلاب</h3>
-       <p>احصل على شرح ومساعدة أكاديمية بسهولة</p>
-    </div>
-
-    <div class="card">
-       <h3>خبراء</h3>
-        <p>شارك خبرتك وساعد الاخرين</p>
-    </div>
-
-    <div class="card">
-      <h3>معلمون</h3>
-        <p>قدم جلسات تعليمية احترافية</p>
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 منصة خبيرة</p>
-</footer>
-
-</body>
-</html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="utf-8">
-    <title>المرشدين</title>
+    <meta charset="UTF-8">
+    <title>منصة خبير</title>
 
     <style>
         body {
-            font-family: Arial;
-            background: #f5f5f5;
+            margin: 0;
+            font-family: "Tahoma", sans-serif;
+            background: #f7f7f7;
+            scroll-behavior: smooth;
         }
 
-        h1 {
+        /* الهيدر */
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 12px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            z-index: 1000;
+        }
+
+        header nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            color: #2b7a2f;
+        }
+
+        /* الرئيسية */
+        .hero {
             text-align: center;
-            margin: 20px;
+            padding: 80px 20px;
+            background: linear-gradient(#2b7a2f, #4caf50);
+            color: white;
+        }
+
+        .hero button {
+            padding: 12px 25px;
+            background: white;
+            color: #2b7a2f;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        /* المزايا */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 50px 20px;
+        }
+
+        .features .card {
+            background: white;
+            padding: 20px;
+            width: 230px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        /* المرشدين */
+        #mentors {
+            padding: 50px 20px;
         }
 
         .mentors {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
         }
 
-        .card {
+        .mentor-card {
             background: white;
-            padding: 15px;
+            padding: 20px;
             width: 230px;
             text-align: center;
-            border-radius: 10px;
+            border-radius: 12px;
             box-shadow: 0 0 10px #ccc;
         }
 
-        .card button {
+        .mentor-card button {
             margin-top: 10px;
-            padding: 8px;
-            background: #4caf50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .tech-chat {
-            margin-top: 15px;
-        }
-
-        .messages {
-            height: 150px;
-            overflow-y: auto;
-            background: #f0f0f0;
             padding: 10px;
-            border-radius: 8px;
-            text-align: right;
-        }
-
-        .input-area {
-            display: flex;
-            margin-top: 10px;
-            gap: 5px;
-        }
-
-        .input-area input {
-            flex: 1;
-            padding: 8px;
-        }
-
-        .input-area button {
-            padding: 8px;
             background: #4caf50;
             color: white;
             border: none;
             cursor: pointer;
+            width: 100%;
         }
 
-        .message {
-            margin: 5px 0;
-            padding: 6px 8px;
-            background: #e0f2f1;
-            border-radius: 5px;
-            font-size: 14px;
+        /* تسجيل الدخول + إنشاء حساب */
+        .form-section {
+            padding: 50px 20px;
+            background: #fff;
+            max-width: 400px;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        .form-section input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+        }
+
+        .form-section button {
+            width: 100%;
+            padding: 12px;
+            background: #2b7a2f;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2b7a2f;
+            color: white;
+            margin-top: 40px;
         }
     </style>
 </head>
+
 <body>
 
-<h1>اختر مرشدك</h1>
-
-
-<div class="mentors">
-
-    <!-- بطاقة مرشد تقنية مع شات داخلي -->
-    <div class="card">
-        <h3>مرشد تقنية</h3>
-        <p>تخصص برمجة</p>
-
-        <button onclick="toggleTechChat()">تواصل</button>
-
-        <div class="tech-chat" id="techChat" style="display: none;">
-
-            <div class="messages" id="techMessages">
-                <div class="message">بدأت المحادثة مع مرشد التقنية 👨‍💻</div>
-            </div>
-
-            <div class="input-area">
-                <input type="text" id="techInput" placeholder="اكتب رسالتك...">
-                <button onclick="sendTechMessage()">ارسال</button>
-            </div>
-
-        </div>
+<!-- الهيدر -->
+<header>
+    <div class="logo" style="display:flex; align-items:center; gap:10px;">
+        <img src="logo.png" style="height:50px;">
+        <strong style="font-size:22px; color:#2b7a2f;">خبير</strong>
     </div>
 
-    <!-- باقي البطاقات عادي بدون شات الآن -->
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#features">المزايا</a>
+        <a href="#mentors">المرشدين</a>
+        <a href="#login">تسجيل الدخول</a>
+        <a href="#signup">إنشاء حساب</a>
+    </nav>
+</header>
+
+<!-- الرئيسية -->
+<section id="home" class="hero">
+    <h2>خبرتك تصنع مستقبلاً</h2>
+    <p>منصة تربط الطلاب بالخبراء والمعلمين لتبادل الخبرات والمساعدة الأكاديمية</p>
+    <button onclick="location.href='#mentors'">ابدأ الآن</button>
+</section>
+
+<!-- المزايا -->
+<section id="features" class="features">
     <div class="card">
-        <h3>مرشد طبي</h3>
-        <p>تخصص طب</p>
-       <button onclick="toggleTechChat()">تواصل</button>
-
-        <div class="tech-chat" id="techChat" style="display: none;">
-
-            <div class="messages" id="techMessages">
-                <div class="message">بدأت المحادثة مع مرشد طبي 👨‍💻</div>
-            </div>
-
-            <div class="input-area">
-                <input type="text" id="techInput" placeholder="اكتب رسالتك...">
-                <button onclick="sendTechMessage()">ارسال</button>
-            </div>
-
-        </div>
+        <h3>طلاب</h3>
+        <p>احصل على شرح ومساعدة أكاديمية بسهولة</p>
     </div>
 
-
     <div class="card">
-        <h3>مرشد إدارة</h3>
-        <p>إدارة أعمال</p>
-     <button onclick="toggleTechChat()">تواصل</button>
-
-        <div class="tech-chat" id="techChat" style="display: none;">
-
-            <div class="messages" id="techMessages">
-                <div class="message">بدأت المحادثة مع مرشد اداري 👨‍💻</div>
-            </div>
-
-            <div class="input-area">
-                <input type="text" id="techInput" placeholder="اكتب رسالتك...">
-                <button onclick="sendTechMessage()">ارسال</button>
-            </div>
-
-        </div>
+        <h3>خبراء</h3>
+        <p>شارك خبرتك وساعد الآخرين</p>
     </div>
 
+    <div class="card">
+        <h3>معلمون</h3>
+        <p>قدم جلسات تعليمية احترافية</p>
+    </div>
+</section>
 
-<script>
-    function toggleTechChat() {
-        const box = document.getElementById("techChat");
-        if (box.style.display === "none" || box.style.display === "") {
-            box.style.display = "block";
-        } else {
-            box.style.display = "none";
-        }
-    }
+<!-- المرشدين -->
+<section id="mentors">
+    <h1 style="text-align:center;">اختر مرشدك</h1>
 
-    function sendTechMessage() {
-        const input = document.getElementById("techInput");
-        const msg = input.value.trim();
-        if (msg === "") return;
+    <div class="mentors">
 
-        const messages = document.getElementById("techMessages");
-        messages.innerHTML += "<div class='message'>" + msg + "</div>";
+        <div class="mentor-card">
+            <h3>مرشد تقنية</h3>
+            <p>تخصص برمجة</p>
+            <button>تواصل</button>
+        </div>
 
-        input.value = "";
-        messages.scrollTop = messages.scrollHeight;
-    }
-</script>
+        <div class="mentor-card">
+            <h3>مرشد طبي</h3>
+            <p>تخصص طب</p>
+            <button>تواصل</button>
+        </div>
+
+        <div class="mentor-card">
+            <h3>مرشد إدارة</h3>
+            <p>إدارة أعمال</p>
+            <button>تواصل</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- تسجيل الدخول -->
+<section id="login" class="form-section">
+    <h2 style="text-align:center;">تسجيل الدخول</h2>
+    <input type="text" placeholder="البريد الإلكتروني">
+    <input type="password" placeholder="كلمة المرور">
+    <button>دخول</button>
+</section>
+
+<!-- إنشاء حساب -->
+<section id="signup" class="form-section">
+    <h2 style="text-align:center;">إنشاء حساب</h2>
+    <input type="text" placeholder="الاسم الكامل">
+    <input type="email" placeholder="البريد الإلكتروني">
+    <input type="password" placeholder="كلمة المرور">
+    <button>إنشاء حساب</button>
+</section>
+
+<footer>
+    © 2026 منصة خبير
+</footer>
 
 </body>
 </html>
