@@ -3,216 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خبير – الصفحة الثانية</title>
+    <title>منصة خبير التعليمية</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body { font-family: "Tahoma"; margin: 0; background: #f7f7f7; }
+        .header { display: flex; justify-content: space-between; padding: 15px 30px; background: #1a73e8; color: #fff; position: sticky; top: 0; z-index: 100; }
+        .nav a { margin: 0 10px; color: #fff; text-decoration: none; font-weight: bold; }
+        .hero { text-align: center; padding: 80px 20px; background: linear-gradient(#1a73e8, #4a90e2); color: #fff; }
+        .btn { display: inline-block; padding: 10px 20px; background: #fff; color: #1a73e8; border-radius: 8px; margin-top: 10px; text-decoration: none; font-weight: bold; }
+        .section { padding: 50px 20px; text-align: center; }
+        .cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .card { background: #fff; padding: 20px; width: 300px; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); text-align: right; }
+        iframe { width: 100%; border-radius: 10px; }
+        .quiz-box { background: #fff; padding: 20px; width: 350px; margin: auto; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+        .footer { text-align: center; padding: 20px; background: #1a73e8; color: #fff; margin-top: 40px; }
+    </style>
 </head>
 
 <body>
 
     <!-- ===== الهيدر ===== -->
     <header class="header">
-        <div class="logo">
-            <img src="لوقو.jpeg" alt="Logo">
-            <span>خبير</span>
-        </div>
-
+        <div class="logo">📘 خبير</div>
         <nav class="nav">
             <a href="#home">الرئيسية</a>
-            <a href="#services">الخدمات</a>
-            <a href="#mentors">الخبراء</a>
-            <a href="#contact">تواصل معنا</a>
+            <a href="#lessons">الدروس</a>
+            <a href="#videos">الفيديوهات</a>
+            <a href="#quiz">الاختبار</a>
+            <a href="#chat">المحادثة</a>
         </nav>
     </header>
 
-
-    <!-- ===== قسم الهيرو ===== -->
+    <!-- ===== الواجهة الرئيسية ===== -->
     <section id="home" class="hero">
-        <h1>مرحباً بك في خبير</h1>
-        <p>منصة تربطك بأفضل الخبراء في مختلف المجالات</p>
-        <a href="#mentors" class="btn">استكشف الخبراء</a>
+        <h1>مرحباً بك في منصة خبير التعليمية</h1>
+        <p>تعلم – شاهد – اختبر – تفاعل</p>
+        <a href="#lessons" class="btn">ابدأ الآن</a>
     </section>
 
-
-    <!-- ===== قسم الخدمات ===== -->
-    <section id="services" class="section">
-        <h2>خدماتنا</h2>
-
-        <div class="cards">
-            <div class="card">
-                <h3>استشارات فورية</h3>
-                <p>تواصل مع الخبراء مباشرة واحصل على إجابات دقيقة.</p>
-            </div>
-
-            <div class="card">
-                <h3>جلسات خاصة</h3>
-                <p>احجز جلسة خاصة مع الخبير المناسب لك.</p>
-            </div>
-
-            <div class="card">
-                <h3>دروس تعليمية</h3>
-                <p>تعلم مهارات جديدة من محترفين.</p>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ===== قسم الخبراء ===== -->
-    <section id="mentors" class="section">
-        <h2>خبراؤنا</h2>
+    <!-- ===== قسم الدروس ===== -->
+    <section id="lessons" class="section">
+        <h2>📘 دروس الصف الابتدائي – العلوم</h2>
 
         <div class="cards">
 
-            <div class="card mentor">
-                <img src="https://via.placeholder.com/150" alt="mentor">
-                <h3>أحمد</h3>
-                <p>خبير برمجة</p>
-                <a href="#" class="btn">ابدأ المحادثة</a>
+            <div class="card">
+                <h3>🌱 أجزاء النبات</h3>
+                <p>شرح مبسط لأجزاء النبات ووظائفها.</p>
+                <ul>
+                    <li>الجذر يمتص الماء.</li>
+                    <li>الساق ينقل الغذاء.</li>
+                    <li>الأوراق تصنع الغذاء.</li>
+                </ul>
             </div>
 
-            <div class="card mentor">
-                <img src="https://via.placeholder.com/150" alt="mentor">
-                <h3>سارة</h3>
-                <p>خبيرة تصميم</p>
-                <a href="#" class="btn">ابدأ المحادثة</a>
-            </div>
-
-            <div class="card mentor">
-                <img src="https://via.placeholder.com/150" alt="mentor">
-                <h3>محمد</h3>
-                <p>خبير أعمال</p>
-                <a href="#" class="btn">ابدأ المحادثة</a>
+            <div class="card">
+                <h3>☀️ مصادر الضوء</h3>
+                <p>تعرف على المصادر الطبيعية والصناعية للضوء.</p>
+                <ul>
+                    <li>الشمس مصدر طبيعي.</li>
+                    <li>المصابيح مصدر صناعي.</li>
+                    <li>الضوء ينتقل بخط مستقيم.</li>
+                </ul>
             </div>
 
         </div>
     </section>
 
+    <!-- ===== قسم الفيديوهات ===== -->
+    <section id="videos" class="section">
+        <h2>🎥 فيديوهات تعليمية قصيرة</h2>
 
-    <!-- ===== قسم التواصل ===== -->
-    <section id="contact" class="section">
-        <h2>تواصل معنا</h2>
-        <p>يسعدنا تواصلك معنا لأي استفسار أو اقتراح.</p>
-        <a href="mailto:info@example.com" class="btn">إرسال رسالة</a>
+        <div class="cards">
+
+            <div class="card">
+                <h3>🌱 فيديو أجزاء النبات</h3>
+                <iframe height="180" src="https://www.youtube.com/embed/2V-2gkG2r1E"></iframe>
+            </div>
+
+            <div class="card">
+                <h3>☀️ فيديو مصادر الضوء</h3>
+                <iframe height="180" src="https://www.youtube.com/embed/8ZxFqPz9vyE"></iframe>
+            </div>
+
+        </div>
     </section>
-<!-- ===== قسم الدروس والشروحات ===== -->
-<section id="lessons" class="section">
-    <h2>دروس وشروحات – الصف الابتدائي (العلوم)</h2>
 
-    <div class="cards">
+    <!-- ===== الاختبار التفاعلي ===== -->
+    <section id="quiz" class="section">
+        <h2>📝 اختبار تفاعلي</h2>
 
-        <!-- الدرس الأول -->
-        <div class="card">
-            <h3>🌱 درس: أجزاء النبات</h3>
-            <p>يتعرف الطالب على أجزاء النبات ووظيفة كل جزء.</p>
-            <ul style="text-align: right; margin-top: 10px;">
-                <li><strong>الجذر:</strong> يمتص الماء من التربة.</li>
-                <li><strong>الساق:</strong> ينقل الماء والغذاء.</li>
-                <li><strong>الأوراق:</strong> تصنع الغذاء بعملية البناء الضوئي.</li>
-            </ul>
-            <a href="#" class="btn">عرض الشرح</a>
+        <div class="quiz-box">
+            <p><strong>سؤال:</strong> ما هو الجزء المسؤول عن امتصاص الماء في النبات؟</p>
+
+            <button onclick="checkAnswer('صح')" class="btn">الجذر</button>
+            <button onclick="checkAnswer('خطأ')" class="btn">الورقة</button>
+
+            <p id="result" style="margin-top: 15px; font-weight: bold;"></p>
         </div>
 
-        <!-- الدرس الثاني -->
-        <div class="card">
-            <h3>☀️ درس: مصادر الضوء</h3>
-            <p>يتعرف الطالب على مصادر الضوء الطبيعية والصناعية.</p>
-            <ul style="text-align: right; margin-top: 10px;">
-                <li><strong>مصادر طبيعية:</strong> الشمس، النار.</li>
-                <li><strong>مصادر صناعية:</strong> المصابيح، الشاشات.</li>
-                <li><strong>خاصية الضوء:</strong> ينتقل في خطوط مستقيمة.</li>
-            </ul>
-            <a href="#" class="btn">عرض الشرح</a>
+        <script>
+            function checkAnswer(ans) {
+                const result = document.getElementById("result");
+                if (ans === "صح") {
+                    result.innerHTML = "✔ إجابة صحيحة!";
+                    result.style.color = "green";
+                } else {
+                    result.innerHTML = "✘ إجابة خاطئة!";
+                    result.style.color = "red";
+                }
+            }
+        </script>
+    </section>
+
+    <!-- ===== المحادثة ===== -->
+    <section id="chat" class="section">
+        <h2>💬 المحادثة الفورية</h2>
+
+        <div id="chat-box" style="
+            width: 100%; max-width: 550px; height: 300px;
+            margin: 20px auto; padding: 15px;
+            border: 1px solid #ccc; border-radius: 10px;
+            overflow-y: auto; background: #fff;">
         </div>
 
-    </div>
-</section>
-<!-- ===== قسم الدروس والشروحات ===== -->
-<section id="lessons" class="section">
-    <h2>📘 دروس وشروحات – الصف الابتدائي (العلوم)</h2>
-
-    <div class="cards">
-
-        <!-- الدرس الأول -->
-        <div class="card">
-            <h3>🌱 أجزاء النبات</h3>
-            <p>يتعرف الطالب على أجزاء النبات ووظيفة كل جزء بطريقة مبسطة.</p>
-            <ul style="text-align: right; margin-top: 10px;">
-                <li><strong>الجذر:</strong> يمتص الماء من التربة.</li>
-                <li><strong>الساق:</strong> ينقل الماء والغذاء.</li>
-                <li><strong>الأوراق:</strong> تصنع الغذاء بعملية البناء الضوئي.</li>
-            </ul>
-            <a href="#" class="btn">عرض الشرح</a>
+        <div style="max-width: 550px; margin: 10px auto; display: flex; gap: 10px;">
+            <input id="chat-input" type="text" placeholder="اكتب رسالتك..." 
+                style="flex: 1; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+            <button onclick="sendMessage()" 
+                style="padding: 10px 20px; border: none; background: #1a73e8; color: #fff; border-radius: 8px;">
+                إرسال
+            </button>
         </div>
 
-        <!-- الدرس الثاني -->
-        <div class="card">
-            <h3>☀️ مصادر الضوء</h3>
-            <p>يتعرف الطالب على مصادر الضوء الطبيعية والصناعية.</p>
-            <ul style="text-align: right; margin-top: 10px;">
-                <li><strong>مصادر طبيعية:</strong> الشمس، النار.</li>
-                <li><strong>مصادر صناعية:</strong> المصابيح، الشاشات.</li>
-                <li><strong>خاصية الضوء:</strong> ينتقل في خطوط مستقيمة.</li>
-            </ul>
-            <a href="#" class="btn">عرض الشرح</a>
-        </div>
+        <script>
+            function sendMessage() {
+                const box = document.getElementById("chat-box");
+                const input = document.getElementById("chat-input");
 
-    </div>
-</section>
+                if (input.value.trim() === "") return;
 
-<!-- ===== قسم الشات ===== -->
-<section id="chat" class="section">
-    <h2>المحادثة</h2>
+                const userMsg = document.createElement("div");
+                userMsg.style.margin = "10px 0";
+                userMsg.style.textAlign = "right";
+                userMsg.innerHTML = "<strong>أنتِ:</strong> " + input.value;
+                box.appendChild(userMsg);
 
-    <div id="chat-box" style="
-        width: 100%;
-        max-width: 500px;
-        height: 300px;
-        margin: 20px auto;
-        padding: 15px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        overflow-y: auto;
-        background: #fff;">
-    </div>
+                const botMsg = document.createElement("div");
+                botMsg.style.margin = "10px 0";
+                botMsg.style.textAlign = "left";
+                botMsg.innerHTML = "<strong>خبير:</strong> تم استلام رسالتك، اسأليني عن أي درس 🌟";
+                box.appendChild(botMsg);
 
-    <div style="max-width: 500px; margin: 10px auto; display: flex; gap: 10px;">
-        <input id="chat-input" type="text" placeholder="اكتب رسالتك..." 
-            style="flex: 1; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-        <button onclick="sendMessage()" 
-            style="padding: 10px 20px; border: none; background: #4CAF50; color: #fff; border-radius: 8px;">
-            إرسال
-        </button>
-    </div>
-</section>
-
-<script>
-function sendMessage() {
-    const box = document.getElementById("chat-box");
-    const input = document.getElementById("chat-input");
-
-    if (input.value.trim() === "") return;
-
-    // إضافة رسالة المستخدم
-    const userMsg = document.createElement("div");
-    userMsg.style.margin = "10px 0";
-    userMsg.style.textAlign = "right";
-    userMsg.innerHTML = "<strong>أنتِ:</strong> " + input.value;
-    box.appendChild(userMsg);
-
-    // رد تلقائي بسيط
-    const botMsg = document.createElement("div");
-    botMsg.style.margin = "10px 0";
-    botMsg.style.textAlign = "left";
-    botMsg.innerHTML = "<strong>الخبير:</strong> تم استلام رسالتك 🌟";
-    box.appendChild(botMsg);
-
-    box.scrollTop = box.scrollHeight;
-    input.value = "";
-}
-</script>
+                box.scrollTop = box.scrollHeight;
+                input.value = "";
+            }
+        </script>
+    </section>
 
     <!-- ===== الفوتر ===== -->
     <footer class="footer">
-        <p>© 2026 خبير – جميع الحقوق محفوظة</p>
+        <p>© 2026 منصة خبير التعليمية</p>
     </footer>
 
 </body>
