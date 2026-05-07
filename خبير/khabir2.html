@@ -1,92 +1,79 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خبير – الصفحة الثانية</title>
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+
+<title>صفحة تسجيل الدخول</title>
+
+<style>
+
+body { font-family: Arial, sans-
+
+serif; background-color: #f4f4f4;
+
+display: flex; justify-content: center;
+
+align-items: center; height: 100vh; }
+
+.login-container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+width: 300px; }
+
+input { width: 100%; padding:
+
+10px; margin: 10px 0; border: 1px solid
+
+#ccc; border-radius: 4px; box-sizing:
+
+border-box; }
+
+button { width: 100%; padding:
+
+10px; background-color: #28a745; color:
+
+white; border: none; border-radius: 4px;
+
+cursor: pointer; }
+
+button:hover { background-color:
+
+#218838; }
+
+</style>
+
 </head>
 
 <body>
 
-    <!-- ===== الهيدر ===== -->
-    <header class="header">
-        <div class="logo">
-            <img src="لوقو.jpeg" alt="Logo">
-            <span>خبير</span>
-        </div>
+<div class="login-container">
 
-        <nav class="nav">
-            <a href="#home">الرئيسية</a>
-            <a href="#services">الخدمات</a>
-            <a href="#mentors">الخبراء</a>
-            <a href="#contact">تواصل معنا</a>
-        </nav>
-    </header>
+<h2>تسجيل الدخول</h2>
 
-    <!-- ===== قسم الهيرو ===== -->
-    <section id="home" class="hero">
-        <h1>مرحباً بك في خبير</h1>
-        <p>منصة تربطك بأفضل الخبراء في مختلف المجالات</p>
-        <a href="#mentors" class="btn">استكشف الخبراء</a>
-    </section>
+<form action="login.php" method="POST">
 
-    <!-- ===== قسم الخدمات ===== -->
-    <section id="services" class="section">
-        <h2>خدماتنا</h2>
+<input type="text"
 
-        <div class="cards">
-            <div class="card">
-                <h3>استشارات فورية</h3>
-                <p>تواصل مع الخبراء مباشرة واحصل على إجابات دقيقة.</p>
-            </div>
+name="username" placeholder="اسم المستخدم
 
-            <div class="card">
-                <h3>جلسات خاصة</h3>
-                <p>احجز جلسة خاصة مع الخبير المناسب لك.</p>
-            </div>
+" required>
 
-            <div class="card">
-                <h3>دروس تعليمية</h3>
-                <p>تعلم مهارات جديدة من محترفين.</p>
-            </div>
-        </div>
-    </section>
+<input type="password"
 
-    <!-- ===== قسم الخبراء ===== -->
-    <section id="mentors" class="section">
-        <h2>خبراؤنا</h2>
+name="password" placeholder="كلمة المرور”
 
-        <div class="cards">
+required>
 
-            <div class="card mentor">
-                <img src="https://via.placeholder.com/150" alt="mentor">
-                <h3>أحمد</h3>
-                <p>خبير برمجة</p>
-                <a href="#" class="btn">ابدأ المحادثة</a>
-            </div>
+<button type="submit”>دخول > /
 
-            <div class="card mentor">
-                <img src="https://via.placeholder.com/150" alt="mentor">
-                <h3>سارة</h3>
-                <p>خبيرة تصميم</p>
-                <a href="#" class="btn">ابدأ المحادثة</a>
-            </div>
+button>
 
-            <div class="card mentor">
-                <img src="https://via.placeholder.com/150" alt="mentor">
-                <h3>محمد</h3>
-                <p>خبير أعمال</p>
-                <a href="#" class="btn">ابدأ المحادثة</a>
-            </div>
+</form>
 
-        </div>
-    </section>
-
-    <!-- ===== الفوتر ===== -->
-    <footer class="footer">
-        <p>© 2026 خبير – جميع الحقوق محفوظة</p>
-    </footer>
+</div>
 
 </body>
+
 </html>
