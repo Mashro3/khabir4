@@ -1,20 +1,104 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-   <link rel="stylesheet" href="style.css"> 
-<meta charset="UTF-8">
-<title>تسجيل الدخول</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خبير – الصفحة الثانية</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="login-box">
-    <h2>تسجيل الدخول</h2>
-    <input type="text" placeholder="اسم المستخدم">
-    <input type="password" placeholder="كلمة المرور">
-    <button>دخول</button>
-</div>
+    <!-- ===== الهيدر ===== -->
+    <header class="header">
+        <div class="logo">
+            <img src="لوقو.jpeg" alt="Logo">
+            <span>خبير</span>
+        </div>
+
+        <nav class="nav">
+            <a href="#home">الرئيسية</a>
+            <a href="#services">الخدمات</a>
+            <a href="#mentors">الخبراء</a>
+            <a href="#contact">تواصل معنا</a>
+        </nav>
+    </header>
+
+
+    <!-- ===== قسم الهيرو ===== -->
+    <section id="home" class="hero">
+        <h1>مرحباً بك في خبير</h1>
+        <p>منصة تربطك بأفضل الخبراء في مختلف المجالات</p>
+        <a href="#mentors" class="btn">استكشف الخبراء</a>
+    </section>
+
+
+    <!-- ===== قسم الخدمات ===== -->
+    <section id="services" class="section">
+        <h2>خدماتنا</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>استشارات فورية</h3>
+                <p>تواصل مع الخبراء مباشرة واحصل على إجابات دقيقة.</p>
+            </div>
+
+            <div class="card">
+                <h3>جلسات خاصة</h3>
+                <p>احجز جلسة خاصة مع الخبير المناسب لك.</p>
+            </div>
+
+            <div class="card">
+                <h3>دروس تعليمية</h3>
+                <p>تعلم مهارات جديدة من محترفين.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== قسم الخبراء ===== -->
+    <section id="mentors" class="section">
+        <h2>خبراؤنا</h2>
+
+        <div class="cards">
+
+            <div class="card mentor">
+                <img src="https://via.placeholder.com/150" alt="mentor">
+                <h3>أحمد</h3>
+                <p>خبير برمجة</p>
+                <a href="#" class="btn">ابدأ المحادثة</a>
+            </div>
+
+            <div class="card mentor">
+                <img src="https://via.placeholder.com/150" alt="mentor">
+                <h3>سارة</h3>
+                <p>خبيرة تصميم</p>
+                <a href="#" class="btn">ابدأ المحادثة</a>
+            </div>
+
+            <div class="card mentor">
+                <img src="https://via.placeholder.com/150" alt="mentor">
+                <h3>محمد</h3>
+                <p>خبير أعمال</p>
+                <a href="#" class="btn">ابدأ المحادثة</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ===== قسم التواصل ===== -->
+    <section id="contact" class="section">
+        <h2>تواصل معنا</h2>
+        <p>يسعدنا تواصلك معنا لأي استفسار أو اقتراح.</p>
+        <a href="mailto:info@example.com" class="btn">إرسال رسالة</a>
+    </section>
+
+
+    <!-- ===== الفوتر ===== -->
+    <footer class="footer">
+        <p>© 2026 خبير – جميع الحقوق محفوظة</p>
+    </footer>
 
 </body>
 </html>
