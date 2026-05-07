@@ -94,6 +94,57 @@
         <a href="mailto:info@example.com" class="btn">إرسال رسالة</a>
     </section>
 
+<!-- ===== قسم الشات ===== -->
+<section id="chat" class="section">
+    <h2>المحادثة</h2>
+
+    <div id="chat-box" style="
+        width: 100%;
+        max-width: 500px;
+        height: 300px;
+        margin: 20px auto;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow-y: auto;
+        background: #fff;">
+    </div>
+
+    <div style="max-width: 500px; margin: 10px auto; display: flex; gap: 10px;">
+        <input id="chat-input" type="text" placeholder="اكتب رسالتك..." 
+            style="flex: 1; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+        <button onclick="sendMessage()" 
+            style="padding: 10px 20px; border: none; background: #4CAF50; color: #fff; border-radius: 8px;">
+            إرسال
+        </button>
+    </div>
+</section>
+
+<script>
+function sendMessage() {
+    const box = document.getElementById("chat-box");
+    const input = document.getElementById("chat-input");
+
+    if (input.value.trim() === "") return;
+
+    // إضافة رسالة المستخدم
+    const userMsg = document.createElement("div");
+    userMsg.style.margin = "10px 0";
+    userMsg.style.textAlign = "right";
+    userMsg.innerHTML = "<strong>أنتِ:</strong> " + input.value;
+    box.appendChild(userMsg);
+
+    // رد تلقائي بسيط
+    const botMsg = document.createElement("div");
+    botMsg.style.margin = "10px 0";
+    botMsg.style.textAlign = "left";
+    botMsg.innerHTML = "<strong>الخبير:</strong> تم استلام رسالتك 🌟";
+    box.appendChild(botMsg);
+
+    box.scrollTop = box.scrollHeight;
+    input.value = "";
+}
+</script>
 
     <!-- ===== الفوتر ===== -->
     <footer class="footer">
