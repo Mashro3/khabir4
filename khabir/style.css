@@ -2,57 +2,80 @@ body {
     margin: 0;
     font-family: Arial;
     direction: rtl;
+    background-color:#f9f9f9;
 }
 
 header {
-    background: #4CAF50;
+    background-color: #4CAF50;
     color: white;
-    padding: 15px;
+    padding: 15px 50px;
     display: flex;
     justify-content: space-between;
+    align-items:center;
 }
 
 nav a {
     color: white;
-    margin: 10px;
+    margin:0 10px;
     text-decoration: none;
+    font-weight:blod;
 }
 
 .hero {
     text-align: center;
-    padding: 50px;
-    background: #f4f4f4;
+    padding: 80px 20px;
+    background-color: #f4f4f4;
 }
 
 .hero button {
-    padding: 10px 20px;
-    background: #4CAF50;
+    padding: 12px 25px;
+    background-color: #4CAF50;
     color: white;
     border: none;
+    border-radius:5px
+    cursor:pointer
+    font-size 16px
 }
 
 .features {
     display: flex;
     justify-content: space-around;
-    padding: 30px;
+    padding: 50px;
+    flex-wrap:warp;
 }
 
 .card {
-    background: white;
+    background-color: white;
     padding: 20px;
-    width: 200px;
+    margin: 10px;
+    border-radius:8px;
     text-align: center;
-    box-shadow: 0 0 10px #ccc;
+    width:250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 .login-box {
     width: 300px;
     margin: 100px auto;
     text-align: center;
+    background-color:#ffffff;
+    padding:30px
+    broder-radius:10px
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    
 }
 
 .login-box input {
     display: block;
-    margin: 10px;
-    padding: 10px;
+    margin: 15px 0;
+    padding: 12px;
     width: 100%;
+    border:1px solid #ddd
+    border-radius:5px;
+    box-sizing:border-box;
+    font-size:14px;
+}
+
+.login-box input:focus{
+    border-color:#4CAF50;
+    outline:none;
 }
