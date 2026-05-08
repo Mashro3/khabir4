@@ -6,9 +6,9 @@
     <title>درس التفكير المنطقي</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --bg-color: #f4f7f6;
+            --primary-color: #2e7d32;
+            --accent-color: #fdd835;
+            --bg-color: #f8f9fa;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -24,7 +24,7 @@
             width: 100%;
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.0.5);
         }
         h1 {
             color: var(--primary-color);
@@ -38,28 +38,29 @@
             margin-bottom: 30px;
         }
         .task-box {
-            background-color: #e3f2fd;
+            background-color: #f1f8e9;
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 30px;
             border-right: 5px solid var(--accent-color);
         }
         details {
-            background: #f1f8ff;
+            background: #ffffff;
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 10px;
             cursor: pointer;
+            border:1px solid #e0e0e0;
         }
         summary {
             font-weight: bold;
             color: var(--primary-color);
         }
         .ask-section {
-            background: #fff9e6;
+            background: #fffde7;
             padding: 25px;
             border-radius: 12px;
-            border: 1px dashed #ffd54f;
+            border: 1px dashed var(--accent-color);
             margin-top: 30px;
         }
         input, textarea {
@@ -70,14 +71,24 @@
             border-radius: 5px;
             box-sizing: border-box; /* لضمان عدم خروج الحقول عن الإطار */
         }
+            input:focus,textarea:focus{
+                outline:none;
+                border-color:#2e7d32;
+                box-shadow:0 0 5px rgba(46,125,50,0.2);
+            }
         .btn {
-            background: #f57c00;
+            background: #2e7d32;
             color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
+            transition:background 0.3s ease;
+        }
+        .btn:hover{
+            background:#fdd835;
+            color:#333;
         }
     </style>
 </head>
