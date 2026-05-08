@@ -3,327 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة خبير | طريقك للتميز</title>
-
+    <title>منصة خبير | الرئيسية</title>
     <style>
-        /* المتغيرات العامة لسهولة التعديل */
         :root {
-            --primary-color: #2b7a2f;
-            --secondary-color: #4caf50;
-            --accent-color: #2ea44f;
-            --bg-color: #f8faf9;
-            --text-dark: #333;
+            --primary: #2b7a2f;
+            --secondary: #4caf50;
+            --bg: #f8faf9;
+            --white: #ffffff;
             --shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--bg-color);
-            color: var(--text-dark);
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: var(--bg);
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         /* الهيدر */
         header {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
-            padding: 15px 50px;
+            background: var(--white);
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .logo { font-size: 24px; color: var(--primary); font-weight: bold; text-decoration: none; }
+        
+        nav a {
+            margin-right: 20px;
             text-decoration: none;
-        }
-
-        .logo strong {
-            font-size: 24px;
-            color: var(--primary-color);
-            letter-spacing: 1px;
-        }
-
-        header nav a {
-            margin-right: 25px;
-            text-decoration: none;
-            color: #555;
+            color: #444;
             font-weight: 600;
             transition: 0.3s;
         }
 
-        header nav a:hover {
-            color: var(--primary-color);
-        }
+        nav a:hover { color: var(--primary); }
 
-        /* القسم الرئيسي - Hero */
+        /* الأقسام الرئيسية */
+        .page-section { display: block; }
+        .hidden { display: none !important; }
+
+        /* قسم الـ Hero */
         .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
             text-align: center;
             padding: 100px 20px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            clip-path: ellipse(150% 100% at 50% 0%); /* انحناء بسيط أسفل القسم */
+            clip-path: ellipse(150% 100% at 50% 0%);
         }
 
-        .hero h2 { font-size: 3rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
 
-        .btn-main {
-            padding: 15px 35px;
+        .btn-start {
+            padding: 15px 40px;
             background: white;
-            color: var(--primary-color);
+            color: var(--primary);
             border: none;
             border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
             cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn-main:hover {
-            transform: scale(1.05);
-            background: #eee;
-        }
-
-        .btn-lesson {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            border: 1px solid white;
-            font-weight: bold;
+            box-shadow: var(--shadow);
             transition: 0.3s;
         }
 
-        .btn-lesson:hover {
-            background: white;
-            color: var(--primary-color);
-        }
+        .btn-start:hover { transform: scale(1.05); background: #f0f0f0; }
 
-        /* قسم المزايا */
-        .section-title { text-align: center; margin-top: 60px; font-size: 2rem; color: var(--primary-color); }
-
+        /* البطاقات */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 50px 10%;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 80px 10%;
         }
 
         .card {
             background: white;
             padding: 30px;
-            text-align: center;
             border-radius: 20px;
+            text-align: center;
             box-shadow: var(--shadow);
             transition: 0.3s;
         }
 
         .card:hover { transform: translateY(-10px); }
-        .card h3 { color: var(--primary-color); }
+        .card h3 { color: var(--primary); }
 
-        /* المرشدين */
-        .mentors-grid {
+        /* صفحة تسجيل الدخول */
+        .login-page {
+            height: 90vh;
             display: flex;
             justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            padding: 40px 20px;
+            align-items: center;
+            background: var(--bg);
         }
 
-        .mentor-card {
-            background: white;
-            padding: 25px;
-            width: 260px;
-            text-align: center;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            border-bottom: 5px solid var(--secondary-color);
-        }
-
-        .mentor-card button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: var(--secondary-color);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-        }
-
-        /* النماذج (Login/Signup) */
-        .forms-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 50px;
-            padding: 50px 20px;
-        }
-
-        .form-section {
+        .login-box {
             background: white;
             padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             width: 100%;
-            max-width: 380px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
+            max-width: 400px;
+            text-align: center;
         }
 
-        .form-section input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-            box-sizing: border-box;
-        }
+        .login-box h2 { color: var(--primary); margin-bottom: 25px; }
 
-        .form-section button {
+        input {
             width: 100%;
             padding: 14px;
-            background: var(--primary-color);
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-sizing: border-box;
+            background: #f9f9f9;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
             color: white;
             border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
+            border-radius: 12px;
+            font-size: 1rem;
             font-weight: bold;
-            margin-top: 10px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .btn-back {
+            margin-top: 20px;
+            display: inline-block;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+            cursor: pointer;
         }
 
         footer {
             text-align: center;
-            padding: 40px;
-            background: var(--primary-color);
+            padding: 30px;
+            background: var(--primary);
             color: white;
-            margin-top: 60px;
-        }
-
-        /* تحسينات للشاشات الصغيرة */
-        @media (max-width: 768px) {
-            header { flex-direction: column; padding: 20px; }
-            header nav { margin-top: 15px; }
-            .hero h2 { font-size: 2rem; }
         }
     </style>
 </head>
-
 <body>
 
 <header>
-    <a href="#" class="logo">
-        <strong id="brand-name">خبير</strong>
-    </a>
+    <a href="#" class="logo" onclick="showHome()">خبير</a>
     <nav>
-        <a href="#home">الرئيسية</a>
+        <a href="#" onclick="showHome()">الرئيسية</a>
         <a href="#features">المزايا</a>
-        <a href="#mentors">المرشدين</a>
-        <a href="#login">دخول</a>
-        <a href="#signup" style="background: var(--primary-color); color:white; padding: 8px 15px; border-radius: 5px;">إنشاء حساب</a>
+        <a href="#" onclick="showLogin()">تسجيل الدخول</a>
     </nav>
 </header>
 
-<section id="home" class="hero">
-    <h2>خبرتك تصنع مستقبلاً</h2>
-    <p>الجسر الرقمي الذي يربط شغف الطلاب بخبرة المعلمين</p>
-    <button class="btn-main" onclick="scrollToMentors()">ابدأ رحلتك الآن</button>
-    <br>
-    <a href="index.html" class="btn-lesson">درس التفكير المنطقي ↗</a>
-</section>
-
-<h2 class="section-title">لماذا منصة خبير؟</h2>
-<section id="features" class="features">
-    <div class="card">
-        <div style="font-size: 40px;">🎓</div>
-        <h3>للطلاب</h3>
-        <p>تخطَ العقبات الأكاديمية مع شروحات مخصصة تناسب أسلوب فهمك.</p>
-    </div>
-    <div class="card">
-        <div style="font-size: 40px;">💡</div>
-        <h3>للخبراء</h3>
-        <p>حوّل معرفتك إلى أثر ملموس وساعد الجيل القادم على النمو.</p>
-    </div>
-    <div class="card">
-        <div style="font-size: 40px;">🏫</div>
-        <h3>للمعلمين</h3>
-        <p>أدوات متطورة لتقديم جلسات تعليمية تفاعلية واحترافية.</p>
-    </div>
-</section>
-
-<section id="mentors">
-    <h2 class="section-title">اختر مرشدك المفضل</h2>
-    <div class="mentors-grid">
-        <div class="mentor-card">
-            <h3>💻 مرشد تقنية</h3>
-            <p>خبير في تطوير الويب والذكاء الاصطناعي</p>
-            <button onclick="contactMentor('التقنية')">تواصل الآن</button>
-        </div>
-        <div class="mentor-card">
-            <h3>🩺 مرشد طبي</h3>
-            <p>متخصص في الاستشارات الأكاديمية الطبية</p>
-            <button onclick="contactMentor('الطب')">تواصل الآن</button>
-        </div>
-        <div class="mentor-card">
-            <h3>📊 مرشد إدارة</h3>
-            <p>متخصص في ريادة الأعمال وإدارة المشاريع</p>
-            <button onclick="contactMentor('الإدارة')">تواصل الآن</button>
-        </div>
-    </div>
-</section>
-
-<div class="forms-container">
-    <section id="login" class="form-section">
-        <h2 style="text-align:center;">تسجيل الدخول</h2>
-        <input type="email" id="login-email" placeholder="البريد الإلكتروني">
-        <input type="password" placeholder="كلمة المرور">
-        <button onclick="handleLogin()">دخول</button>
+<!-- قسم الصفحة الرئيسية -->
+<div id="home-page" class="page-section">
+    <section class="hero">
+        <h1>خبرتك تصنع مستقبلاً</h1>
+        <p>المنصة الأولى لربط الطلاب بأفضل الخبراء والمعلمين</p>
+        <button class="btn-start" onclick="showLogin()">ابدأ الآن</button>
     </section>
 
-    <section id="signup" class="form-section">
-        <h2 style="text-align:center;">إنشاء حساب جديد</h2>
-        <input type="text" placeholder="الاسم الكامل">
-        <input type="email" placeholder="البريد الإلكتروني">
-        <input type="password" placeholder="كلمة المرور">
-        <button onclick="alert('تم إنشاء الحساب بنجاح!')">اشترك الآن</button>
+    <section id="features" class="features">
+        <div class="card">
+            <h3>🎓 للطلاب</h3>
+            <p>ابحث عن معلّمك المفضل وافهم دروسك بذكاء.</p>
+        </div>
+        <div class="card">
+            <h3>💡 للخبراء</h3>
+            <p>شارك معرفتك مع الآخرين وابنِ سمعتك المهنية.</p>
+        </div>
+        <div class="card">
+            <h3>📊 تطوير</h3>
+            <p>جلسات استشارية متخصصة في كافة المجالات.</p>
+        </div>
     </section>
+
+    <footer>
+        <p>© 2026 منصة خبير - جميع الحقوق محفوظة</p>
+    </footer>
 </div>
 
-<footer>
-    <p>© 2026 منصة خبير - جميع الحقوق محفوظة</p>
-    <p><small>صنع بكل حب لدعم المحتوى التعليمي العربي</small></p>
-</footer>
+<!-- قسم صفحة تسجيل الدخول (مخفي افتراضياً) -->
+<div id="login-page" class="page-section hidden">
+    <div class="login-page">
+        <div class="login-box">
+            <h2>تسجيل الدخول</h2>
+            <form onsubmit="event.preventDefault(); alert('تم تسجيل الدخول بنجاح!');">
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <input type="password" placeholder="كلمة المرور" required>
+                <button type="submit" class="btn-login">دخول</button>
+            </form>
+            <a class="btn-back" onclick="showHome()">← العودة للرئيسية</a>
+        </div>
+    </div>
+</div>
 
 <script>
-    // وظائف بسيطة للتفاعل
-    function scrollToMentors() {
-        document.getElementById('mentors').scrollIntoView();
+    const homePage = document.getElementById('home-page');
+    const loginPage = document.getElementById('login-page');
+
+    function showLogin() {
+        homePage.classList.add('hidden');
+        loginPage.classList.remove('hidden');
+        window.scrollTo(0, 0);
     }
 
-    function contactMentor(specialty) {
-        alert("سيتم توجيهك الآن للمحادثة مع مرشد " + specialty);
-    }
-
-    function handleLogin() {
-        const email = document.getElementById('login-email').value;
-        if(email) {
-            alert("أهلاً بك مجدداً في خبير!");
-        } else {
-            alert("يرجى إدخال البريد الإلكتروني");
-        }
+    function showHome() {
+        loginPage.classList.add('hidden');
+        homePage.classList.remove('hidden');
     }
 </script>
 
