@@ -2,269 +2,330 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>منصة خبير</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة خبير | طريقك للتميز</title>
 
     <style>
+        /* المتغيرات العامة لسهولة التعديل */
+        :root {
+            --primary-color: #2b7a2f;
+            --secondary-color: #4caf50;
+            --accent-color: #2ea44f;
+            --bg-color: #f8faf9;
+            --text-dark: #333;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
         body {
             margin: 0;
-            font-family: "Tahoma", sans-serif;
-            background: #f7f7f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-dark);
             scroll-behavior: smooth;
         }
-     
-    <style>
 
         /* الهيدر */
         header {
             position: sticky;
             top: 0;
-            background: white;
-            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            padding: 15px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #eee;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo strong {
+            font-size: 24px;
+            color: var(--primary-color);
+            letter-spacing: 1px;
         }
 
         header nav a {
-            margin-left: 20px;
+            margin-right: 25px;
             text-decoration: none;
-            color: #333;
-            font-weight: bold;
+            color: #555;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
         header nav a:hover {
-            color: #2b7a2f;
+            color: var(--primary-color);
         }
 
-        /* الرئيسية */
+        /* القسم الرئيسي - Hero */
         .hero {
             text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(#2b7a2f, #4caf50);
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
+            clip-path: ellipse(150% 100% at 50% 0%); /* انحناء بسيط أسفل القسم */
         }
 
-        .hero button {
-            padding: 12px 25px;
+        .hero h2 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+
+        .btn-main {
+            padding: 15px 35px;
             background: white;
-            color: #2b7a2f;
+            color: var(--primary-color);
             border: none;
-            border-radius: 6px;
+            border-radius: 50px;
             cursor: pointer;
             font-size: 18px;
-            margin-top: 15px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        /* المزايا */
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            padding: 50px 20px;
+        .btn-main:hover {
+            transform: scale(1.05);
+            background: #eee;
         }
 
-        .features .card {
+        .btn-lesson {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 1px solid white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-lesson:hover {
             background: white;
-            padding: 20px;
-            width: 230px;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 0 10px #ccc;
+            color: var(--primary-color);
         }
+
+        /* قسم المزايا */
+        .section-title { text-align: center; margin-top: 60px; font-size: 2rem; color: var(--primary-color); }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px 10%;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { color: var(--primary-color); }
 
         /* المرشدين */
-        #mentors {
-            padding: 50px 20px;
-        }
-
-        .mentors {
+        .mentors-grid {
             display: flex;
             justify-content: center;
             gap: 25px;
             flex-wrap: wrap;
+            padding: 40px 20px;
         }
 
         .mentor-card {
             background: white;
-            padding: 20px;
-            width: 230px;
+            padding: 25px;
+            width: 260px;
             text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 0 10px #ccc;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border-bottom: 5px solid var(--secondary-color);
         }
 
         .mentor-card button {
-            margin-top: 10px;
-            padding: 10px;
-            background: #4caf50;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: var(--secondary-color);
             color: white;
             border: none;
+            border-radius: 8px;
             cursor: pointer;
             width: 100%;
+            font-weight: bold;
         }
 
-        /* تسجيل الدخول + إنشاء حساب */
-        .form-section {
+        /* النماذج (Login/Signup) */
+        .forms-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
             padding: 50px 20px;
-            background: #fff;
-            max-width: 400px;
-            margin: 40px auto;
-            border-radius: 12px;
-            box-shadow: 0 0 10px #ccc;
+        }
+
+        .form-section {
+            background: white;
+            padding: 40px;
+            width: 100%;
+            max-width: 380px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
         }
 
         .form-section input {
             width: 100%;
             padding: 12px;
             margin: 10px 0;
-            border-radius: 6px;
-            border: 1px solid #aaa;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
         }
 
         .form-section button {
             width: 100%;
-            padding: 12px;
-            background: #2b7a2f;
+            padding: 14px;
+            background: var(--primary-color);
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            background: #2b7a2f;
+            padding: 40px;
+            background: var(--primary-color);
             color: white;
-            margin-top: 40px;
+            margin-top: 60px;
         }
-        .my-lesson-button {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: #2ea44f; /* لون غيث هاب الأخضر المميز */
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    font-family: sans-serif;
-    transition: background-color 0.3s, transform 0.2s;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
 
-.my-lesson-button:hover {
-    background-color: #3fb950;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(46, 164, 79, 0.4);
-}
-
+        /* تحسينات للشاشات الصغيرة */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 20px; }
+            header nav { margin-top: 15px; }
+            .hero h2 { font-size: 2rem; }
+        }
     </style>
 </head>
 
 <body>
 
-<!-- الهيدر -->
 <header>
-    <div class="logo" style="display:flex; align-items:center; gap:10px;">
-        <img src="logo.png" style="height:50px;">
-        <strong style="font-size:22px; color:#2b7a2f;">خبير</strong>
-    </div>
-
+    <a href="#" class="logo">
+        <strong id="brand-name">خبير</strong>
+    </a>
     <nav>
         <a href="#home">الرئيسية</a>
         <a href="#features">المزايا</a>
         <a href="#mentors">المرشدين</a>
-        <a href="#login">تسجيل الدخول</a>
-        <a href="#signup">إنشاء حساب</a>
+        <a href="#login">دخول</a>
+        <a href="#signup" style="background: var(--primary-color); color:white; padding: 8px 15px; border-radius: 5px;">إنشاء حساب</a>
     </nav>
 </header>
 
-<!-- الرئيسية -->
 <section id="home" class="hero">
     <h2>خبرتك تصنع مستقبلاً</h2>
-    <p>منصة تربط الطلاب بالخبراء والمعلمين لتبادل الخبرات والمساعدة الأكاديمية</p>
-    <button onclick="location.href='#mentors'">ابدأ الآن</button>
-     <a href="index.html" style="
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: white; /* لون خلفية الزر أبيض ليبرز فوق الأخضر */
-    color: #2ea44f; /* لون الخط أخضر */
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-">الدخول إلى درس التفكير المنطقي ↗</a>
+    <p>الجسر الرقمي الذي يربط شغف الطلاب بخبرة المعلمين</p>
+    <button class="btn-main" onclick="scrollToMentors()">ابدأ رحلتك الآن</button>
+    <br>
+    <a href="index.html" class="btn-lesson">درس التفكير المنطقي ↗</a>
 </section>
 
-<!-- المزايا -->
+<h2 class="section-title">لماذا منصة خبير؟</h2>
 <section id="features" class="features">
     <div class="card">
-        <h3>طلاب</h3>
-        <p>احصل على شرح ومساعدة أكاديمية بسهولة</p>
+        <div style="font-size: 40px;">🎓</div>
+        <h3>للطلاب</h3>
+        <p>تخطَ العقبات الأكاديمية مع شروحات مخصصة تناسب أسلوب فهمك.</p>
     </div>
-
     <div class="card">
-        <h3>خبراء</h3>
-        <p>شارك خبرتك وساعد الآخرين</p>
+        <div style="font-size: 40px;">💡</div>
+        <h3>للخبراء</h3>
+        <p>حوّل معرفتك إلى أثر ملموس وساعد الجيل القادم على النمو.</p>
     </div>
-
     <div class="card">
-        <h3>معلمون</h3>
-        <p>قدم جلسات تعليمية احترافية</p>
+        <div style="font-size: 40px;">🏫</div>
+        <h3>للمعلمين</h3>
+        <p>أدوات متطورة لتقديم جلسات تعليمية تفاعلية واحترافية.</p>
     </div>
 </section>
 
-<!-- المرشدين -->
 <section id="mentors">
-    <h1 style="text-align:center;">اختر مرشدك</h1>
-
-    <div class="mentors">
-
+    <h2 class="section-title">اختر مرشدك المفضل</h2>
+    <div class="mentors-grid">
         <div class="mentor-card">
-            <h3>مرشد تقنية</h3>
-            <p>تخصص برمجة</p>
-            <button>تواصل</button>
+            <h3>💻 مرشد تقنية</h3>
+            <p>خبير في تطوير الويب والذكاء الاصطناعي</p>
+            <button onclick="contactMentor('التقنية')">تواصل الآن</button>
         </div>
-
         <div class="mentor-card">
-            <h3>مرشد طبي</h3>
-            <p>تخصص طب</p>
-            <button>تواصل</button>
+            <h3>🩺 مرشد طبي</h3>
+            <p>متخصص في الاستشارات الأكاديمية الطبية</p>
+            <button onclick="contactMentor('الطب')">تواصل الآن</button>
         </div>
-
         <div class="mentor-card">
-            <h3>مرشد إدارة</h3>
-            <p>إدارة أعمال</p>
-            <button>تواصل</button>
+            <h3>📊 مرشد إدارة</h3>
+            <p>متخصص في ريادة الأعمال وإدارة المشاريع</p>
+            <button onclick="contactMentor('الإدارة')">تواصل الآن</button>
         </div>
-
     </div>
 </section>
 
-<!-- تسجيل الدخول -->
-<section id="login" class="form-section">
-    <h2 style="text-align:center;">تسجيل الدخول</h2>
-    <input type="text" placeholder="البريد الإلكتروني">
-    <input type="password" placeholder="كلمة المرور">
-    <button>دخول</button>
-</section>
+<div class="forms-container">
+    <section id="login" class="form-section">
+        <h2 style="text-align:center;">تسجيل الدخول</h2>
+        <input type="email" id="login-email" placeholder="البريد الإلكتروني">
+        <input type="password" placeholder="كلمة المرور">
+        <button onclick="handleLogin()">دخول</button>
+    </section>
 
-<!-- إنشاء حساب -->
-<section id="signup" class="form-section">
-    <h2 style="text-align:center;">إنشاء حساب</h2>
-    <input type="text" placeholder="الاسم الكامل">
-    <input type="email" placeholder="البريد الإلكتروني">
-    <input type="password" placeholder="كلمة المرور">
-    <button>إنشاء حساب</button>
-</section>
+    <section id="signup" class="form-section">
+        <h2 style="text-align:center;">إنشاء حساب جديد</h2>
+        <input type="text" placeholder="الاسم الكامل">
+        <input type="email" placeholder="البريد الإلكتروني">
+        <input type="password" placeholder="كلمة المرور">
+        <button onclick="alert('تم إنشاء الحساب بنجاح!')">اشترك الآن</button>
+    </section>
+</div>
 
 <footer>
-    © 2026 منصة خبير
+    <p>© 2026 منصة خبير - جميع الحقوق محفوظة</p>
+    <p><small>صنع بكل حب لدعم المحتوى التعليمي العربي</small></p>
 </footer>
+
+<script>
+    // وظائف بسيطة للتفاعل
+    function scrollToMentors() {
+        document.getElementById('mentors').scrollIntoView();
+    }
+
+    function contactMentor(specialty) {
+        alert("سيتم توجيهك الآن للمحادثة مع مرشد " + specialty);
+    }
+
+    function handleLogin() {
+        const email = document.getElementById('login-email').value;
+        if(email) {
+            alert("أهلاً بك مجدداً في خبير!");
+        } else {
+            alert("يرجى إدخال البريد الإلكتروني");
+        }
+    }
+</script>
 
 </body>
 </html>
