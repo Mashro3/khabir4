@@ -18,7 +18,7 @@ nav a {
     color: white;
     margin:0 10px;
     text-decoration: none;
-    font-weight:blod;
+    font-weight:bold;
 }
 
 .hero {
@@ -41,7 +41,7 @@ nav a {
     display: flex;
     justify-content: space-around;
     padding: 50px;
-    flex-wrap:warp;
+    flex-wrap:wrap;
 }
 
 .card {
@@ -59,7 +59,7 @@ nav a {
     text-align: center;
     background-color:#ffffff;
     padding:30px
-    broder-radius:10px
+    border-radius:10px
     box-shadow:0 4px 15px rgba(0,0,0,0.1);
     
 }
