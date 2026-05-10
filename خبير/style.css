@@ -131,3 +131,7 @@ h1 {
     background: #e0f2f1;
     border-radius: 5px;
 }
+.logo {
+    width: 120px;
+    height: auto;
+}
