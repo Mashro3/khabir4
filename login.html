@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* خلفية بسيطة بنفس ألوان الموقع */
+        body {
+            background: #f5f5f5;
+            font-family: Arial;
+        }
+
+        /* صندوق تسجيل الدخول */
+        .login-container {
+            width: 350px;
+            margin: 80px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        /* اللوقو */
+        .login-container img {
+            width: 120px;
+            margin-bottom: 15px;
+        }
+
+        /* العنوان */
+        .login-container h2 {
+            color: #2e7d32; /* أخضر */
+            margin-bottom: 20px;
+        }
+
+        /* الحقول */
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        /* زر الدخول */
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #f4c20d; /* أصفر */
+            color: #2e7d32; /* أخضر */
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #e0b000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- نفس اللوقو الموجود في بداية الموقع -->
+        <img src="لوقو.jpeg" alt="شعار خبير">
+
+        <h2>تسجيل الدخول</h2>
+
+        <form action="#" method="post">
+            <input type="text" name="username" placeholder="اسم المستخدم" required>
+            <input type="password" name="password" placeholder="كلمة المرور" required>
+
+            <button class="login-btn">دخول</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
