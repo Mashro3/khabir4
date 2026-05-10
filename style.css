@@ -52,29 +52,40 @@ p{
     border-color: #1b5e20;
     box-shadow: 0 0 5px rgba(46, 125, 50, 0.3);
 }
+/* الحاوية الأساسية عشان تخلي العناصر تحت بعض وفي النص */
+.student-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* مسافة بين القائمة والزر */
+    margin-top: 20px;
+}
 
-.student-section label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #2e7d32;
+/* تنسيق القائمة المنسدلة لتكون أرتب */
+#teacher-select {
+    padding: 10px;
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
 
-.start-button {
-    background-color: #2e7d32; /* نفس الدرجة الخضراء في شعاركم */
+/* تنسيق الزر (أخضر وكبير وتحت) */
+.start-btn {
+    background-color: #2e7d32; /* اللون الأخضر حق مشروعك */
     color: white;
-    padding: 10px 25px;
+    padding: 12px 40px; /* كبرناه من هنا */
     border: none;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 15px;
     transition: 0.3s;
-    width: 150px; /* تقدري تتحكمي بالعرض من هنا */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.start-button:hover {
-    background-color: #1b5e20; /* يغمق اللون شوي لما تمرين بالماوس */
-    transform: scale(1.05); /* حركة تكبير بسيطة */
+/* حركة عند مرور الماوس */
+.start-btn:hover {
+    background-color: #1b5e20;
+    transform: translateY(-2px);
 }
-
