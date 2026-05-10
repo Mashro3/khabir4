@@ -91,6 +91,42 @@
             color: #ffffff;
             border-top: 3px solid #FFD700;
         }
+
+        /* زر الدردشة العائم (Gemini) */
+        .chat-float {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background: #FFD700;
+            color: #1B4332;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            animation: glow 1.5s infinite alternate;
+            z-index: 9999;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+                transform: scale(1);
+            }
+            to {
+                box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+                transform: scale(1.08);
+            }
+        }
+
+        .chat-float:hover {
+            background: #e6c200;
+        }
     </style>
 </head>
 
@@ -127,10 +163,11 @@
     <footer>
         © 2026 منصة خبير — جميع الحقوق محفوظة
     </footer>
-<!-- زر الدردشة العائم (Google Gemini) -->
-<div class="chat-float" onclick="window.open('https://gemini.google.com/app', '_blank')">
-    🤖
-</div>
+
+    <!-- زر الدردشة العائم (Google Gemini) -->
+    <div class="chat-float" onclick="window.open('https://gemini.google.com/app', '_blank')">
+        🤖
+    </div>
 
 </body>
 </html>
