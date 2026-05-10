@@ -2,326 +2,154 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة خبير | الرئيسية</title>
+    <title>حسابي | منصة خبير</title>
 
     <style>
-        :root {
-            --primary: #2D6A4F;
-            --header-bg: #1B4332;
-            --secondary: #FFD700;
-            --bg: #F8F9FA;
-            --white: #ffffff;
-            --text-main: #1B4332;
-            --shadow-elegant: 0 4px 20px rgba(6,95,70,0.08);
-        }
-
         body {
             margin: 0;
-            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #F8F9FA;
+            color: #1B4332;
         }
 
         /* الهيدر */
         header {
-            background-color: #ffffff;
-            border-bottom: 2px solid #f0f0f0;
-            border-radius: 50px;
-            padding: 10px 40px;
+            background: #ffffff;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            margin: 20px 5%;
+            border-bottom: 3px solid #FFD700;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .logo {
-            font-size: 24px;
-            color: var(--primary);
-            font-weight: bold;
-            text-decoration: none;
+        header img {
+            height: 60px;
         }
 
         nav a {
-            margin-right: 25px;
+            margin-left: 25px;
             text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
+            color: #1B4332;
+            font-weight: 600;
             transition: 0.3s;
         }
 
         nav a:hover {
-            color: var(--primary);
+            color: #2D6A4F;
         }
 
-        .page-section { display: block; }
-        .hidden { display: none !important; }
-
-        /* قسم الـ Hero */
-        .hero {
-            background: #1a3c34;
-            padding: 100px 10%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            color: var(--white);
-            text-align: right;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            line-height: 1.3;
-            font-weight: 200;
-            width: 100%;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            max-width: 500px;
-        }
-
-        .btn-start {
-            padding: 8px 25px;
-            background-color: #FFF9C4;
-            color: var(--primary);
-            border: 1px solid #FBC02D;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            width: fit-content;
-            display: inline-block;
-        }
-
-        .btn-start:hover {
-            transform: scale(1.05);
-            background: #f0f0f0;
-        }
-
-        /* البطاقات */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-            padding: 100px 12%;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 50px 35px;
-            border-radius: 30px;
+        /* بطاقة الحساب */
+        .profile-box {
+            width: 80%;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid #FFD700;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
             text-align: center;
-            box-shadow: var(--shadow-elegant);
-            transition: 0.3s;
-            border: 1px solid rgba(6,95,70,0.05);
         }
 
-        .card:hover {
-            transform: translateY(-15px);
-            border-color: var(--secondary);
-            box-shadow: 0 30px 60px -12px rgba(6,95,70,0.15);
-        }
-
-        .card h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            font-weight: 800;
+        .profile-box img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #2D6A4F;
             margin-bottom: 15px;
         }
 
-        /* صفحة تسجيل الدخول */
-        .login-page {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #1a3c34 0%, #0d211c 100%);
-        }
-
-        .login-box {
-            background: white;
-            padding: 50px;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            width: 100%;
-            max-width: 420px;
-            text-align: center;
-            border-top: 5px solid #FFD700;
-        }
-
-        .login-box h2 {
-            color: #1a3c34;
-            margin-bottom: 30px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        input {
-            width: 100%;
-            padding: 14px;
+        .profile-box h2 {
             margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            background: #f9f9f9;
+            color: #2D6A4F;
         }
 
-        .btn-login {
+        .profile-box p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* نموذج تعديل البيانات */
+        .edit-form {
+            width: 80%;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px solid #2D6A4F;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+
+        .edit-form label {
+            font-weight: bold;
+            color: #1B4332;
+        }
+
+        .edit-form input {
             width: 100%;
-            padding: 14px;
-            background: linear-gradient(to right, #1a3c34, #245247);
-            color: #FFD700;
+            padding: 12px;
+            margin: 8px 0 20px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .save-btn {
+            padding: 12px 25px;
+            background: #FFD700;
+            color: #1B4332;
             border: none;
-            border-radius: 12px;
-            font-size: 1rem;
+            border-radius: 10px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 15px;
+            transition: 0.3s;
         }
 
-        .btn-back {
-            margin-top: 20px;
-            display: inline-block;
-            color: #1a3c34;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #2e7d32;
-            color: white;
-            border-top: 3px solid #FFD700;
-            font-size: 0.85rem;
+        .save-btn:hover {
+            background: #e6c200;
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <a href="#" class="logo" onclick="showHome()">خبير</a>
-    <nav>
-        <a href="#" onclick="showHome()">الرئيسية</a>
-        <a href="#features">المزايا</a>
-        <a href="#" onclick="showLogin()">تسجيل الدخول</a>
-    </nav>
-</header>
+    <!-- الهيدر -->
+    <header>
+        <div class="logo">
+            <img src="لوقو.jpeg" alt="شعار خبير">
+        </div>
 
-<!-- الصفحة الرئيسية -->
-<div id="home-page" class="page-section">
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="khabir2.html">المرشدون</a>
+            <a href="kabear8.html">الدروس</a>
+            <a href="update_page.html">حسابي</a>
+        </nav>
+    </header>
 
-    <section class="hero">
-        <h1>خبرتك تصنع مستقبلاً</h1>
-        <p>المنصة الأولى لربط الطلاب بأفضل الخبراء والمعلمين</p>
-        <button class="btn-start" onclick="showLogin()">ابدأ الآن</button>
+    <!-- بطاقة الحساب -->
+    <section class="profile-box">
+        <img src="https://via.placeholder.com/120" alt="صورة المستخدم">
+        <h2>اسم المستخدم</h2>
+        <p>البريد الإلكتروني: user@example.com</p>
     </section>
 
-    <section id="features" class="features">
+    <!-- نموذج تعديل البيانات -->
+    <section class="edit-form">
+        <h2 style="color:#2D6A4F; text-align:center;">تعديل بيانات الحساب</h2>
 
-        <div class="card">
-            <h3>🎓 للطلاب</h3>
-            <p>ابحث عن معلّمك المفضل وافهم دروسك بذكاء.</p>
+        <form>
+            <label>اسم المستخدم:</label>
+            <input type="text" placeholder="اكتب اسمك">
 
-            <label for="teacher-select">اختر معلمك المفضل:</label>
-            <select id="teacher-select">
-                <option value="">-- اختر من القائمة --</option>
-                <option value="1">أ. أحمد المنصور</option>
-                <option value="2">أ. سارة الأحمد</option>
-                <option value="3">أ. خالد العتيبي</option>
-            </select>
+            <label>البريد الإلكتروني:</label>
+            <input type="email" placeholder="example@mail.com">
 
-            <button class="btn-start">ابدأ الآن</button>
-        </div>
+            <label>كلمة المرور الجديدة:</label>
+            <input type="password" placeholder="********">
 
-        <div class="card">
-            <h3>💡 للخبراء</h3>
-            <p>شارك معرفتك مع الآخرين وابنِ سمعتك المهنية.</p>
-
-            <a href="خبير/khabir2.html" style="
-                display:inline-block;
-                margin-top:15px;
-                padding:10px 20px;
-                background:#2e7d32;
-                color:white;
-                border-radius:8px;
-                text-decoration:none;
-                font-weight:bold;
-            ">فتح صفحة الخبراء</a>
-        </div>
-
-        <div class="card">
-            <h3>📊 تطوير</h3>
-            <p>جلسات استشارية متخصصة في كافة المجالات.</p>
-
-            <a href="خبير/class.html" style="
-                display:inline-block;
-                margin-top:15px;
-                padding:10px 20px;
-                background:#2b7a2f;
-                color:white;
-                border-radius:8px;
-                text-decoration:none;
-                font-weight:bold;
-            ">فتح الدرس</a>
-        </div>
-
+            <button class="save-btn">حفظ التعديلات</button>
+        </form>
     </section>
-
-    <footer>
-        <p>© 2026 منصة خبير - جميع الحقوق محفوظة</p>
-    </footer>
-
-</div>
-
-<!-- صفحة تسجيل الدخول -->
-<div id="login-page" class="page-section hidden">
-    <div class="login-page">
-        <div class="login-box">
-            <h2>تسجيل الدخول</h2>
-
-            <form onsubmit="event.preventDefault(); alert('تم تسجيل الدخول بنجاح!');">
-                <input type="email" placeholder="البريد الإلكتروني" required>
-                <input type="password" placeholder="كلمة المرور" required>
-                <button type="submit" class="btn-login">دخول</button>
-            </form>
-
-            <a class="btn-back" onclick="showHome()">← العودة للرئيسية</a>
-        </div>
-    </div>
-</div>
-
-<script>
-    const homePage = document.getElementById('home-page');
-    const loginPage = document.getElementById('login-page');
-
-    function showLogin() {
-        homePage.classList.add('hidden');
-        loginPage.classList.remove('hidden');
-        window.scrollTo(0, 0);
-    }
-
-    function showHome() {
-        loginPage.classList.add('hidden');
-        homePage.classList.remove('hidden');
-    }
-</script>
 
 </body>
 </html>
