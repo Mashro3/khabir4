@@ -52,7 +52,7 @@ p{
     border-color: #1b5e20;
     box-shadow: 0 0 5px rgba(46, 125, 50, 0.3);
 }
-/* الحاوية الأساسية عشان تخلي العناصر تحت بعض وفي النص */
+
 .student-box {
     display: flex;
     flex-direction: column;
@@ -72,9 +72,9 @@ p{
 
 /* تنسيق الزر (أخضر وكبير وتحت) */
 .start-btn {
-    background-color: #2e7d32; /* اللون الأخضر حق مشروعك */
+    background-color: #2e7d32; 
     color: white;
-    padding: 12px 40px; /* كبرناه من هنا */
+    padding: 12px 40px;
     border: none;
     border-radius: 8px;
     font-size: 18px;
