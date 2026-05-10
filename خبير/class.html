@@ -1,20 +1,119 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <title>درس التفكير المنطقي</title>
-    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #F8F9FA;
+            color: #1B4332;
+        }
+
+        /* الهيدر */
+        header {
+            background: #ffffff;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #FFD700;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #1B4332;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #2D6A4F;
+        }
+
+        /* عنوان الدرس */
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            color: #2D6A4F;
+        }
+
+        /* محتوى الدرس */
+        .lesson-content {
+            width: 80%;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid #FFD700;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+
+        .lesson-content h2 {
+            color: #2D6A4F;
+            margin-top: 25px;
+        }
+
+        .lesson-content ul li {
+            margin: 8px 0;
+        }
+
+        /* صندوق السؤال */
+        .question-box {
+            width: 80%;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px solid #2D6A4F;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+
+        .start-btn {
+            margin-top: 15px;
+            padding: 10px 25px;
+            background: #FFD700;
+            color: #1B4332;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .start-btn:hover {
+            background: #e6c200;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- الهيدر الثابت بنفس اللوقو والألوان -->
-    <header class="main-header">
+    <!-- الهيدر -->
+    <header>
         <div class="logo">
             <img src="../لوقو.jpeg" alt="شعار خبير">
         </div>
 
-        <nav class="nav">
+        <nav>
             <a href="../index.html">الرئيسية</a>
             <a href="../khabir2.html">المرشدون</a>
             <a href="../kabear8.html">الدروس</a>
@@ -30,44 +129,44 @@
 
         <h2>ما هو التفكير المنطقي؟</h2>
         <p>
-            التفكير المنطقي هو القدرة على تحليل المعلومات، فهم العلاقات بين الأشياء، واستخدام الأدلة للوصول إلى نتائج صحيحة.
+            التفكير المنطقي هو العملية التي يستخدمها العقل لترتيب الأفكار بشكل متسلسل للوصول إلى حلول دقيقة بناءً على الحقائق.
         </p>
 
         <h2>خطوات التفكير المنطقي</h2>
         <ul>
-            <li>تحديد المشكلة</li>
-            <li>جمع المعلومات</li>
-            <li>تحليل البيانات</li>
-            <li>اختبار الفرضيات</li>
-            <li>اتخاذ القرار</li>
+            <li>الملاحظة: جمع الحقائق المتوفرة عن المشكلة بدقة.</li>
+            <li>التحليل: فهم العلاقة بين المعلومات.</li>
+            <li>الاستنتاج: الوصول إلى الحل الأمثل.</li>
         </ul>
+
+        <h2>لماذا نحتاج للمنطق؟</h2>
+        <p>
+            يساعدنا على اتخاذ قرارات ذكية، وتجنب التسرع، وهو المحرك الأساسي لعلوم المستقبل مثل البرمجة والذكاء الاصطناعي.
+        </p>
 
         <h2>مهمة الدرس</h2>
         <p>
-            اقرأ المثال التالي ثم حاول تحديد الخطأ المنطقي فيه.
+            فكر في مشكلة بسيطة واجهتها اليوم، واكتب الخطوات المنطقية التي اتبعتها لحلها.
         </p>
 
-        <h2>أسئلة شائعة</h2>
-        <p><strong>س:</strong> لماذا نحتاج التفكير المنطقي؟</p>
-        <p><strong>ج:</strong> لأنه يساعدنا على اتخاذ قرارات صحيحة.</p>
-
-        <p><strong>س:</strong> هل يمكن تعلم التفكير المنطقي؟</p>
+        <h2>الأسئلة الشائعة</h2>
+        <p><strong>س:</strong> هل يمكن للجميع تعلم التفكير المنطقي؟</p>
         <p><strong>ج:</strong> نعم، من خلال التدريب المستمر.</p>
+
+        <p><strong>س:</strong> ما أهمية المنطق في حياتنا؟</p>
+        <p><strong>ج:</strong> يساعدنا على اتخاذ قرارات صحيحة.</p>
 
     </section>
 
     <!-- صندوق إرسال سؤال -->
     <section class="question-box">
-        <h2>هل لديك سؤال؟</h2>
+        <h2>✉️ اسأل سؤالك</h2>
 
         <form action="#" method="post">
-            <textarea placeholder="اكتب سؤالك هنا" required></textarea>
-            <br>
-            <button class="start-btn">إرسال</button>
+            <textarea placeholder="اكتب سؤالك هنا..." required></textarea>
+            <button class="start-btn">إرسال السؤال</button>
         </form>
     </section>
 
 </body>
 </html>
-
-
