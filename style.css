@@ -1,91 +1,139 @@
-header{
+
+/* ===== إعدادات عامة ===== */
+body {
+    margin: 0;
+    font-family: Arial;
+    direction: rtl;
+    background: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+}
+
+/* ===== الهيدر الجديد واللوقو ===== */
+.main-header {
     display: flex;
     justify-content: space-between;
-    align-items:center;
-    padding: 20px;
-    background: rgb(54, 139, 54);
-    direction: rtl;
-}
-
-    img {
-    background-color: white;
-    padding: 10px;          
-    border-radius: 15px;    
-    box-shadow: 0 4px 15px rgba(66, 64, 64, 0.2);
-    max-width: 120px;
-    width: 200px;
-    height: auto;
-    }
-     
-    h1{
-         margin:0;
-    color: rgb(255, 253, 253);
-    text-align: right;
-    font-size: 40px;
-    font-family: 'Segoe UI',Tahoma, Geneva, Verdana, sans-serif;
-    font-weight:bold ;
-
- }   
-
-p{
-    margin:0;
-    color: black;
-    text-align: right;
-    font-size: 20;
-}
-
-
-.student-section select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #2e7d32; /* لون أخضر متناسق مع التصميم */
-    border-radius: 8px;
-    background-color: white;
-    font-size: 16px;
-    color: #333;
-    cursor: pointer;
-}
-
-.student-section select:focus {
-    outline: none;
-    border-color: #1b5e20;
-    box-shadow: 0 0 5px rgba(46, 125, 50, 0.3);
-}
-
-.student-box {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 15px; /* مسافة بين القائمة والزر */
-    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
 }
 
-/* تنسيق القائمة المنسدلة لتكون أرتب */
-#teacher-select {
-    padding: 10px;
-    width: 250px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+.logo img {
+    height: 50px;
+}
+
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #007bff;
+}
+
+/* ===== قسم الهيرو ===== */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background: #f4f4f4;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+}
+
+/* ===== الكروت ===== */
+.card {
+    background: white;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+/* ===== قسم الميزات ===== */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+/* ===== صندوق تسجيل الدخول ===== */
+.login-box {
+    width: 300px;
+    margin: 100px auto;
     text-align: center;
 }
 
-/* تنسيق الزر (أخضر وكبير وتحت) */
-.start-btn {
-    background-color: #2e7d32; 
-    color: white;
-    padding: 12px 40px;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.login-box input {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
 }
 
-/* حركة عند مرور الماوس */
-.start-btn:hover {
-    background-color: #1b5e20;
-    transform: translateY(-2px);
+/* ===== قسم الخبراء ===== */
+.mentors {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ===== صندوق الدردشة ===== */
+.chat-box {
+    width: 400px;
+    height: 400px;
+    background: white;
+    margin: 30px auto;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 0 10px #aaa;
+}
+
+.messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.input-area {
+    display: flex;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+}
+
+.input-area button {
+    padding: 10px;
+    background: green;
+    color: white;
+    border: none;
+}
+
+.message {
+    margin: 5px;
+    padding: 8px;
+    background: #e0f2f1;
+    border-radius: 5px;
+}
+
+/* ===== اللوقو العام ===== */
+.logo {
+    width: 120px;
+    height: auto;
 }
