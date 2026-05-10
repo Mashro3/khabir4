@@ -2,157 +2,32 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>درس التفكير المنطقي</title>
-    <style>
-        :root {
-            --primary-color: #2e7d32;
-            --accent-color: #fdd835;
-            --bg-color: #f8f9fa;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .lesson-card {
-            background: white;
-            max-width: 800px;
-            width: 100%;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.0.5);
-        }
-        h1 {
-            color: var(--primary-color);
-            border-right: 5px solid var(--accent-color);
-            padding-right: 15px;
-        }
-        .content-section {
-            line-height: 1.8;
-            font-size: 1.1em;
-            color: #333;
-            margin-bottom: 30px;
-        }
-        .task-box {
-            background-color: #f1f8e9;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-right: 5px solid var(--accent-color);
-        }
-        details {
-            background: #ffffff;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            border:1px solid #e0e0e0;
-        }
-        summary {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        .ask-section {
-            background: #fffde7;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px dashed var(--accent-color);
-            margin-top: 30px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box; /* لضمان عدم خروج الحقول عن الإطار */
-        }
-            input:focus,textarea:focus{
-                outline:none;
-                border-color:#2e7d32;
-                box-shadow:0 0 5px rgba(46,125,50,0.2);
-            }
-        .btn {
-            background: #2e7d32;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition:background 0.3s ease;
-        }
-        .btn:hover{
-            background:#fdd835;
-            color:#333;
-        }
-    </style>
+    <title>صفحات خبير</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
-<nav>
-  <a href="index.html">الرئيسية</a>
-  <a href="خبير/khabir2.html">خبير</a>
-  <a href="update_page.html">تحديث الصفحة</a>
-</nav>
+<header>
+    <img src="../logo.png" alt="شعار خبير">
+    <h1>منصة خبير</h1>
+</header>
 
+<div style="text-align:center; margin-top:40px;">
+    <h2>اختر الصفحة</h2>
 
-<!-- هنا يبدأ محتوى صفحة خبير -->
+    <div style="margin-top:30px;">
+        <a href="class.html" 
+           style="display:block; margin:15px auto; width:250px; padding:12px; background:#2e7d32; color:white; border-radius:10px; text-decoration:none; font-weight:bold;">
+           صفحة الدرس
+        </a>
 
-
-    <div class="lesson-card">
-
-
-    <h1>الدرس: أساسيات التفكير المنطقي</h1>
-
-   
-    <div class="content-section">
-        <p>التفكير المنطقي هو <strong>"فن الربط بين الأسباب والنتائج"</strong>. هو العملية التي يستخدمها العقل لترتيب الأفكار بشكل متسلسل للوصول إلى حلول دقيقة بناءً على الحقائق.</p>
-       
-        <h4 style="color: var(--accent-color); margin-bottom: 10px;">🛡️ خطوات التفكير المنطقي:</h4>
-        <ul style="padding-right: 20px;">
-            <li><strong>الملاحظة:</strong> جمع الحقائق المتوفرة عن المشكلة بدقة.</li>
-            <li><strong>التحليل:</strong> فهم العلاقة بين المعلومات (لماذا حدث هذا؟).</li>
-            <li><strong>الاستنتاج:</strong> الوصول إلى الحل الأمثل بناءً على التحليل.</li>
-        </ul>
-
-        <h4 style="color: var(--accent-color); margin-bottom: 10px;">🌟 لماذا نحتاج للمنطق؟</h4>
-        <p>يساعدنا على اتخاذ قرارات ذكية، وتجنب التسرع، وهو المحرك الأساسي لعلوم المستقبل مثل البرمجة والذكاء الاصطناعي.</p>
-    </div>
-
-    <div class="task-box">
-        <h3>💡 مهمة الدرس:</h3>
-        <p>فكر في مشكلة بسيطة واجهتها اليوم، واكتب الخطوات المنطقية التي اتبعتها لحلها في دفترك الخاص.</p>
-    </div>
-
-    <div class="faq-section">
-        <h2>❓ الأسئلة الشائعة</h2>
-        <details>
-            <summary>هل يمكن للجميع تعلم التفكير المنطقي؟</summary>
-            <p>نعم، التفكير المنطقي مهارة مكتسبة تتطور بالتدريب وحل المشكلات المستمر.</p>
-        </details>
-        <details>
-            <summary>ما هي أهمية المنطق في حياتنا؟</summary>
-            <p>يساعدنا على تجنب القرارات المتسرعة وفهم الأمور بناءً على أدلة وليس فقط على العاطفة.</p>
-        </details>
-    </div>
-
-    <div class="ask-section">
-        <h3>✉️ اسأل سؤالك</h3>
-        <p>إذا كان لديك أي استفسار حول الدرس، اكتبه هنا:</p>
-        <input type="text" placeholder="الاسم">
-        <textarea placeholder="سؤالك هنا..." rows="3"></textarea>
-        <button class="btn" onclick="alert('تم استلام سؤالك، شكراً لك!')">إرسال السؤال</button>
+        <a href="khabir2.html" 
+           style="display:block; margin:15px auto; width:250px; padding:12px; background:#2e7d32; color:white; border-radius:10px; text-decoration:none; font-weight:bold;">
+           صفحة خبير 2
+        </a>
     </div>
 </div>
-
-</body>
-</html>
 
 </body>
 </html>
