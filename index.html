@@ -1,38 +1,174 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <title>منصة خبير</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #F8F9FA;
+            color: #1B4332;
+        }
+
+        /* الهيدر */
+        header {
+            background: #ffffff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #FFD700;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        header img {
+            height: 70px;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #1B4332;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #2D6A4F;
+        }
+
+        /* البانر */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, #ffffff, #F1F8F3);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: #2D6A4F;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #555;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        /* الأزرار */
+        .buttons {
+            margin-top: 40px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 14px 28px;
+            background: #FFD700;
+            color: #1B4332;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .buttons a:hover {
+            background: #e6c200;
+        }
+
+        /* الفوتر */
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            padding: 20px;
+            background: #ffffff;
+            border-top: 3px solid #FFD700;
+            color: #1B4332;
+        }
+
+        /* زر الدردشة العائم */
+        .chat-float {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background: #FFD700;
+            color: #1B4332;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            animation: glow 1.5s infinite alternate;
+            z-index: 9999;
+        }
+
+        /* تأثير اللمعان */
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+                transform: scale(1);
+            }
+            to {
+                box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+                transform: scale(1.08);
+            }
+        }
+
+        .chat-float:hover {
+            background: #e6c200;
+        }
+    </style>
 </head>
 
 <body>
 
+<!-- الهيدر -->
 <header>
-    <img src="logo.png" alt="شعار خبير">
-    <h1>منصة خبير</h1>
+    <img src="لوقو.jpeg" alt="شعار خبير">
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="khabir2.html">المرشدون</a>
+        <a href="kabear8.html">الدروس</a>
+        <a href="update_page.html">حسابي</a>
+    </nav>
 </header>
 
-<div style="text-align:center; margin-top:40px;">
-    <h2>اختر الصفحة</h2>
+<!-- البانر -->
+<section class="hero">
+    <h1>مرحباً بك في منصة خبير</h1>
+    <p>
+        منصة تعليمية تساعد الطلاب على الوصول إلى أفضل المرشدين  
+        وتقديم دروس مبسطة، شروحات، وتوجيهات تساعدك على تطوير مهاراتك  
+        في مختلف المجالات بطريقة سهلة وواضحة.
+    </p>
 
-    <div style="margin-top:30px;">
-        <a href="class.html" 
-           style="display:block; margin:15px auto; width:250px; padding:12px; background:#2e7d32; color:white; border-radius:10px; text-decoration:none; font-weight:bold;">
-           صفحة الدرس
-        </a>
-
-        <a href="khabir2.html" 
-           style="display:block; margin:15px auto; width:250px; padding:12px; background:#2e7d32; color:white; border-radius:10px; text-decoration:none; font-weight:bold;">
-           صفحة خبير 2
-        </a>
-
-        <a href="kabear8.html" 
-           style="display:block; margin:15px auto; width:250px; padding:12px; background:#2e7d32; color:white; border-radius:10px; text-decoration:none; font-weight:bold;">
-           صفحة الدروس
-        </a>
+    <div class="buttons">
+        <a href="khabir2.html">ابدأ مع مرشد</a>
+        <a href="kabear8.html">تصفح الدروس</a>
+        <a href="class.html">درس تجريبي</a>
     </div>
+</section>
+
+<!-- زر الدردشة العائم -->
+<div class="chat-float" onclick="window.open('https://gemini.google.com/app', '_blank')">
+    🤖
 </div>
+
+<!-- الفوتر -->
+<footer>
+    © 2026 منصة خبير — جميع الحقوق محفوظة
+</footer>
 
 </body>
 </html>
