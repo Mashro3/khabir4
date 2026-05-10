@@ -135,3 +135,28 @@ h1 {
     width: 120px;
     height: auto;
 }
+/* ====== الهيدر واللوقو ====== */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #007bff;
+}
