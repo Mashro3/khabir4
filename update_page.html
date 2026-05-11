@@ -9,12 +9,12 @@
         body {
             font-family: "Tajawal", sans-serif;
             margin: 0;
-            background: #f5f5f5;
+            background: #ffffff;
         }
 
         /* الهيدر */
         header {
-            background: #4A90E2;
+            background: #2e7d32; /* أخضر */
             padding: 15px 25px;
             color: white;
             display: flex;
@@ -22,7 +22,11 @@
             align-items: center;
         }
 
-        header a {
+        .logo img {
+            height: 55px;
+        }
+
+        nav a {
             color: white;
             text-decoration: none;
             margin-left: 15px;
@@ -33,16 +37,16 @@
             width: 90%;
             max-width: 600px;
             margin: 40px auto;
-            background: white;
+            background: #fffbea; /* أصفر فاتح */
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 0 10px #00000020;
+            border: 2px solid #f4d03f; /* أصفر */
         }
 
         h2 {
             text-align: center;
             margin-bottom: 25px;
-            color: #333;
+            color: #2e7d32; /* أخضر */
         }
 
         label {
@@ -64,16 +68,17 @@
         button {
             width: 100%;
             padding: 14px;
-            background: #4A90E2;
+            background: #f4d03f; /* أصفر */
             border: none;
-            color: white;
+            color: #2e7d32; /* أخضر */
             font-size: 18px;
             border-radius: 8px;
             cursor: pointer;
+            font-weight: bold;
         }
 
         button:hover {
-            background: #357ABD;
+            background: #f1c40f;
         }
     </style>
 </head>
@@ -82,7 +87,10 @@
 
     <!-- الهيدر -->
     <header>
-        <div class="logo">خبير</div>
+        <div class="logo">
+            <img src="logo.png" alt="شعار خبير">
+        </div>
+
         <nav>
             <a href="index.html">الرئيسية</a>
             <a href="class.html">الدروس</a>
