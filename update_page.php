@@ -1,3 +1,18 @@
+<?php
+session_start();
+include "db.php";
+
+if (!isset($_SESSION['email'])) {
+    header("Location: login.html");
+    exit();
+}
+
+$email = $_SESSION['email'];
+
+$sql = "SELECT * FROM users WHERE email='$email'";
+$result = mysqli_query($conn, $sql);
+$user = mysqli_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -11,7 +26,6 @@
             background: #F8F9FA;
         }
 
-        /* الهيدر */
         header {
             background: #ffffff;
             padding: 15px 40px;
@@ -32,7 +46,6 @@
             font-weight: bold;
         }
 
-        /* صندوق الحساب */
         .profile-box {
             width: 380px;
             margin: 60px auto;
@@ -86,34 +99,36 @@
 
 <body>
 
-    <!-- الهيدر -->
-    <header>
-        <img src="logo.jpg" alt="شعار خبير">
-        <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="kabear8.html">المرشدون</a>
-            <a href="khabir2.html">الدروس</a>
-            <a href="update_page.html" class="active">حسابي</a>
-        </nav>
-    </header>
+<header>
+    <img src="لوقو.jpeg" alt="شعار خبير">
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="kabear8.html">المرشدون</a>
+        <a href="khabir2.html">الدروس</a>
+        <a href="update_page.php">حسابي</a>
+    </nav>
+</header>
 
-    <!-- صندوق الحساب -->
-    <div class="profile-box">
+<div class="profile-box">
 
-        <h2>البيانات الشخصية</h2>
+    <h2>البيانات الشخصية</h2>
+
+    <form action="update.php" method="POST">
 
         <label>اسم المستخدم</label>
-        <input type="text" placeholder="اكتب اسمك الجديد">
+        <input type="text" name="name" value="<?php echo $user['name']; ?>">
 
         <label>البريد الإلكتروني</label>
-        <input type="email" placeholder="example@email.com">
+        <input type="email" name="email" value="<?php echo $user['email']; ?>">
 
         <label>كلمة المرور</label>
-        <input type="password" placeholder="********">
+        <input type="password" name="password" placeholder="اكتب كلمة مرور جديدة">
 
         <button class="update-btn">تحديث البيانات</button>
 
-    </div>
+    </form>
+
+</div>
 
 </body>
 </html>
