@@ -1,108 +1,191 @@
-<!-- إطار الدرس -->
-<div style="
-    background:#fffbea;
-    border:3px solid #ffeb3b;
-    padding:25px;
-    border-radius:15px;
-    margin:25px auto;
-    width:90%;
-    max-width:850px;
-    font-family:'Tajawal', sans-serif;
-">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدروس – خبير</title>
 
-    <h1 style="text-align:center; color:#1faa00; margin-bottom:20px;">
-        درس التفكير المنطقي
-    </h1>
+    <style>
+        :root {
+            --green: #1faa00;
+            --yellow: #ffeb3b;
+            --light-yellow: #fffbea;
+        }
 
-    <h2 style="color:#1faa00;">ما هو التفكير المنطقي؟</h2>
-    <p style="font-size:18px; line-height:1.8;">
-        التفكير المنطقي هو القدرة على تحليل المعلومات، فهم العلاقات، واستخدام الأدلة للوصول إلى نتائج صحيحة.
-    </p>
+        body {
+            font-family: "Tajawal", sans-serif;
+            margin: 0;
+            background: white;
+        }
 
-    <h2 style="color:#1faa00;">خطوات التفكير المنطقي</h2>
-    <ul style="
-        background:white;
-        padding:15px 20px;
-        border-radius:10px;
-        border:2px solid #ffeb3b;
-        font-size:17px;
-        line-height:1.8;
-    ">
-        <li>تحديد المشكلة</li>
-        <li>جمع المعلومات</li>
-        <li>تحليل البيانات</li>
-        <li>اختبار الفرضيات</li>
-        <li>اتخاذ القرار</li>
-    </ul>
+        /* الهيدر */
+        header {
+            background: var(--green);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    <!-- مهمة الدرس -->
-    <div style="
-        background:white;
-        padding:20px;
-        border-radius:10px;
-        border:2px solid #1faa00;
-        margin-top:25px;
-    ">
-        <h2 style="color:#1faa00;">مهمة الدرس</h2>
-        <p style="font-size:18px;">
-            اقرأ المثال التالي ثم حاول تحديد الخطأ المنطقي فيه.
+        header img {
+            height: 55px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 18px;
+        }
+
+        /* إطار الدرس */
+        .lesson-box {
+            width: 90%;
+            max-width: 850px;
+            margin: 30px auto;
+            background: var(--light-yellow);
+            padding: 25px;
+            border-radius: 12px;
+            border: 3px solid var(--yellow);
+        }
+
+        h1, h2 {
+            color: var(--green);
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        ul {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 2px solid var(--yellow);
+            font-size: 17px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* مهمة الدرس */
+        .task-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid var(--green);
+            margin-top: 25px;
+        }
+
+        /* الأسئلة الشائعة */
+        .faq-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid var(--yellow);
+            margin-top: 25px;
+        }
+
+        /* صندوق السؤال */
+        .ask-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 3px solid var(--green);
+            margin: 30px auto;
+            width: 90%;
+            max-width: 850px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 130px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: var(--yellow);
+            border: none;
+            color: black;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #f1d600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="شعار خبير">
+        </div>
+
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="khabir2.html">المرشدون</a>
+            <a href="class.html">الدروس</a>
+            <a href="update_page.html">حسابي</a>
+        </nav>
+    </header>
+
+    <!-- محتوى الدرس -->
+    <div class="lesson-box">
+
+        <h1>درس التفكير المنطقي</h1>
+
+        <h2>ما هو التفكير المنطقي؟</h2>
+        <p>
+            التفكير المنطقي هو القدرة على تحليل المعلومات، فهم العلاقات، واستخدام الأدلة للوصول إلى نتائج صحيحة.
         </p>
+
+        <h2>خطوات التفكير المنطقي</h2>
+        <ul>
+            <li>تحديد المشكلة</li>
+            <li>جمع المعلومات</li>
+            <li>تحليل البيانات</li>
+            <li>اختبار الفرضيات</li>
+            <li>اتخاذ القرار</li>
+        </ul>
+
+        <div class="task-box">
+            <h2>مهمة الدرس</h2>
+            <p>اقرأ المثال التالي ثم حاول تحديد الخطأ المنطقي فيه.</p>
+        </div>
+
+        <div class="faq-box">
+            <h2>أسئلة شائعة</h2>
+
+            <p><strong>س: لماذا نحتاج التفكير المنطقي؟</strong></p>
+            <p>ج: لأنه يساعدنا على اتخاذ قرارات صحيحة.</p>
+
+            <p><strong>س: هل يمكن تعلم التفكير المنطقي؟</strong></p>
+            <p>ج: نعم، من خلال التدريب المستمر.</p>
+        </div>
+
     </div>
 
-    <!-- الأسئلة الشائعة -->
-    <div style="
-        background:white;
-        padding:20px;
-        border-radius:10px;
-        border:2px solid #ffeb3b;
-        margin-top:25px;
-    ">
-        <h2 style="color:#1faa00;">أسئلة شائعة</h2>
-
-        <p><strong>س: لماذا نحتاج التفكير المنطقي؟</strong></p>
-        <p>ج: لأنه يساعدنا على اتخاذ قرارات صحيحة.</p>
-
-        <p><strong>س: هل يمكن تعلم التفكير المنطقي؟</strong></p>
-        <p>ج: نعم، من خلال التدريب المستمر.</p>
+    <!-- صندوق السؤال -->
+    <div class="ask-box">
+        <h2>✉️ اسأل سؤالك</h2>
+        <textarea placeholder="اكتب سؤالك هنا..."></textarea>
+        <button>إرسال السؤال</button>
     </div>
 
-</div>
-
-<!-- إطار السؤال -->
-<div style="
-    background:white;
-    border:3px solid #1faa00;
-    padding:20px;
-    border-radius:12px;
-    margin:25px auto;
-    width:90%;
-    max-width:850px;
-    font-family:'Tajawal', sans-serif;
-">
-    <h2 style="color:#1faa00; margin-bottom:10px;">✉️ اسأل سؤالك</h2>
-
-    <textarea placeholder="اكتب سؤالك هنا..." style="
-        width:100%;
-        height:130px;
-        padding:12px;
-        border-radius:8px;
-        border:1px solid #ccc;
-        font-size:16px;
-        resize:none;
-    "></textarea>
-
-    <button style="
-        width:100%;
-        padding:14px;
-        background:#ffeb3b;
-        border:none;
-        color:black;
-        font-size:18px;
-        border-radius:8px;
-        cursor:pointer;
-        margin-top:10px;
-        font-weight:bold;
-    ">
-        إرسال السؤال
-    </button>
-</div>
+</body>
+</html>
