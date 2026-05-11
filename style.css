@@ -137,3 +137,14 @@ h1 {
     width: 120px;
     height: auto;
 }
+/* ===== اللوقو العام ===== */
+.logo {
+    width: 120px;
+    height: auto;
+} 
+.logo-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
