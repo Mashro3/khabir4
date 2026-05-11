@@ -12,7 +12,7 @@ h1 {
     margin: 20px;
 }
 
-/* ===== الهيدر الجديد واللوقو ===== */
+/* ===== الهيدر الجديد + اللوقو ===== */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -22,10 +22,19 @@ h1 {
     border-bottom: 1px solid #ddd;
 }
 
-.logo img {
-    height: 50px;
+/* اللوقو في أعلى الصفحة يمين */
+.logo-container {
+    display: flex;
+    justify-content: flex-start; /* يمين */
+    align-items: center;
 }
 
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+/* روابط الهيدر */
 .nav a {
     margin-left: 20px;
     text-decoration: none;
@@ -131,15 +140,3 @@ h1 {
     background: #e0f2f1;
     border-radius: 5px;
 }
-
-/* ===== اللوقو العام ===== */
-.logo {
-    width: 120px;
-    height: auto;
-} 
-.logo-container {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
