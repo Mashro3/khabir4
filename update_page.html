@@ -6,24 +6,30 @@
     <title>تعديل بيانات الحساب</title>
 
     <style>
+        :root {
+            --green: #1faa00;
+            --yellow: #ffeb3b;
+        }
+
         body {
             font-family: "Tajawal", sans-serif;
             margin: 0;
-            background: #ffffff;
+            background-color: white;
         }
 
         /* الهيدر */
         header {
-            background: #2e7d32; /* أخضر */
+            background-color: var(--green);
             padding: 15px 25px;
-            color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
+        /* اللوقو */
         .logo img {
-            height: 55px;
+            height: 60px;
+            display: block;
         }
 
         nav a {
@@ -33,27 +39,27 @@
             font-size: 18px;
         }
 
+        /* الصندوق */
         .container {
             width: 90%;
             max-width: 600px;
             margin: 40px auto;
-            background: #fffbea; /* أصفر فاتح */
+            background: white;
             padding: 25px;
             border-radius: 12px;
-            border: 2px solid #f4d03f; /* أصفر */
+            border: 3px solid var(--yellow);
         }
 
         h2 {
             text-align: center;
+            color: var(--green);
             margin-bottom: 25px;
-            color: #2e7d32; /* أخضر */
         }
 
         label {
             font-size: 16px;
             margin-bottom: 8px;
             display: block;
-            color: #444;
         }
 
         input {
@@ -68,9 +74,9 @@
         button {
             width: 100%;
             padding: 14px;
-            background: #f4d03f; /* أصفر */
+            background-color: var(--yellow);
             border: none;
-            color: #2e7d32; /* أخضر */
+            color: black;
             font-size: 18px;
             border-radius: 8px;
             cursor: pointer;
@@ -78,7 +84,7 @@
         }
 
         button:hover {
-            background: #f1c40f;
+            background-color: #e6d200;
         }
     </style>
 </head>
