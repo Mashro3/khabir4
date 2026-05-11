@@ -3,133 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>درس التفكير المنطقي</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #F8F9FA;
-            color: #1B4332;
-        }
-
-        /* الهيدر */
-        header {
-            background: #ffffff;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid #FFD700;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        header img {
-            height: 60px;
-        }
-
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #1B4332;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #2D6A4F;
-        }
-
-        /* عنوان الدرس */
-        h1 {
-            text-align: center;
-            margin-top: 40px;
-            color: #2D6A4F;
-        }
-
-        /* محتوى الدرس */
-        .lesson-content {
-            width: 80%;
-            margin: 40px auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 20px;
-            border: 2px solid #FFD700;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        }
-
-        .lesson-content h2 {
-            color: #2D6A4F;
-            margin-top: 25px;
-        }
-
-        .lesson-content ul li {
-            margin: 8px 0;
-        }
-
-        /* صندوق السؤال */
-        .question-box {
-            width: 80%;
-            margin: 40px auto;
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 20px;
-            border: 2px solid #2D6A4F;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        }
-
-        textarea {
-            width: 100%;
-            height: 120px;
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-            resize: none;
-        }
-
-        .start-btn {
-            margin-top: 15px;
-            padding: 10px 25px;
-            background: #FFD700;
-            color: #1B4332;
-            border: none;
-            border-radius: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .start-btn:hover {
-            background: #e6c200;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-    <!-- الهيدر الجديد -->
-    <header>
+    <!-- الهيدر -->
+    <header class="main-header">
 
         <!-- اللوقو في أعلى الصفحة يمين -->
-        <img src="logo.jpg" alt="شعار الموقع">
+        <div class="logo-container">
+            <img src="logo.jpg" alt="شعار خبير" class="logo">
+        </div>
 
         <!-- القائمة -->
-        <nav>
+        <nav class="nav">
             <a href="index.html">الرئيسية</a>
-            <a href="khabir2.html">المرشدون</a>
-            <a href="kabear8.html">الدروس</a>
+            <a href="kabear8.html">المرشدون</a>
+            <a href="khabir2.html">الدروس</a>
             <a href="update_page.html">حسابي</a>
         </nav>
 
     </header>
-    
 
     <!-- عنوان الدرس -->
     <h1>درس التفكير المنطقي</h1>
 
     <!-- محتوى الدرس -->
     <section class="lesson-content">
-
         <h2>ما هو التفكير المنطقي؟</h2>
         <p>
             التفكير المنطقي هو القدرة على تحليل المعلومات، فهم العلاقات، واستخدام الأدلة للوصول إلى نتائج صحيحة.
@@ -155,7 +56,6 @@
 
         <p><strong>س:</strong> هل يمكن تعلم التفكير المنطقي؟</p>
         <p><strong>ج:</strong> نعم، من خلال التدريب المستمر.</p>
-
     </section>
 
     <!-- صندوق إرسال سؤال -->
