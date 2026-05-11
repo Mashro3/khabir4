@@ -2,153 +2,48 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>حسابي | منصة خبير</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #F8F9FA;
-            color: #1B4332;
-        }
-
-        /* الهيدر */
-        header {
-            background: #ffffff;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid #FFD700;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        header img {
-            height: 60px;
-        }
-
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #1B4332;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #2D6A4F;
-        }
-
-        /* بطاقة الحساب */
-        .profile-box {
-            width: 80%;
-            margin: 40px auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 20px;
-            border: 2px solid #FFD700;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            text-align: center;
-        }
-
-        .profile-box img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid #2D6A4F;
-            margin-bottom: 15px;
-        }
-
-        .profile-box h2 {
-            margin: 10px 0;
-            color: #2D6A4F;
-        }
-
-        .profile-box p {
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        /* نموذج تعديل البيانات */
-        .edit-form {
-            width: 80%;
-            margin: 30px auto;
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 20px;
-            border: 2px solid #2D6A4F;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        }
-
-        .edit-form label {
-            font-weight: bold;
-            color: #1B4332;
-        }
-
-        .edit-form input {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0 20px;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-        }
-
-        .save-btn {
-            padding: 12px 25px;
-            background: #FFD700;
-            color: #1B4332;
-            border: none;
-            border-radius: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .save-btn:hover {
-            background: #e6c200;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- الهيدر -->
-    <header>
-        <div class="logo">
-            <img src="لوقو.jpeg" alt="شعار خبير">
+    <!-- لوقو خبير -->
+    <div class="logo-container">
+        <img src="logo.jpg" alt="شعار خبير" class="logo">
+    </div>
+
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <a href="index.html">الرئيسية</a>
+        <a href="kabear8.html">المرشدون</a>
+        <a href="khabir2.html">الدروس</a>
+        <a href="update_page.html" class="active">حسابي</a>
+    </nav>
+
+    <section class="profile-section">
+
+        <div class="profile-card">
+            <img src="logo.jpg" class="profile-img" alt="صورة المستخدم">
+
+            <h2 class="profile-name">اسم المستخدم</h2>
+            <p class="profile-email">example@email.com</p>
+
+            <form class="update-form">
+                <label>تحديث الاسم:</label>
+                <input type="text" placeholder="اكتب اسمك الجديد">
+
+                <label>تحديث البريد:</label>
+                <input type="email" placeholder="اكتب بريدك الجديد">
+
+                <label>تحديث كلمة المرور:</label>
+                <input type="password" placeholder="********">
+
+                <button type="submit" class="update-btn">تحديث البيانات</button>
+            </form>
         </div>
 
-        <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="khabir2.html">المرشدون</a>
-            <a href="kabear8.html">الدروس</a>
-            <a href="update_page.html">حسابي</a>
-        </nav>
-    </header>
-
-    <!-- بطاقة الحساب -->
-    <section class="profile-box">
-        <img src="https://via.placeholder.com/120" alt="صورة المستخدم">
-        <h2>اسم المستخدم</h2>
-        <p>البريد الإلكتروني: user@example.com</p>
-    </section>
-
-    <!-- نموذج تعديل البيانات -->
-    <section class="edit-form">
-        <h2 style="color:#2D6A4F; text-align:center;">تعديل بيانات الحساب</h2>
-
-        <form>
-            <label>اسم المستخدم:</label>
-            <input type="text" placeholder="اكتب اسمك">
-
-            <label>البريد الإلكتروني:</label>
-            <input type="email" placeholder="example@mail.com">
-
-            <label>كلمة المرور الجديدة:</label>
-            <input type="password" placeholder="********">
-
-            <button class="save-btn">حفظ التعديلات</button>
-        </form>
     </section>
 
 </body>
