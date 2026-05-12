@@ -80,6 +80,23 @@
         button:hover {
             background: #256628;
         }
+
+        /* رسالة النجاح / الفشل */
+        .message {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 18px;
+            display: none;
+        }
+
+        .success {
+            background: #2e7d32;
+        }
+
+        .error {
+            background: #b71c1c;
+        }
     </style>
 </head>
 
@@ -103,11 +120,33 @@
 <div class="form-box">
     <h1>تسجيل الدخول</h1>
 
-    <input type="text" placeholder="اسم المستخدم">
-    <input type="password" placeholder="كلمة المرور">
+    <input id="user" type="text" placeholder="اسم المستخدم">
+    <input id="pass" type="password" placeholder="كلمة المرور">
 
-    <button>دخول</button>
+    <button onclick="login()">دخول</button>
+
+    <div id="msg" class="message"></div>
 </div>
+
+<script>
+function login() {
+    let user = document.getElementById("user").value.trim();
+    let pass = document.getElementById("pass").value.trim();
+    let msg = document.getElementById("msg");
+
+    if (user === "" || pass === "") {
+        msg.style.display = "block";
+        msg.className = "message error";
+        msg.textContent = "لم يتم التسجيل — يرجى تعبئة جميع الحقول";
+        return;
+    }
+
+    // نجاح
+    msg.style.display = "block";
+    msg.className = "message success";
+    msg.textContent = "تم التسجيل بنجاح ✔";
+}
+</script>
 
 </body>
 </html>
