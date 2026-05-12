@@ -3,85 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <title>تسجيل الدخول</title>
-    <link rel="stylesheet" href="style.css">
 
     <style>
-        /* خلفية بسيطة بنفس ألوان الموقع */
         body {
-            background: #f5f5f5;
-            font-family: Arial;
-        }
-
-        /* صندوق تسجيل الدخول */
-        .login-container {
-            width: 350px;
-            margin: 80px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+            margin: 0;
+            padding: 0;
+            font-family: "Cairo", sans-serif;
+            background: url("background.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
             text-align: center;
         }
 
-        /* اللوقو */
-        .login-container img {
-            width: 120px;
-            margin-bottom: 15px;
+        /* الهيدر */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
         }
 
-        /* العنوان */
-        .login-container h2 {
-            color: #2e7d32; /* أخضر */
-            margin-bottom: 20px;
-        }
-
-        /* الحقول */
-        .login-container input {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-
-        /* زر الدخول */
-        .login-btn {
-            width: 100%;
-            padding: 12px;
-            background: #f4c20d; /* أصفر */
-            color: #2e7d32; /* أخضر */
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
+        header a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
             font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
+            text-shadow: 0 0 5px black;
         }
 
-        .login-btn:hover {
-            background: #e0b000;
+        /* اللوغو */
+        .logo {
+            margin-top: 40px;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        /* صندوق التسجيل */
+        .form-box {
+            width: 40%;
+            margin: 40px auto;
+            background: rgba(0,0,0,0.55);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 15px black;
+        }
+
+        .form-box h1 {
+            margin-bottom: 25px;
+            font-size: 32px;
+        }
+
+        input {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: none;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #256628;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="login-container">
+<!-- الهيدر -->
+<header>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">تعرف على المنصة</a>
+    <a href="khabir2.html">المرشد</a>
+    <a href="student.html">الطالب</a>
+    <a href="class.html">الدرس</a>
+</header>
 
-        <!-- نفس اللوقو الموجود في بداية الموقع -->
-        <img src="لوقو.jpeg" alt="شعار خبير">
+<!-- اللوغو -->
+<div class="logo">
+    <img src="logo.jpg" alt="شعار خبير">
+</div>
 
-        <h2>تسجيل الدخول</h2>
-<form action="login.php" method="POST">
-    <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-    <input type="password" name="password" placeholder="كلمة المرور" required>
-    <button class="login-btn">دخول</button>
-</form>
+<!-- نموذج التسجيل -->
+<div class="form-box">
+    <h1>تسجيل الدخول</h1>
 
-     
+    <input type="text" placeholder="اسم المستخدم">
+    <input type="password" placeholder="كلمة المرور">
 
-    </div>
+    <button>دخول</button>
+</div>
 
 </body>
 </html>
