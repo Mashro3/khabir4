@@ -180,18 +180,35 @@ function reply() {
         return;
     }
 
-    // ردود ذكية بسيطة حسب الكلمات
-    if (q.includes("برمجة") || q.includes("البرمجة")) {
-        ans.textContent = "البرمجة هي إعطاء أوامر للحاسوب ليقوم بمهام معينة مثل تشغيل التطبيقات.";
+    let text = q.toLowerCase();
+
+    // ردود ذكية حسب الكلمات المفتاحية
+    if (text.includes("برمجة") || text.includes("programming")) {
+        ans.textContent = "البرمجة هي عملية كتابة أوامر للحاسوب باستخدام لغات مثل Python وJavaScript لتنفيذ مهام محددة.";
     }
-    else if (q.includes("تقنية") || q.includes("التقنية")) {
-        ans.textContent = "التقنية هي استخدام الأدوات والبرامج لحل المشكلات وتسهيل الحياة.";
+    else if (text.includes("لغة") || text.includes("python") || text.includes("javascript")) {
+        ans.textContent = "لغات البرمجة هي أدوات للتواصل مع الحاسوب. Python مناسبة للمبتدئين، بينما JavaScript تُستخدم لتطوير المواقع.";
     }
-    else if (q.includes("موقع") || q.includes("مواقع")) {
-        ans.textContent = "تطوير المواقع يتم باستخدام HTML وCSS وJavaScript.";
+    else if (text.includes("موقع") || text.includes("مواقع") || text.includes("ويب")) {
+        ans.textContent = "تطوير المواقع يعتمد على HTML وCSS وJavaScript. HTML للبناء، CSS للتصميم، وJavaScript للتفاعل.";
+    }
+    else if (text.includes("تطبيق") || text.includes("تطبيقات") || text.includes("app")) {
+        ans.textContent = "تطوير التطبيقات يتم باستخدام لغات مثل Flutter أو Swift أو Java حسب نوع التطبيق.";
+    }
+    else if (text.includes("شبكة") || text.includes("شبكات") || text.includes("network")) {
+        ans.textContent = "الشبكات هي ربط أجهزة معًا لتبادل البيانات. أهم المفاهيم: IP – Router – Switch – DNS.";
+    }
+    else if (text.includes("تقنية") || text.includes("التقنية") || text.includes("technology")) {
+        ans.textContent = "التقنية تشمل البرمجة، الذكاء الاصطناعي، الأمن السيبراني، تطوير المواقع، وتطوير التطبيقات.";
+    }
+    else if (text.includes("حاسوب") || text.includes("كمبيوتر")) {
+        ans.textContent = "الحاسوب يعمل عبر وحدة المعالجة CPU والذاكرة RAM والتخزين. البرمجة تعطيه أوامر لتنفيذها.";
+    }
+    else if (text.includes("ذكاء اصطناعي") || text.includes("ai")) {
+        ans.textContent = "الذكاء الاصطناعي هو قدرة الحاسوب على التعلم واتخاذ قرارات. يُستخدم في الروبوتات، الترجمة، والتعرف على الصور.";
     }
     else {
-        ans.textContent = "سؤال جميل! هذا السؤال يحتاج شرحًا أكبر، اسأل مرشدك لمزيد من التفاصيل.";
+        ans.textContent = "سؤال جميل! لكنه يحتاج شرحًا أكبر. حاول أن تسأل عن البرمجة، المواقع، التطبيقات، أو الشبكات.";
     }
 
     ans.style.display = "block";
@@ -199,6 +216,7 @@ function reply() {
     document.getElementById("question").value = "";
 }
 </script>
+
 
 </body>
 </html>
