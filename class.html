@@ -41,84 +41,57 @@
         }
 
         /* صندوق الدرس */
-        .lesson-box {
-            width: 70%;
+        .lesson-container {
+            max-width: 800px;
             margin: 40px auto;
-            background: rgba(0,0,0,0.55);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px black;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            color: #333;
         }
 
-        h1 {
-            text-align: center;
-            font-size: 36px;
+        .header {
+            border-bottom: 3px solid #45a091;
+            padding-bottom: 10px;
             margin-bottom: 20px;
         }
 
-        p, li {
+        h1 {
+            color: #2c3e50;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #45a091;
             font-size: 20px;
+        }
+
+        .content {
             line-height: 1.8;
-        }
-
-        /* الدردشة */
-        .chat-window {
-            width: 70%;
-            margin: 40px auto;
-            background: rgba(0,0,0,0.65);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px black;
-        }
-
-        .chat-box {
-            height: 300px;
-            overflow-y: auto;
-            padding: 10px;
-        }
-
-        .bubble {
-            max-width: 70%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 12px;
             font-size: 18px;
         }
 
-        .user {
-            background: white;
-            color: black;
-            margin-left: auto;
+        .task-box {
+            background-color: #dfdbdd;
+            border-right: 5px solid #45a091;
+            padding: 15px;
+            margin-top: 20px;
         }
 
-        .ai {
-            background: #2e7d32;
+        .button {
+            display: inline-block;
+            background-color: #45a091;
             color: white;
-            margin-right: auto;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: 0.3s;
         }
 
-        .input-area {
-            display: flex;
-            margin-top: 15px;
-        }
-
-        textarea {
-            width: 85%;
-            height: 60px;
-            border-radius: 10px;
-            border: none;
-            padding: 10px;
-            font-size: 18px;
-        }
-
-        button.send {
-            width: 12%;
-            background: #2e7d32;
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
+        .button:hover {
+            background-color: #3a857a;
         }
     </style>
 </head>
@@ -139,92 +112,32 @@
     <img src="logo.jpg" alt="شعار المنصة">
 </div>
 
-<!-- محتوى الدرس -->
-<div class="lesson-box">
-    <h1>أساسيات التفكير المنطقي</h1>
-
-    <p>
-        التفكير المنطقي هو القدرة على تحليل المعلومات، فهم العلاقات بين الأشياء،
-        واستخدام الأدلة للوصول إلى نتائج صحيحة.
-    </p>
-
-    <h2>خطوات التفكير المنطقي</h2>
-    <ul>
-        <li>تحديد المشكلة</li>
-        <li>جمع المعلومات</li>
-        <li>تحليل البيانات</li>
-        <li>اختبار الفرضيات</li>
-        <li>اتخاذ القرار</li>
-    </ul>
-
-    <h2>لماذا نحتاج التفكير المنطقي؟</h2>
-    <p>
-        لأنه يساعدنا على اتخاذ قرارات صحيحة، وتجنب الأخطاء، وفهم الأمور بطريقة أعمق.
-    </p>
-
-    <h2>هل يمكن تعلم التفكير المنطقي؟</h2>
-    <p>
-        نعم، يمكن تعلمه من خلال التدريب المستمر، حل المشكلات، وممارسة التحليل.
-    </p>
-</div>
-
-<!-- نافذة الدردشة -->
-<div class="chat-window">
-    <h2>اسأل مرشدك</h2>
-
-    <div class="chat-box" id="chatBox"></div>
-
-    <div class="input-area">
-        <textarea id="userInput" placeholder="اكتب سؤالك عن الدرس..."></textarea>
-        <button class="send" onclick="sendMessage()">➤</button>
+<!-- محتوى الدرس (الكود الذي أرسلتيه) -->
+<div class="lesson-container">
+    <div class="header">
+        <h1>المصطرس خبتفكرس أسبسسست :الأوس الدرس</h1>
     </div>
+
+    <div class="content">
+        <h2>ببيط شخح:</h2>
+        <p>
+            مسة لغر تل السيل أنت تبيل .واسكصرسل اسيسأوس وفهل ألمتكطرس تبليل على الدلرس هو المصطرس خبتفكرس .ميبية "ممبكن" عرى ملسفصرس اه تنكر "تيليكة" تتكط سفيلخل وم "أسبمططرس" بطمط تديل فننه
+        </p>
+        <p>
+            .ونصة تتكط مبمةخيرس اسهيأوس مطسكي اهل مبةهبرس سصلسبل اه مبيم أسلسخت مسيلس اه سندىسيل تنأو نتطلطكن سمسطر
+        </p>
+    </div>
+
+    <div class="task-box">
+        <h3>أصة مطهلمطرس اسفطرس:</h3>
+        <ul>
+            <li>اهبرس أكفهسل ممبيط ملتكة ادل.</li>
+            <li>ملتكطرس هذو تير سفط فطت ميلخة أسهمر ثلمم اكيس.</li>
+        </ul>
+    </div>
+
+    <a href="#" class="button">الدرس إسفنى ول</a>
 </div>
-
-<script>
-async function sendMessage() {
-    let input = document.getElementById("userInput");
-    let chat = document.getElementById("chatBox");
-
-    if (input.value.trim() === "") return;
-
-    // رسالة المستخدم
-    let userBubble = document.createElement("div");
-    userBubble.className = "bubble user";
-    userBubble.textContent = input.value;
-    chat.appendChild(userBubble);
-
-    // رسالة الذكاء الاصطناعي (مؤقتة)
-    let aiBubble = document.createElement("div");
-    aiBubble.className = "bubble ai";
-    aiBubble.textContent = "جارٍ التفكير...";
-    chat.appendChild(aiBubble);
-
-    chat.scrollTop = chat.scrollHeight;
-
-    // 🔥 ربط Google Gemini API
-    const API_KEY = "ضعي_مفتاحك_هنا";
-
-    const response = await fetch(
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + API_KEY,
-        {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                contents: [{ parts: [{ text: input.value }] }]
-            })
-        }
-    );
-
-    const data = await response.json();
-
-    aiBubble.textContent =
-        data.candidates?.[0]?.content?.parts?.[0]?.text ||
-        "لم أستطع فهم السؤال، حاول صياغته بطريقة أخرى.";
-
-    input.value = "";
-    chat.scrollTop = chat.scrollHeight;
-}
-</script>
 
 </body>
 </html>
