@@ -1,5 +1,6 @@
 <?php
-// استلام السؤال من الصفحة
+
+// استلام السؤال من صفحة المرشد
 $question = $_POST['question'] ?? '';
 
 if (!$question) {
@@ -7,21 +8,29 @@ if (!$question) {
     exit;
 }
 
-// هنا المفروض تتصلين بخدمة ذكاء اصطناعي حقيقية (API)
-// الكود التالي مجرد مثال هيكل، تحتاجين تبدلينه بمزود فعلي
+/*
+===========================================
+    🔥 إعدادات الذكاء الاصطناعي (API)
+===========================================
+*/
 
-// مثال شكلي فقط:
-$apiKey = "ضعـي_هنا_مفتاح_API_الخدمة_اللي_تستخدمينها";
-$endpoint = "https://example-ai-service.com/chat"; // عنوان خدمة الذكاء
+// ضعي مفتاح API الخاص بك هنا
+$apiKey = "YOUR_API_KEY_HERE";
 
-// طلب إلى خدمة الذكاء (هذا مثال عام، يختلف حسب المزود)
+// عنوان خدمة الذكاء الاصطناعي
+$endpoint = "https://api.openai.com/v1/chat/completions";
+
+// البيانات التي سيتم إرسالها للنموذج
 $data = [
-    "model" => "gpt-like-model",
+    "model" => "gpt-3.5-turbo",   // يمكنك تغييره حسب الخدمة
     "messages" => [
+        ["role" => "system", "content" => "أنت مرشد ذكي تشرح بإسلوب بسيط وواضح."],
         ["role" => "user", "content" => $question]
-    ]
+    ],
+    "temperature" => 0.7
 ];
 
+// تجهيز الاتصال
 $ch = curl_init($endpoint);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     "Content-Type: application/json",
@@ -31,17 +40,23 @@ curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
+// تنفيذ الطلب
 $response = curl_exec($ch);
+
 if (curl_errno($ch)) {
     echo "خطأ في الاتصال بخدمة الذكاء الاصطناعي.";
     exit;
 }
+
 curl_close($ch);
 
-// هنا تحتاجين تفكين JSON حسب شكل استجابة المزود
-// هذا مثال عام:
+// تحليل الرد
 $resData = json_decode($response, true);
+
+// استخراج الإجابة
 $answer = $resData['choices'][0]['message']['content'] ?? "لم أستطع توليد إجابة.";
 
-// نرجع الإجابة للصفحة
+// إرجاع الإجابة للصفحة
 echo $answer;
+
+?>
