@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // جلب المستخدم
+    // جلب المستخدم بطريقة آمنة
     $stmt = $conn->prepare("SELECT id, password, login_count FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $update->bind_param("ii", $new_count, $row['id']);
             $update->execute();
 
+            // حفظ الجلسة
             $_SESSION['email'] = $email;
 
             header("Location: update_page.php");
