@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تعرف على منصة خبير</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Cairo", sans-serif;
+            background: url("background.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+        }
+
+        header a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 5px black;
+        }
+
+        .content {
+            margin-top: 120px;
+            background: rgba(0,0,0,0.55);
+            padding: 40px;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px black;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 22px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html">الرئيسية</a>
+    <a href="login.html">التسجيل</a>
+    <a href="khabir2.html">المرشد</a>
+    <a href="student.html">الطالب</a>
+    <a href="class.html">الدرس</a>
+</header>
+
+<div class="content">
+    <h1>تعرف على منصة خبير</h1>
+
+    <p>
+        منصة <strong>خبير</strong> هي منصة تعليمية مبتكرة تهدف إلى ربط الطلاب بالخبراء والمعلمين
+        في مختلف المجالات، لتقديم الدعم الأكاديمي والإرشاد التعليمي بطريقة سهلة وسريعة.
+    </p>
+
+    <p>
+        تتيح المنصة للطلاب طرح أسئلتهم، طلب شرح للدروس، أو حجز جلسات تعليمية مباشرة مع
+        خبراء متخصصين في مجالات متعددة.
+    </p>
+
+    <p>
+        تهدف منصة خبير إلى تحسين جودة التعلم، وتوفير بيئة تعليمية تفاعلية تساعد الطلاب
+        على فهم دروسهم بذكاء، وتساعد الخبراء على مشاركة معرفتهم وبناء سمعتهم المهنية.
+    </p>
+</div>
+
+</body>
+</html>
