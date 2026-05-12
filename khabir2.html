@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -35,6 +36,7 @@
             justify-content: center;
             gap: 30px;
             margin-top: 80px;
+            flex-wrap: wrap;
         }
 
         .card {
@@ -45,6 +47,11 @@
             text-align: center;
             box-shadow: 0 0 10px black;
             cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
         }
 
         .card img {
@@ -52,6 +59,8 @@
             height: 110px;
             border-radius: 50%;
             margin-bottom: 15px;
+            background: white;
+            padding: 10px;
         }
 
         .card h3 {
@@ -151,21 +160,21 @@
 <!-- بطاقات المرشدين -->
 <div class="mentors">
     <div class="card" onclick="openChat('المرشد التقني')">
-        <img src="tech.jpg">
+        <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png">
         <h3>المرشد التقني</h3>
         <p>متخصص في البرمجة والتقنية</p>
         <button>ابدأ الدردشة</button>
     </div>
 
     <div class="card" onclick="openChat('المرشد الطبي')">
-        <img src="medical.jpg">
+        <img src="https://cdn-icons-png.flaticon.com/512/387/387561.png">
         <h3>المرشد الطبي</h3>
         <p>متخصص في الصحة والطب</p>
         <button>ابدأ الدردشة</button>
     </div>
 
     <div class="card" onclick="openChat('المرشد الإداري')">
-        <img src="manager.jpg">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
         <h3>المرشد الإداري</h3>
         <p>متخصص في الإدارة والتطوير</p>
         <button>ابدأ الدردشة</button>
@@ -203,18 +212,50 @@ function sendMessage() {
     userBubble.textContent = input.value;
     chat.appendChild(userBubble);
 
-    // رسالة الذكاء الاصطناعي
+    // رسالة الذكاء الاصطناعي (مؤقتة)
     let aiBubble = document.createElement("div");
     aiBubble.className = "bubble ai";
     aiBubble.textContent = "جارٍ التفكير...";
     chat.appendChild(aiBubble);
 
+    let question = input.value.toLowerCase();
+
     setTimeout(() => {
-        aiBubble.textContent = "إجابة ذكية: " + input.value;
+        aiBubble.textContent = generateSmartAnswer(question);
     }, 900);
 
     input.value = "";
     chat.scrollTop = chat.scrollHeight;
+}
+
+function generateSmartAnswer(q) {
+    // تقنية / برمجة
+    if (q.includes("برمجة") || q.includes("كود") || q.includes("html") || q.includes("php") || q.includes("موقع")) {
+        return "يبدو أن سؤالك تقني 👨‍💻.\nأفضل أسلوب هو تقسيم المشكلة لخطوات صغيرة، وتجربة كل خطوة على حدة.\nإذا حابة، أقدر أقترح عليك كود أو هيكل جاهز للمشروع.";
+    }
+
+    // صحة / طب
+    if (q.includes("صحة") || q.includes("مرض") || q.includes("دواء") || q.includes("طبيب")) {
+        return "سؤال مهم يتعلق بالصحة 🩺.\nمن الأفضل دائمًا استشارة طبيب مختص، لكن بشكل عام:\nالراحة، شرب الماء، والمتابعة الطبية هي الأساس.\nإذا حابة، أقدر أشرح لك نمط حياة صحي مناسب.";
+    }
+
+    // إدارة / مشروع
+    if (q.includes("إدارة") || q.includes("قيادة") || q.includes("مشروع") || q.includes("فريق")) {
+        return "في الإدارة الفعّالة 📚:\n1- وضوح الهدف\n2- توزيع المهام\n3- المتابعة والتقييم\nأخبريني عن نوع مشروعك، وأقترح عليك خطة بسيطة تناسبه.";
+    }
+
+    // تحية
+    if (q.includes("السلام عليكم")) {
+        return "وعليكم السلام ورحمة الله وبركاته 🌷\nسعيدة بسؤالك، كيف أقدر أساعدك اليوم؟";
+    }
+
+    // سؤال قصير جدًا
+    if (q.length < 5) {
+        return "سؤالك قصير جدًا، هل يمكنك توضيحه أكثر؟ 🙂";
+    }
+
+    // رد عام ذكي
+    return "سؤال جميل 👌.\nأفضل طريقة للتعامل مع هذا الموضوع هي فهم الهدف أولًا، ثم اختيار خطوات عملية بسيطة.\nإذا حابة، أقدر أحول سؤالك إلى خطة من 3–5 خطوات واضحة.";
 }
 </script>
 
