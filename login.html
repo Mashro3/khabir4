@@ -5,92 +5,143 @@
     <meta charset="UTF-8">
     <title>تسجيل الدخول</title>
 
-    <link rel="stylesheet" href="style.css"> <!-- نفس تنسيق الصفحة الرئيسية -->
-
     <style>
         body {
-            font-family: "Tajawal", sans-serif;
-            background-image: url('background.jpg'); /* نفس خلفية الصفحة الرئيسية */
+            margin: 0;
+            padding: 0;
+            font-family: "Cairo", sans-serif;
+            background: url("background.jpg") no-repeat center center fixed;
             background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            color: white;
             text-align: center;
         }
 
-        .container {
-            width: 350px;
-            margin: 80px auto;
-            background: rgba(255, 255, 255, 0.90);
-            padding: 25px;
+        /* الهيدر */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+        }
+
+        header a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 5px black;
+        }
+
+        /* اللوقو */
+        .logo {
+            margin-top: 20px;
+        }
+
+        .logo img {
+            width: 150px;
+        }
+
+        /* صندوق تسجيل الدخول */
+        .login-box {
+            width: 60%;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.9);
+            padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            border-top: 6px solid #2e7d32;
-        }
-
-        img.logo {
-            width: 120px;
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            color: #2e7d32;
-            margin-bottom: 20px;
+            color: #333;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
         }
 
         input {
-            width: 90%;
+            width: 80%;
             padding: 12px;
-            margin: 8px 0;
-            border: 2px solid #fdd835;
+            margin: 10px 0;
             border-radius: 10px;
-            font-size: 16px;
+            border: 1px solid #ccc;
+            font-size: 18px;
         }
 
         button {
-            width: 95%;
-            padding: 12px;
+            margin-top: 15px;
+            padding: 12px 25px;
             background: #2e7d32;
-            color: white;
             border: none;
             border-radius: 10px;
-            font-size: 18px;
+            color: white;
+            font-size: 20px;
             cursor: pointer;
-            margin-top: 10px;
         }
 
         button:hover {
-            background: #1b5e20;
+            background: #256628;
         }
 
-        a {
-            display: block;
-            margin-top: 12px;
-            color: #2e7d32;
-            text-decoration: none;
-            font-size: 14px;
+        .msg {
+            margin-top: 20px;
+            padding: 12px;
+            background: #2e7d32;
+            color: white;
+            border-radius: 10px;
+            display: none;
+            font-size: 18px;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <img src="logo.jpg" class="logo">
+<!-- الهيدر -->
+<header>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">تعرف على المنصة</a>
+    <a href="khabir2.html">المرشد</a>
+    <a href="student.html">الطالب</a>
+    <a href="class.html">الدرس</a>
+</header>
 
-        <h2>تسجيل الدخول</h2>
+<!-- اللوقو -->
+<div class="logo">
+    <img src="logo.jpg" alt="شعار المنصة">
+</div>
 
-        <form action="login.php" method="POST">
+<!-- صندوق تسجيل الدخول -->
+<div class="login-box">
+    <h1>تسجيل الدخول</h1>
 
-            <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+    <input type="text" id="username" placeholder="اسم المستخدم">
+    <br>
+    <input type="password" id="password" placeholder="كلمة المرور">
+    <br>
 
-            <input type="password" name="password" placeholder="كلمة المرور" required>
+    <button onclick="login()">دخول</button>
 
-            <button type="submit">دخول</button>
+    <div id="msg" class="msg">✔ تم تسجيل الدخول بنجاح</div>
+</div>
 
-        </form>
+<script>
+function login() {
+    let user = document.getElementById("username").value.trim();
+    let pass = document.getElementById("password").value.trim();
+    let msg = document.getElementById("msg");
 
-        <a href="signup.html">ليس لديك حساب؟ إنشاء حساب جديد</a>
-    </div>
+    if (user === "" || pass === "") {
+        msg.style.display = "block";
+        msg.style.background = "#b71c1c";
+        msg.textContent = "✖ الرجاء تعبئة جميع الحقول";
+        return;
+    }
+
+    // إشعار النجاح
+    msg.style.display = "block";
+    msg.style.background = "#2e7d32";
+    msg.textContent = "✔ تم تسجيل الدخول بنجاح";
+
+    // الانتقال بعد ثانيتين
+    setTimeout(() => {
+        window.location.href = "student.html";
+    }, 1500);
+}
+</script>
 
 </body>
 </html>
