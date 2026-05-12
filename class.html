@@ -41,57 +41,75 @@
         }
 
         /* صندوق الدرس */
-        .lesson-container {
-            max-width: 800px;
+        .lesson-box {
+            width: 70%;
             margin: 40px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            background: rgba(255,255,255,0.9);
+            padding: 40px;
+            border-radius: 15px;
             color: #333;
-        }
-
-        .header {
-            border-bottom: 3px solid #45a091;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
         }
 
         h1 {
+            text-align: center;
+            font-size: 32px;
             color: #2c3e50;
-            font-size: 24px;
         }
 
         h2 {
             color: #45a091;
-            font-size: 20px;
+            margin-top: 25px;
         }
 
-        .content {
+        p, li {
+            font-size: 20px;
             line-height: 1.8;
+        }
+
+        /* مربع السؤال */
+        .ask-box {
+            width: 70%;
+            margin: 40px auto;
+            background: rgba(0,0,0,0.55);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px black;
+            text-align: center;
+        }
+
+        textarea {
+            width: 90%;
+            height: 80px;
+            border-radius: 10px;
+            border: none;
+            padding: 10px;
             font-size: 18px;
         }
 
-        .task-box {
-            background-color: #dfdbdd;
-            border-right: 5px solid #45a091;
-            padding: 15px;
-            margin-top: 20px;
-        }
-
-        .button {
-            display: inline-block;
-            background-color: #45a091;
+        button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: #2e7d32;
+            border: none;
+            border-radius: 10px;
             color: white;
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: 0.3s;
+            font-size: 20px;
+            cursor: pointer;
         }
 
-        .button:hover {
-            background-color: #3a857a;
+        button:hover {
+            background: #256628;
+        }
+
+        .msg {
+            margin-top: 15px;
+            padding: 10px;
+            background: #2e7d32;
+            color: white;
+            border-radius: 10px;
+            display: none;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -112,32 +130,67 @@
     <img src="logo.jpg" alt="شعار المنصة">
 </div>
 
-<!-- محتوى الدرس (الكود الذي أرسلتيه) -->
-<div class="lesson-container">
-    <div class="header">
-        <h1>المصطرس خبتفكرس أسبسسست :الأوس الدرس</h1>
-    </div>
+<!-- محتوى الدرس -->
+<div class="lesson-box">
+    <h1>أساسيات التفكير المنطقي</h1>
 
-    <div class="content">
-        <h2>ببيط شخح:</h2>
-        <p>
-            مسة لغر تل السيل أنت تبيل .واسكصرسل اسيسأوس وفهل ألمتكطرس تبليل على الدلرس هو المصطرس خبتفكرس .ميبية "ممبكن" عرى ملسفصرس اه تنكر "تيليكة" تتكط سفيلخل وم "أسبمططرس" بطمط تديل فننه
-        </p>
-        <p>
-            .ونصة تتكط مبمةخيرس اسهيأوس مطسكي اهل مبةهبرس سصلسبل اه مبيم أسلسخت مسيلس اه سندىسيل تنأو نتطلطكن سمسطر
-        </p>
-    </div>
+    <p>
+        التفكير المنطقي هو القدرة على تحليل المعلومات، فهم العلاقات بين الأشياء،
+        واستخدام الأدلة للوصول إلى نتائج صحيحة. يساعدنا هذا النوع من التفكير على اتخاذ قرارات أفضل
+        وتجنب الأخطاء الناتجة عن التسرع أو سوء الفهم.
+    </p>
 
-    <div class="task-box">
-        <h3>أصة مطهلمطرس اسفطرس:</h3>
-        <ul>
-            <li>اهبرس أكفهسل ممبيط ملتكة ادل.</li>
-            <li>ملتكطرس هذو تير سفط فطت ميلخة أسهمر ثلمم اكيس.</li>
-        </ul>
-    </div>
+    <h2>خطوات التفكير المنطقي</h2>
+    <ul>
+        <li>تحديد المشكلة بوضوح</li>
+        <li>جمع المعلومات المتعلقة بالمشكلة</li>
+        <li>تحليل البيانات وربطها ببعض</li>
+        <li>اختبار الفرضيات المحتملة</li>
+        <li>اتخاذ القرار بناءً على الأدلة</li>
+    </ul>
 
-    <a href="#" class="button">الدرس إسفنى ول</a>
+    <h2>أهمية التفكير المنطقي</h2>
+    <p>
+        التفكير المنطقي يساعد على حل المشكلات، فهم المواقف المعقدة، واتخاذ قرارات صحيحة.
+        كما أنه مهارة أساسية في الدراسة، العمل، والحياة اليومية.
+    </p>
+
+    <h2>هل يمكن تعلم التفكير المنطقي؟</h2>
+    <p>
+        نعم، يمكن تعلمه من خلال التدريب المستمر، حل الألغاز، تحليل المواقف، وممارسة التفكير النقدي.
+    </p>
 </div>
+
+<!-- مربع طرح السؤال -->
+<div class="ask-box">
+    <h2>اسأل مرشدك</h2>
+
+    <textarea id="question" placeholder="اكتب سؤالك هنا..."></textarea>
+    <br>
+    <button onclick="send()">إرسال</button>
+
+    <div id="msg" class="msg">✔ تم الإرسال بنجاح</div>
+</div>
+
+<script>
+function send() {
+    let q = document.getElementById("question").value.trim();
+    let msg = document.getElementById("msg");
+
+    if (q === "") {
+        msg.style.display = "block";
+        msg.style.background = "#b71c1c";
+        msg.textContent = "✖ الرجاء كتابة سؤال";
+        return;
+    }
+
+    msg.style.display = "block";
+    msg.style.background = "#2e7d32";
+    msg.textContent = "✔ تم الإرسال بنجاح";
+
+    document.getElementById("question").value = "";
+}
+</script>
 
 </body>
 </html>
