@@ -10,31 +10,31 @@ if (!$question) {
 
 /*
 ===========================================
-    🔥 إعدادات الذكاء الاصطناعي (API)
+    🔥 إعدادات Google Gemini API
 ===========================================
 */
 
-// ضعي مفتاح API الخاص بك هنا
-$apiKey = "YOUR_API_KEY_HERE";
+// ضعي مفتاح Gemini API هنا
+$apiKey = "YOUR_GEMINI_API_KEY_HERE";
 
-// عنوان خدمة الذكاء الاصطناعي
-$endpoint = "https://api.openai.com/v1/chat/completions";
+// عنوان API
+$endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" . $apiKey;
 
-// البيانات التي سيتم إرسالها للنموذج
+// تجهيز البيانات المرسلة للنموذج
 $data = [
-    "model" => "gpt-3.5-turbo",   // يمكنك تغييره حسب الخدمة
-    "messages" => [
-        ["role" => "system", "content" => "أنت مرشد ذكي تشرح بإسلوب بسيط وواضح."],
-        ["role" => "user", "content" => $question]
-    ],
-    "temperature" => 0.7
+    "contents" => [
+        [
+            "parts" => [
+                ["text" => $question]
+            ]
+        ]
+    ]
 ];
 
 // تجهيز الاتصال
 $ch = curl_init($endpoint);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "Content-Type: application/json",
-    "Authorization: Bearer " . $apiKey
+    "Content-Type: application/json"
 ]);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
@@ -44,7 +44,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 
 if (curl_errno($ch)) {
-    echo "خطأ في الاتصال بخدمة الذكاء الاصطناعي.";
+    echo "خطأ في الاتصال بخدمة Google Gemini.";
     exit;
 }
 
@@ -53,10 +53,10 @@ curl_close($ch);
 // تحليل الرد
 $resData = json_decode($response, true);
 
-// استخراج الإجابة
-$answer = $resData['choices'][0]['message']['content'] ?? "لم أستطع توليد إجابة.";
+// استخراج الإجابة من Gemini
+$answer = $resData['candidates'][0]['content']['parts'][0]['text'] ?? "لم أستطع توليد إجابة.";
 
 // إرجاع الإجابة للصفحة
-echo $answer;
+echo nl2br($answer);
 
 ?>
