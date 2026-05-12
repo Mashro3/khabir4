@@ -113,14 +113,12 @@
 <div class="form-box">
     <h1>إنشاء حساب</h1>
 
-    <!-- اختيار نوع التسجيل -->
     <select id="type">
         <option value="">اختر نوع الحساب</option>
         <option value="student">طالب</option>
         <option value="mentor">مرشد</option>
     </select>
 
-    <!-- الحقول -->
     <input id="user" type="text" placeholder="اسم المستخدم">
     <input id="email" type="email" placeholder="البريد الإلكتروني">
     <input id="pass" type="password" placeholder="كلمة المرور">
@@ -133,9 +131,9 @@
 <script>
 function register() {
     let type = document.getElementById("type").value;
-    let user = document.getElementById("user").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let pass = document.getElementById("pass").value.trim();
+    let user = document.getElementById("user").value;
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("pass").value;
     let msg = document.getElementById("msg");
 
     if (type === "" || user === "" || email === "" || pass === "") {
@@ -145,16 +143,31 @@ function register() {
         return;
     }
 
-    msg.style.display = "block";
-    msg.className = "msg success";
-    msg.textContent = "✔ تم التسجيل بنجاح كـ " + (type === "student" ? "طالب" : "مرشد");
+    let formData = new FormData();
+    formData.append("type", type);
+    formData.append("username", user);
+    formData.append("email", email);
+    formData.append("password", pass);
 
-    document.getElementById("type").value = "";
-    document.getElementById("user").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("pass").value = "";
+    fetch("register.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.text())
+    .then(data => {
+        if (data === "success") {
+            msg.style.display = "block";
+            msg.className = "msg success";
+            msg.textContent = "✔ تم التسجيل بنجاح";
+        } else {
+            msg.style.display = "block";
+            msg.className = "msg error";
+            msg.textContent = "✖ حدث خطأ أثناء التسجيل";
+        }
+    });
 }
 </script>
+
 
 </body>
 </html>
