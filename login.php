@@ -7,8 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // جلب المستخدم
-    $stmt = $conn->prepare("SELECT id, password, login_count FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, password, name, role FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -17,19 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $row = $result->fetch_assoc();
 
-        // مقارنة كلمة المرور (بدون تشفير)
-        if ($password === $row['password']) {
+        if (password_verify($password, $row['password'])) {
 
-            // تحديث عدد مرات الدخول
-            $new_count = $row['login_count'] + 1;
-            $update = $conn->prepare("UPDATE users SET login_count = ? WHERE id = ?");
-            $update->bind_param("ii", $new_count, $row['id']);
-            $update->execute();
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['name']    = $row['name'];
+            $_SESSION['role']    = $row['role'];
 
-            // حفظ الجلسة
-            $_SESSION['email'] = $email;
-
-            // رسالة نجاح + تحويل للصفحة الرئيسية
             echo "<script>
                     alert('✔ تم تسجيل الدخول بنجاح');
                     window.location.href='index.html';
@@ -37,11 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
 
         } else {
-            echo "<h3 style='color:red; text-align:center; margin-top:40px;'>❌ كلمة المرور غير صحيحة</h3>";
+            echo "<script>alert('❌ كلمة المرور غير صحيحة');history.back();</script>";
         }
 
     } else {
-        echo "<h3 style='color:red; text-align:center; margin-top:40px;'>❌ البريد غير موجود</h3>";
+        echo "<script>alert('❌ البريد غير مسجل');history.back();</script>";
     }
 }
 ?>
