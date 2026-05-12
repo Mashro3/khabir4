@@ -190,11 +190,18 @@
 </div>
 
 <script>
+
 function openChat(name) {
     document.getElementById("mentorName").textContent = name;
     document.getElementById("chatWindow").style.display = "block";
     document.getElementById("chatBox").innerHTML = "";
 }
+
+/*  
+===========================================
+     🔥 دالة sendMessage الجديدة (ترسل إلى chat.php)
+===========================================
+*/
 
 function sendMessage() {
     let input = document.getElementById("userInput");
@@ -213,50 +220,25 @@ function sendMessage() {
     chat.appendChild(aiBubble);
 
     let question = input.value;
-
-    setTimeout(() => {
-        aiBubble.textContent = generateSmartGPTAnswer(question);
-        chat.scrollTop = chat.scrollHeight;
-    }, 900);
-
     input.value = "";
     chat.scrollTop = chat.scrollHeight;
+
+    // إرسال السؤال إلى chat.php
+    fetch("chat.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "question=" + encodeURIComponent(question)
+    })
+    .then(res => res.text())
+    .then(answer => {
+        aiBubble.textContent = answer;
+        chat.scrollTop = chat.scrollHeight;
+    })
+    .catch(err => {
+        aiBubble.textContent = "حدث خطأ في الاتصال بالذكاء الاصطناعي.";
+    });
 }
 
-/* ذكاء يشبه شات جي بي تي (مبسّط) */
-function generateSmartGPTAnswer(question) {
-    let q = question.toLowerCase();
-    let keywords = q.split(" ").filter(w => w.length > 2);
-
-    const knowledge = {
-        "html": "HTML هي لغة لبناء هيكل صفحات الويب وتتكون من عناصر مثل div و p و h1.",
-        "css": "CSS مسؤولة عن تنسيق صفحات الويب: الألوان، الخطوط، المحاذاة، الهوامش، الخلفيات.",
-        "php": "PHP لغة تعمل على السيرفر وتستخدم لبناء مواقع ديناميكية وربطها بقواعد البيانات.",
-        "sql": "SQL هي لغة للتعامل مع قواعد البيانات: إضافة، حذف، تعديل، واستعلام.",
-        "برمجة": "البرمجة تعتمد على المنطق وحل المشكلات. أفضل طريقة للتعلم هي بناء مشاريع صغيرة.",
-        "مشكلة": "لحل أي مشكلة: حددي الخطأ، اقرئي الرسالة، جرّبي خطوة خطوة، ثم راجعي الكود.",
-        "دراسة": "أفضل طريقة للدراسة: تقسيم الوقت، مراجعة يومية قصيرة، واستخدام الخرائط الذهنية.",
-        "جامعة": "اختيار التخصص يعتمد على ميولك. التقنية مناسبة لمن يحب التحليل وحل المشكلات.",
-        "صحة": "للحفاظ على الصحة: شرب الماء، النوم الكافي، التغذية المتوازنة، والرياضة.",
-        "صداع": "الصداع غالبًا بسبب قلة النوم أو الجفاف. اشربي ماء وارتاحي، وإذا استمر راجعي طبيب.",
-        "مشروع": "لبدء مشروع: حددي الفكرة، ادرسي السوق، ضعي خطة بسيطة، وابدئي بخطوات صغيرة.",
-        "إدارة": "الإدارة الفعالة تعتمد على: وضوح الهدف، توزيع المهام، المتابعة، والتحفيز."
-    };
-
-    for (let word of keywords) {
-        if (knowledge[word]) {
-            return generateGPTStyleAnswer(question, knowledge[word]);
-        }
-    }
-
-    return generateGPTStyleAnswer(question, "سؤالك مهم، لكن أحتاج تفاصيل أكثر حتى أجاوبك بدقة.");
-}
-
-function generateGPTStyleAnswer(question, baseAnswer) {
-    return "سؤالك: " + question + "\n\n" +
-           "الإجابة:\n" + baseAnswer + "\n\n" +
-           "إذا حابة، أقدر أشرح لك الموضوع بخطوات أو أعطيك مثال عملي.";
-}
 </script>
 
 </body>
