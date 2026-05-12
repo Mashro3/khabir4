@@ -1,173 +1,25 @@
+
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>التسجيل</title>
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Cairo", sans-serif;
-            background: url("background.jpg") no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            text-align: center;
-        }
-
-        /* الهيدر */
-        header {
-            display: flex;
-            justify-content: flex-end;
-            padding: 20px 40px;
-        }
-
-        header a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-            text-shadow: 0 0 5px black;
-        }
-
-        /* اللوغو */
-        .logo {
-            margin-top: 40px;
-        }
-
-        .logo img {
-            width: 150px;
-        }
-
-        /* صندوق التسجيل */
-        .form-box {
-            width: 40%;
-            margin: 40px auto;
-            background: rgba(0,0,0,0.55);
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 0 15px black;
-        }
-
-        .form-box h1 {
-            margin-bottom: 25px;
-            font-size: 32px;
-        }
-
-        select, input {
-            width: 80%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 10px;
-            border: none;
-            font-size: 18px;
-        }
-
-        button {
-            padding: 12px 25px;
-            background: #2e7d32;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 20px;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-
-        button:hover {
-            background: #256628;
-        }
-
-        .msg {
-            margin-top: 15px;
-            padding: 12px;
-            border-radius: 10px;
-            font-size: 18px;
-            display: none;
-        }
-
-        .success { background: #2e7d32; }
-        .error { background: #b71c1c; }
-    </style>
+    <title>تسجيل الدخول</title>
 </head>
-
 <body>
 
-<!-- الهيدر -->
-<header>
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html">تعرف على المنصة</a>
-    <a href="khabir2.html">المرشد</a>
-    <a href="student.html">الطالب</a>
-    <a href="class.html">الدرس</a>
-</header>
+<h2 style="text-align:center;">تسجيل الدخول</h2>
 
-<!-- اللوغو -->
-<div class="logo">
-    <img src="logo.jpg" alt="شعار خبير">
-</div>
+<form action="login.php" method="POST" style="text-align:center; margin-top:30px;">
 
-<!-- نموذج التسجيل -->
-<div class="form-box">
-    <h1>إنشاء حساب</h1>
+    <input type="email" name="email" placeholder="البريد الإلكتروني" required
+           style="padding:10px; width:250px; margin-bottom:10px;"><br>
 
-    <select id="type">
-        <option value="">اختر نوع الحساب</option>
-        <option value="student">طالب</option>
-        <option value="mentor">مرشد</option>
-    </select>
+    <input type="password" name="password" placeholder="كلمة المرور" required
+           style="padding:10px; width:250px; margin-bottom:10px;"><br>
 
-    <input id="user" type="text" placeholder="اسم المستخدم">
-    <input id="email" type="email" placeholder="البريد الإلكتروني">
-    <input id="pass" type="password" placeholder="كلمة المرور">
+    <button type="submit" style="padding:10px 20px;">دخول</button>
 
-    <button onclick="register()">تسجيل</button>
-
-    <div id="msg" class="msg"></div>
-</div>
-
-<script>
-function register() {
-    let type = document.getElementById("type").value;
-    let user = document.getElementById("user").value;
-    let email = document.getElementById("email").value;
-    let pass = document.getElementById("pass").value;
-    let msg = document.getElementById("msg");
-
-    if (type === "" || user === "" || email === "" || pass === "") {
-        msg.style.display = "block";
-        msg.className = "msg error";
-        msg.textContent = "✖ يرجى تعبئة جميع الحقول";
-        return;
-    }
-
-    let formData = new FormData();
-    formData.append("type", type);
-    formData.append("username", user);
-    formData.append("email", email);
-    formData.append("password", pass);
-
-    fetch("register.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(res => res.text())
-    .then(data => {
-        if (data === "success") {
-            msg.style.display = "block";
-            msg.className = "msg success";
-            msg.textContent = "✔ تم التسجيل بنجاح";
-        } else {
-            msg.style.display = "block";
-            msg.className = "msg error";
-            msg.textContent = "✖ حدث خطأ أثناء التسجيل";
-        }
-    });
-}
-</script>
-
+</form>
 
 </body>
 </html>
