@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>تسجيل الدخول</title>
+    <title>التسجيل</title>
 
     <style>
         body {
@@ -38,7 +38,6 @@
 
         .logo img {
             width: 150px;
-            height: auto;
         }
 
         /* صندوق التسجيل */
@@ -57,7 +56,7 @@
             font-size: 32px;
         }
 
-        input {
+        select, input {
             width: 80%;
             padding: 12px;
             margin: 10px 0;
@@ -81,22 +80,16 @@
             background: #256628;
         }
 
-        /* رسالة النجاح / الفشل */
-        .message {
-            margin-top: 20px;
+        .msg {
+            margin-top: 15px;
             padding: 12px;
             border-radius: 10px;
             font-size: 18px;
             display: none;
         }
 
-        .success {
-            background: #2e7d32;
-        }
-
-        .error {
-            background: #b71c1c;
-        }
+        .success { background: #2e7d32; }
+        .error { background: #b71c1c; }
     </style>
 </head>
 
@@ -118,33 +111,48 @@
 
 <!-- نموذج التسجيل -->
 <div class="form-box">
-    <h1>تسجيل الدخول</h1>
+    <h1>إنشاء حساب</h1>
 
+    <!-- اختيار نوع التسجيل -->
+    <select id="type">
+        <option value="">اختر نوع الحساب</option>
+        <option value="student">طالب</option>
+        <option value="mentor">مرشد</option>
+    </select>
+
+    <!-- الحقول -->
     <input id="user" type="text" placeholder="اسم المستخدم">
+    <input id="email" type="email" placeholder="البريد الإلكتروني">
     <input id="pass" type="password" placeholder="كلمة المرور">
 
-    <button onclick="login()">دخول</button>
+    <button onclick="register()">تسجيل</button>
 
-    <div id="msg" class="message"></div>
+    <div id="msg" class="msg"></div>
 </div>
 
 <script>
-function login() {
+function register() {
+    let type = document.getElementById("type").value;
     let user = document.getElementById("user").value.trim();
+    let email = document.getElementById("email").value.trim();
     let pass = document.getElementById("pass").value.trim();
     let msg = document.getElementById("msg");
 
-    if (user === "" || pass === "") {
+    if (type === "" || user === "" || email === "" || pass === "") {
         msg.style.display = "block";
-        msg.className = "message error";
-        msg.textContent = "لم يتم التسجيل — يرجى تعبئة جميع الحقول";
+        msg.className = "msg error";
+        msg.textContent = "✖ يرجى تعبئة جميع الحقول";
         return;
     }
 
-    // نجاح
     msg.style.display = "block";
-    msg.className = "message success";
-    msg.textContent = "تم التسجيل بنجاح ✔";
+    msg.className = "msg success";
+    msg.textContent = "✔ تم التسجيل بنجاح كـ " + (type === "student" ? "طالب" : "مرشد");
+
+    document.getElementById("type").value = "";
+    document.getElementById("user").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("pass").value = "";
 }
 </script>
 
