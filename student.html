@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -39,7 +40,7 @@
         }
 
         .card {
-            width: 260px;
+            width: 300px;
             background: rgba(0,0,0,0.55);
             padding: 20px;
             border-radius: 15px;
@@ -64,6 +65,19 @@
         .card h3 {
             margin: 10px 0;
             font-size: 24px;
+        }
+
+        .qa-box {
+            text-align: right;
+            margin-top: 15px;
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .qa-box p {
+            margin: 5px 0;
+            font-size: 16px;
         }
 
         .card button {
@@ -153,21 +167,51 @@
 <!-- بطاقات الدروس -->
 <div class="lessons">
 
+    <!-- درس البرمجة -->
     <div class="card" onclick="openChat('درس البرمجة')">
         <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png">
         <h3>درس البرمجة</h3>
+
+        <div class="qa-box">
+            <p><strong>سؤال:</strong> ما هي لغة HTML؟</p>
+            <p><strong>جواب:</strong> هي لغة لبناء هيكل صفحات الويب.</p>
+
+            <p><strong>سؤال:</strong> ما الفرق بين CSS و JavaScript؟</p>
+            <p><strong>جواب:</strong> CSS للتصميم، وJavaScript للتفاعل.</p>
+        </div>
+
         <button>اسأل الذكاء الاصطناعي</button>
     </div>
 
+    <!-- درس الصحة -->
     <div class="card" onclick="openChat('درس الصحة')">
         <img src="https://cdn-icons-png.flaticon.com/512/387/387561.png">
         <h3>درس الصحة</h3>
+
+        <div class="qa-box">
+            <p><strong>سؤال:</strong> كيف أقوي المناعة؟</p>
+            <p><strong>جواب:</strong> النوم الجيد، التغذية الصحية، والرياضة.</p>
+
+            <p><strong>سؤال:</strong> ما سبب الصداع؟</p>
+            <p><strong>جواب:</strong> قد يكون بسبب الجفاف أو التوتر.</p>
+        </div>
+
         <button>اسأل الذكاء الاصطناعي</button>
     </div>
 
+    <!-- درس الإدارة -->
     <div class="card" onclick="openChat('درس الإدارة')">
         <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
         <h3>درس الإدارة</h3>
+
+        <div class="qa-box">
+            <p><strong>سؤال:</strong> كيف أدير فريق عمل؟</p>
+            <p><strong>جواب:</strong> توزيع المهام والمتابعة المستمرة.</p>
+
+            <p><strong>سؤال:</strong> ما هي القيادة؟</p>
+            <p><strong>جواب:</strong> القدرة على التأثير وتوجيه الفريق.</p>
+        </div>
+
         <button>اسأل الذكاء الاصطناعي</button>
     </div>
 
