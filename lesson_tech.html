@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>درس تقني بسيط</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Cairo", sans-serif;
+            background: url("background.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        /* الهيدر */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+        }
+
+        header a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 5px black;
+        }
+
+        /* اللوقو */
+        .logo {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logo img {
+            width: 150px;
+        }
+
+        /* صندوق الدرس */
+        .lesson-box {
+            width: 70%;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.9);
+            padding: 40px;
+            border-radius: 15px;
+            color: #333;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            color: #2c3e50;
+        }
+
+        h2 {
+            color: #45a091;
+            margin-top: 25px;
+        }
+
+        p, li {
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* صندوق الشات */
+        .chat-box {
+            width: 70%;
+            margin: 40px auto;
+            background: rgba(0,0,0,0.55);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px black;
+        }
+
+        textarea {
+            width: 90%;
+            height: 80px;
+            border-radius: 10px;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: #2e7d32;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #256628;
+        }
+
+        .answer {
+            margin-top: 20px;
+            background: #2e7d32;
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            display: none;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- الهيدر -->
+<header>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">تعرف على المنصة</a>
+    <a href="khabir2.html">المرشد</a>
+    <a href="student.html">الطالب</a>
+    <a href="class.html">الدرس</a>
+</header>
+
+<!-- اللوقو -->
+<div class="logo">
+    <img src="logo.jpg" alt="شعار المنصة">
+</div>
+
+<!-- محتوى الدرس -->
+<div class="lesson-box">
+    <h1>درس تقني بسيط</h1>
+
+    <p>
+        هذا درس تقني مبسط يساعدك على فهم أهم المفاهيم الأساسية في عالم التقنية.
+        الهدف هو أن تتعرف على معنى البرمجة، ما هو الحاسوب، وكيف تعمل التطبيقات.
+    </p>
+
+    <h2>ما هي التقنية؟</h2>
+    <p>
+        التقنية هي استخدام الأدوات والبرامج والأجهزة لحل المشكلات وتسهيل الحياة.
+    </p>
+
+    <h2>ما هي البرمجة؟</h2>
+    <p>
+        البرمجة هي إعطاء أوامر للحاسوب ليقوم بمهام معينة مثل تشغيل لعبة أو تطبيق.
+    </p>
+
+    <h2>أمثلة على مجالات التقنية</h2>
+    <ul>
+        <li>تطوير المواقع</li>
+        <li>تطوير التطبيقات</li>
+        <li>الأمن السيبراني</li>
+        <li>الذكاء الاصطناعي</li>
+    </ul>
+</div>
+
+<!-- صندوق الشات -->
+<div class="chat-box">
+    <h2>💬 اسأل عن الدرس</h2>
+
+    <textarea id="question" placeholder="اكتب سؤالك عن الدرس..."></textarea>
+    <br>
+    <button onclick="reply()">إرسال</button>
+
+    <div id="answer" class="answer"></div>
+</div>
+
+<script>
+function reply() {
+    let q = document.getElementById("question").value.trim();
+    let ans = document.getElementById("answer");
+
+    if (q === "") {
+        ans.style.display = "block";
+        ans.style.background = "#b71c1c";
+        ans.textContent = "✖ الرجاء كتابة سؤال";
+        return;
+    }
+
+    // ردود ذكية بسيطة حسب الكلمات
+    if (q.includes("برمجة") || q.includes("البرمجة")) {
+        ans.textContent = "البرمجة هي إعطاء أوامر للحاسوب ليقوم بمهام معينة مثل تشغيل التطبيقات.";
+    }
+    else if (q.includes("تقنية") || q.includes("التقنية")) {
+        ans.textContent = "التقنية هي استخدام الأدوات والبرامج لحل المشكلات وتسهيل الحياة.";
+    }
+    else if (q.includes("موقع") || q.includes("مواقع")) {
+        ans.textContent = "تطوير المواقع يتم باستخدام HTML وCSS وJavaScript.";
+    }
+    else {
+        ans.textContent = "سؤال جميل! هذا السؤال يحتاج شرحًا أكبر، اسأل مرشدك لمزيد من التفاصيل.";
+    }
+
+    ans.style.display = "block";
+    ans.style.background = "#2e7d32";
+    document.getElementById("question").value = "";
+}
+</script>
+
+</body>
+</html>
