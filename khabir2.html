@@ -13,8 +13,10 @@
             background: url("background.jpg") no-repeat center center fixed;
             background-size: cover;
             color: white;
+            text-align: center;
         }
 
+        /* الهيدر */
         header {
             display: flex;
             justify-content: flex-end;
@@ -30,103 +32,84 @@
             text-shadow: 0 0 5px black;
         }
 
-        .mentors {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 80px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            width: 260px;
-            background: rgba(0,0,0,0.55);
-            padding: 20px;
-            border-radius: 15px;
+        /* اللوقو */
+        .logo {
             text-align: center;
-            box-shadow: 0 0 10px black;
-            cursor: pointer;
-            transition: 0.3s;
+            margin-top: 20px;
         }
 
-        .card:hover {
+        .logo img {
+            width: 150px;
+        }
+
+        /* شبكة المرشدين */
+        .mentors-grid {
+            width: 80%;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .mentor-card {
+            background: rgba(255,255,255,0.9);
+            padding: 25px;
+            border-radius: 15px;
+            color: #333;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .mentor-card:hover {
             transform: scale(1.05);
         }
 
-        .card img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            background: white;
-            padding: 10px;
+        .icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+            color: #2e7d32;
         }
 
-        .card h3 {
-            margin: 10px 0;
+        .mentor-card h3 {
             font-size: 24px;
+            color: #2e7d32;
         }
 
-        .card p {
+        .mentor-card p {
             font-size: 18px;
-            opacity: 0.9;
+            color: #444;
         }
 
-        .card button {
-            margin-top: 15px;
+        .mentor-card button {
+            margin-top: 10px;
             padding: 10px 20px;
             background: #2e7d32;
+            color: white;
             border: none;
             border-radius: 10px;
-            color: white;
             font-size: 18px;
             cursor: pointer;
         }
 
-        .chat-window {
-            display: none;
+        .mentor-card button:hover {
+            background: #256628;
+        }
+
+        /* صندوق الشات */
+        .chat-box {
             width: 70%;
-            margin: 50px auto;
-            background: rgba(0,0,0,0.65);
-            padding: 20px;
+            margin: 40px auto;
+            background: rgba(0,0,0,0.55);
+            padding: 25px;
             border-radius: 15px;
             box-shadow: 0 0 15px black;
-        }
-
-        .chat-box {
-            height: 350px;
-            overflow-y: auto;
-            padding: 10px;
-        }
-
-        .bubble {
-            max-width: 70%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 12px;
-            font-size: 18px;
-        }
-
-        .user {
-            background: white;
-            color: black;
-            margin-left: auto;
-        }
-
-        .ai {
-            background: #2e7d32;
-            color: white;
-            margin-right: auto;
-        }
-
-        .input-area {
-            display: flex;
-            margin-top: 15px;
+            display: none;
         }
 
         textarea {
-            width: 85%;
-            height: 60px;
+            width: 90%;
+            height: 80px;
             border-radius: 10px;
             border: none;
             padding: 10px;
@@ -134,7 +117,8 @@
         }
 
         button.send {
-            width: 12%;
+            margin-top: 15px;
+            padding: 12px 25px;
             background: #2e7d32;
             border: none;
             border-radius: 10px;
@@ -142,11 +126,22 @@
             font-size: 20px;
             cursor: pointer;
         }
+
+        .answer {
+            margin-top: 20px;
+            background: #2e7d32;
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            display: none;
+            font-size: 18px;
+        }
     </style>
 </head>
 
 <body>
 
+<!-- الهيدر -->
 <header>
     <a href="index.html">الرئيسية</a>
     <a href="about.html">تعرف على المنصة</a>
@@ -155,90 +150,108 @@
     <a href="class.html">الدرس</a>
 </header>
 
-<div class="mentors">
-    <div class="card" onclick="openChat('المرشد التقني')">
-        <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png">
-        <h3>المرشد التقني</h3>
-        <p>متخصص في البرمجة والتقنية</p>
-        <button>ابدأ الدردشة</button>
-    </div>
-
-    <div class="card" onclick="openChat('المرشد الطبي')">
-        <img src="https://cdn-icons-png.flaticon.com/512/387/387561.png">
-        <h3>المرشد الطبي</h3>
-        <p>متخصص في الصحة والطب</p>
-        <button>ابدأ الدردشة</button>
-    </div>
-
-    <div class="card" onclick="openChat('المرشد الإداري')">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
-        <h3>المرشد الإداري</h3>
-        <p>متخصص في الإدارة والتطوير</p>
-        <button>ابدأ الدردشة</button>
-    </div>
+<!-- اللوقو -->
+<div class="logo">
+    <img src="logo.jpg" alt="شعار المنصة">
 </div>
 
-<div class="chat-window" id="chatWindow">
-    <h2 id="mentorName"></h2>
+<h1>اختر مرشدك</h1>
 
-    <div class="chat-box" id="chatBox"></div>
+<!-- شبكة المرشدين -->
+<div class="mentors-grid">
 
-    <div class="input-area">
-        <textarea id="userInput" placeholder="اكتب سؤالك هنا..."></textarea>
-        <button class="send" onclick="sendMessage()">➤</button>
+    <!-- المرشد التقني -->
+    <div class="mentor-card" onclick="selectMentor('tech')">
+        <div class="icon">💻</div>
+        <h3>المرشد التقني</h3>
+        <p>متخصص في التقنية والبرمجة والشبكات.</p>
+        <button>ابدأ المحادثة</button>
     </div>
+
+    <!-- المرشد الطبي -->
+    <div class="mentor-card" onclick="selectMentor('medical')">
+        <div class="icon">🩺</div>
+        <h3>المرشد الطبي</h3>
+        <p>متخصص في أساسيات الطب والصحة.</p>
+        <button>ابدأ المحادثة</button>
+    </div>
+
+    <!-- المرشد الإداري -->
+    <div class="mentor-card" onclick="selectMentor('management')">
+        <div class="icon">📊</div>
+        <h3>المرشد الإداري</h3>
+        <p>متخصص في الإدارة واتخاذ القرار.</p>
+        <button>ابدأ المحادثة</button>
+    </div>
+
+</div>
+
+<!-- صندوق الشات -->
+<div id="chatBox" class="chat-box">
+    <h2>💬 اسأل مرشدك</h2>
+
+    <textarea id="question" placeholder="اكتب سؤالك هنا..."></textarea>
+    <br>
+    <button class="send" onclick="reply()">إرسال</button>
+
+    <div id="answer" class="answer"></div>
 </div>
 
 <script>
+let specialty = "";
 
-function openChat(name) {
-    document.getElementById("mentorName").textContent = name;
-    document.getElementById("chatWindow").style.display = "block";
-    document.getElementById("chatBox").innerHTML = "";
+function selectMentor(type) {
+    specialty = type;
+    document.getElementById("chatBox").style.display = "block";
+    document.getElementById("answer").style.display = "none";
 }
 
-/*  
-===========================================
-     🔥 دالة sendMessage الجديدة (ترسل إلى chat.php)
-===========================================
-*/
+function reply() {
+    let q = document.getElementById("question").value.trim();
+    let ans = document.getElementById("answer");
 
-function sendMessage() {
-    let input = document.getElementById("userInput");
-    let chat = document.getElementById("chatBox");
+    if (q === "") {
+        ans.style.display = "block";
+        ans.style.background = "#b71c1c";
+        ans.textContent = "✖ الرجاء كتابة سؤال";
+        return;
+    }
 
-    if (input.value.trim() === "") return;
+    let text = q.toLowerCase();
+    let response = "";
 
-    let userBubble = document.createElement("div");
-    userBubble.className = "bubble user";
-    userBubble.textContent = input.value;
-    chat.appendChild(userBubble);
+    /* المرشد التقني */
+    if (specialty === "tech") {
+        if (text.includes("برمجة")) response = "البرمجة هي إعطاء أوامر للحاسوب باستخدام لغات مثل Python وJavaScript.";
+        else if (text.includes("موقع")) response = "تطوير المواقع يتم باستخدام HTML وCSS وJavaScript.";
+        else if (text.includes("شبكات")) response = "الشبكات تربط الأجهزة ببعضها لتبادل البيانات. أهم المفاهيم: IP – Router – DNS.";
+        else if (text.includes("تطبيق")) response = "تطوير التطبيقات يتم باستخدام Flutter أو Swift أو Java.";
+        else response = "اسألني عن البرمجة، المواقع، التطبيقات، أو الشبكات.";
+    }
 
-    let aiBubble = document.createElement("div");
-    aiBubble.className = "bubble ai";
-    aiBubble.textContent = "جارٍ التفكير...";
-    chat.appendChild(aiBubble);
+    /* المرشد الطبي */
+    else if (specialty === "medical") {
+        if (text.includes("قلب")) response = "القلب يضخ الدم إلى جميع أجزاء الجسم.";
+        else if (text.includes("رئة")) response = "الرئتان مسؤولة عن تبادل الأكسجين وثاني أكسيد الكربون.";
+        else if (text.includes("عظام")) response = "العظام توفر الدعم للجسم وتساعد على الحركة.";
+        else if (text.includes("جهاز هضمي")) response = "الجهاز الهضمي مسؤول عن هضم الطعام وامتصاص العناصر الغذائية.";
+        else response = "اسألني عن القلب، الرئتين، العظام، أو أي عضو آخر.";
+    }
 
-    let question = input.value;
-    input.value = "";
-    chat.scrollTop = chat.scrollHeight;
+    /* المرشد الإداري */
+    else if (specialty === "management") {
+        if (text.includes("إدارة")) response = "الإدارة هي تنظيم الموارد لتحقيق الأهداف بكفاءة.";
+        else if (text.includes("قرار")) response = "اتخاذ القرار يعتمد على تحليل المعلومات واختيار أفضل بديل.";
+        else if (text.includes("قيادة")) response = "القيادة هي التأثير في الآخرين لتحقيق الأهداف.";
+        else if (text.includes("تنظيم")) response = "التنظيم هو ترتيب المهام وتوزيع الأدوار لتحقيق الإنتاجية.";
+        else response = "اسألني عن الإدارة، القيادة، أو اتخاذ القرار.";
+    }
 
-    // إرسال السؤال إلى chat.php
-    fetch("chat.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: "question=" + encodeURIComponent(question)
-    })
-    .then(res => res.text())
-    .then(answer => {
-        aiBubble.textContent = answer;
-        chat.scrollTop = chat.scrollHeight;
-    })
-    .catch(err => {
-        aiBubble.textContent = "حدث خطأ في الاتصال بالذكاء الاصطناعي.";
-    });
+    ans.style.display = "block";
+    ans.style.background = "#2e7d32";
+    ans.textContent = response;
+    document.getElementById("question").value = "";
 }
-
 </script>
 
 </body>
