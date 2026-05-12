@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -8,166 +7,83 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-image: url('background.jpg');
+            padding: 0;
+            font-family: "Cairo", sans-serif;
+            background: url("background.jpg") no-repeat center center fixed;
             background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            color: #ffffff;
+            text-align: center;
         }
 
-        /* الهيدر */
+        /* شريط الروابط */
         header {
-            width: 100%;
-            padding: 20px 40px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0,0,0,0.35);
-            backdrop-filter: blur(6px);
-            border-bottom: 3px solid #FFD700;
+            justify-content: flex-end;
+            padding: 20px 40px;
         }
 
-        header img {
-            height: 70px;
-        }
-
-        nav a {
+        header a {
             margin-left: 25px;
             text-decoration: none;
-            color: #ffffff;
-            font-weight: 600;
-            transition: 0.3s;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 5px black;
         }
 
-        nav a:hover {
-            color: #FFD700;
-        }
-
-        /* البانر */
+        /* القسم الرئيسي */
         .hero {
-            text-align: center;
-            padding: 140px 20px;
+            margin-top: 120px;
+        }
+
+        .hero img {
+            width: 180px;
+            height: auto;
         }
 
         .hero h1 {
-            font-size: 42px;
-            color: #ffffff;
-            margin-bottom: 15px;
+            margin-top: 25px;
+            font-size: 36px;
+            color: white;
+            text-shadow: 0 0 8px black;
         }
 
-        .hero p {
-            font-size: 20px;
-            color: #f0f0f0;
-            max-width: 600px;
-            margin: auto;
-            line-height: 1.8;
-        }
-
-        /* الأزرار */
-        .buttons a {
-            display: inline-block;
-            margin: 10px;
-            padding: 14px 28px;
-            background: #FFD700;
-            color: #1B4332;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .buttons a:hover {
-            background: #e6c200;
-        }
-
-        /* الفوتر */
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            padding: 20px;
-            background: rgba(0,0,0,0.4);
-            color: #ffffff;
-            border-top: 3px solid #FFD700;
-        }
-
-        /* زر الدردشة العائم (Gemini) */
-        .chat-float {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            background: #FFD700;
-            color: #1B4332;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 32px;
-            font-weight: bold;
+        .hero button {
+            margin-top: 30px;
+            padding: 14px 30px;
+            background: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 22px;
             cursor: pointer;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
-            animation: glow 1.5s infinite alternate;
-            z-index: 9999;
+            box-shadow: 0 0 10px black;
         }
 
-        @keyframes glow {
-            from {
-                box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-                transform: scale(1);
-            }
-            to {
-                box-shadow: 0 0 25px rgba(255, 215, 0, 1);
-                transform: scale(1.08);
-            }
-        }
-
-        .chat-float:hover {
-            background: #e6c200;
+        .hero button:hover {
+            background: #256628;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- الهيدر -->
-    <header>
-        <img src="logo.jpg" alt="شعار خبير">
-        <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="khabir2.html">المرشدون</a>
-            <a href="kabear8.html">الدروس</a>
-            <a href="update_page.html">حسابي</a>
-        </nav>
-    </header>
+<header>
+    <a href="login.html">التسجيل</a>
+    <a href="khabir2.html">المرشد</a>
+    <a href="student.html">الطالب</a>
+    <a href="class.html">الدرس</a>
+</header>
 
-    <!-- البانر -->
-    <section class="hero">
-        <h1>مرحباً بك في منصة خبير</h1>
-        <p>
-            منصة تعليمية تساعد الطلاب على الوصول إلى أفضل المرشدين  
-            وتقديم دروس مبسطة، شروحات، وتوجيهات تساعدك على تطوير مهاراتك  
-            في مختلف المجالات بطريقة سهلة وواضحة.
-        </p>
+<div class="hero">
+    <img src="logo.jpg" alt="شعار خبير">
 
-        <div class="buttons">
-            <a href="khabir2.html">ابدأ مع مرشد</a>
-            <a href="kabear8.html">تصفح الدروس</a>
-            <a href="class.html">درس تجريبي</a>
-        </div>
-    </section>
+    <h1>مرحبًا بكم في منصة خبير</h1>
 
-    <!-- الفوتر -->
-    <footer>
-        © 2026 منصة خبير — جميع الحقوق محفوظة
-    </footer>
-
-    <!-- زر الدردشة العائم (Google Gemini) -->
-    <div class="chat-float" onclick="window.open('https://gemini.google.com/app', '_blank')">
-        🤖
-    </div>
+    <button onclick="location.href='khabir2.html'">
+        تعرّف على منصة خبير
+    </button>
+</div>
 
 </body>
 </html>
+
