@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>درس التفكير المنطقي</title>
+    <title>الدروس المتخصصة</title>
 
     <style>
         body {
@@ -12,9 +12,10 @@
             background: url("background.jpg") no-repeat center center fixed;
             background-size: cover;
             color: white;
+            text-align: center;
         }
 
-        /* الهيدر */
+        /* الهيدر (نفس الصفحة الأصلية) */
         header {
             display: flex;
             justify-content: flex-end;
@@ -30,7 +31,7 @@
             text-shadow: 0 0 5px black;
         }
 
-        /* اللوغو */
+        /* اللوقو (نفس الصفحة الأصلية) */
         .logo {
             text-align: center;
             margin-top: 20px;
@@ -40,34 +41,66 @@
             width: 150px;
         }
 
-        /* صندوق الدرس */
-        .lesson-box {
-            width: 70%;
+        /* عنوان الصفحة */
+        h1 {
+            margin-top: 20px;
+            font-size: 36px;
+            text-shadow: 0 0 8px black;
+        }
+
+        /* بطاقات الدروس */
+        .lessons-grid {
+            width: 80%;
             margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .lesson-card {
             background: rgba(255,255,255,0.9);
-            padding: 40px;
+            padding: 25px;
             border-radius: 15px;
             color: #333;
             box-shadow: 0 0 15px rgba(0,0,0,0.4);
+            transition: 0.3s;
         }
 
-        h1 {
-            text-align: center;
-            font-size: 32px;
-            color: #2c3e50;
+        .lesson-card:hover {
+            transform: scale(1.05);
         }
 
-        h2 {
-            color: #45a091;
-            margin-top: 25px;
+        .lesson-card h3 {
+            font-size: 24px;
+            color: #2e7d32;
         }
 
-        p, li {
-            font-size: 20px;
-            line-height: 1.8;
+        .lesson-card p {
+            font-size: 18px;
+            color: #444;
         }
 
-        /* مربع السؤال */
+        .lesson-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #2e7d32;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .lesson-card a:hover {
+            background: #256628;
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        /* صندوق الأسئلة (نفس الصفحة الأصلية) */
         .ask-box {
             width: 70%;
             margin: 40px auto;
@@ -101,16 +134,6 @@
         button:hover {
             background: #256628;
         }
-
-        .msg {
-            margin-top: 15px;
-            padding: 10px;
-            background: #2e7d32;
-            color: white;
-            border-radius: 10px;
-            display: none;
-            font-size: 18px;
-        }
     </style>
 </head>
 
@@ -125,43 +148,43 @@
     <a href="class.html">الدرس</a>
 </header>
 
-<!-- اللوغو -->
+<!-- اللوقو -->
 <div class="logo">
     <img src="logo.jpg" alt="شعار المنصة">
 </div>
 
-<!-- محتوى الدرس -->
-<div class="lesson-box">
-    <h1>أساسيات التفكير المنطقي</h1>
+<h1>الدروس المتخصصة</h1>
 
-    <p>
-        التفكير المنطقي هو القدرة على تحليل المعلومات، فهم العلاقات بين الأشياء،
-        واستخدام الأدلة للوصول إلى نتائج صحيحة. يساعدنا هذا النوع من التفكير على اتخاذ قرارات أفضل
-        وتجنب الأخطاء الناتجة عن التسرع أو سوء الفهم.
-    </p>
+<!-- شبكة الدروس -->
+<div class="lessons-grid">
 
-    <h2>خطوات التفكير المنطقي</h2>
-    <ul>
-        <li>تحديد المشكلة بوضوح</li>
-        <li>جمع المعلومات المتعلقة بالمشكلة</li>
-        <li>تحليل البيانات وربطها ببعض</li>
-        <li>اختبار الفرضيات المحتملة</li>
-        <li>اتخاذ القرار بناءً على الأدلة</li>
-    </ul>
+    <!-- درس تقني -->
+    <div class="lesson-card">
+        <div class="icon">💻</div>
+        <h3>الدرس التقني</h3>
+        <p>تعلم أساسيات التقنية والبرمجة والشبكات.</p>
+        <a href="lesson_tech.html">ابدأ الدرس</a>
+    </div>
 
-    <h2>أهمية التفكير المنطقي</h2>
-    <p>
-        التفكير المنطقي يساعد على حل المشكلات، فهم المواقف المعقدة، واتخاذ قرارات صحيحة.
-        كما أنه مهارة أساسية في الدراسة، العمل، والحياة اليومية.
-    </p>
+    <!-- درس طبي -->
+    <div class="lesson-card">
+        <div class="icon">🩺</div>
+        <h3>الدرس الطبي</h3>
+        <p>معلومات طبية مبسطة لفهم جسم الإنسان.</p>
+        <a href="lesson_medical.html">ابدأ الدرس</a>
+    </div>
 
-    <h2>هل يمكن تعلم التفكير المنطقي؟</h2>
-    <p>
-        نعم، يمكن تعلمه من خلال التدريب المستمر، حل الألغاز، تحليل المواقف، وممارسة التفكير النقدي.
-    </p>
+    <!-- درس إداري -->
+    <div class="lesson-card">
+        <div class="icon">📊</div>
+        <h3>الدرس الإداري</h3>
+        <p>أساسيات الإدارة واتخاذ القرار.</p>
+        <a href="lesson_management.html">ابدأ الدرس</a>
+    </div>
+
 </div>
 
-<!-- مربع طرح السؤال -->
+<!-- صندوق الأسئلة -->
 <div class="ask-box">
     <h2>اسأل مرشدك</h2>
 
