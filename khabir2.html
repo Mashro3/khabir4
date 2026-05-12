@@ -30,7 +30,6 @@
             text-shadow: 0 0 5px black;
         }
 
-        /* بطاقات المرشدين */
         .mentors {
             display: flex;
             justify-content: center;
@@ -84,7 +83,6 @@
             cursor: pointer;
         }
 
-        /* نافذة الدردشة */
         .chat-window {
             display: none;
             width: 70%;
@@ -157,7 +155,6 @@
     <a href="class.html">الدرس</a>
 </header>
 
-<!-- بطاقات المرشدين -->
 <div class="mentors">
     <div class="card" onclick="openChat('المرشد التقني')">
         <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png">
@@ -181,7 +178,6 @@
     </div>
 </div>
 
-<!-- نافذة الدردشة -->
 <div class="chat-window" id="chatWindow">
     <h2 id="mentorName"></h2>
 
@@ -197,67 +193,4 @@
 function openChat(name) {
     document.getElementById("mentorName").textContent = name;
     document.getElementById("chatWindow").style.display = "block";
-    document.getElementById("chatBox").innerHTML = "";
-}
-
-function sendMessage() {
-    let input = document.getElementById("userInput");
-    let chat = document.getElementById("chatBox");
-
-    if (input.value.trim() === "") return;
-
-    // رسالة المستخدم
-    let userBubble = document.createElement("div");
-    userBubble.className = "bubble user";
-    userBubble.textContent = input.value;
-    chat.appendChild(userBubble);
-
-    // رسالة الذكاء الاصطناعي (مؤقتة)
-    let aiBubble = document.createElement("div");
-    aiBubble.className = "bubble ai";
-    aiBubble.textContent = "جارٍ التفكير...";
-    chat.appendChild(aiBubble);
-
-    let question = input.value.toLowerCase();
-
-    setTimeout(() => {
-        aiBubble.textContent = generateSmartAnswer(question);
-    }, 900);
-
-    input.value = "";
-    chat.scrollTop = chat.scrollHeight;
-}
-
-function generateSmartAnswer(q) {
-    // تقنية / برمجة
-    if (q.includes("برمجة") || q.includes("كود") || q.includes("html") || q.includes("php") || q.includes("موقع")) {
-        return "يبدو أن سؤالك تقني 👨‍💻.\nأفضل أسلوب هو تقسيم المشكلة لخطوات صغيرة، وتجربة كل خطوة على حدة.\nإذا حابة، أقدر أقترح عليك كود أو هيكل جاهز للمشروع.";
-    }
-
-    // صحة / طب
-    if (q.includes("صحة") || q.includes("مرض") || q.includes("دواء") || q.includes("طبيب")) {
-        return "سؤال مهم يتعلق بالصحة 🩺.\nمن الأفضل دائمًا استشارة طبيب مختص، لكن بشكل عام:\nالراحة، شرب الماء، والمتابعة الطبية هي الأساس.\nإذا حابة، أقدر أشرح لك نمط حياة صحي مناسب.";
-    }
-
-    // إدارة / مشروع
-    if (q.includes("إدارة") || q.includes("قيادة") || q.includes("مشروع") || q.includes("فريق")) {
-        return "في الإدارة الفعّالة 📚:\n1- وضوح الهدف\n2- توزيع المهام\n3- المتابعة والتقييم\nأخبريني عن نوع مشروعك، وأقترح عليك خطة بسيطة تناسبه.";
-    }
-
-    // تحية
-    if (q.includes("السلام عليكم")) {
-        return "وعليكم السلام ورحمة الله وبركاته 🌷\nسعيدة بسؤالك، كيف أقدر أساعدك اليوم؟";
-    }
-
-    // سؤال قصير جدًا
-    if (q.length < 5) {
-        return "سؤالك قصير جدًا، هل يمكنك توضيحه أكثر؟ 🙂";
-    }
-
-    // رد عام ذكي
-    return "سؤال جميل 👌.\nأفضل طريقة للتعامل مع هذا الموضوع هي فهم الهدف أولًا، ثم اختيار خطوات عملية بسيطة.\nإذا حابة، أقدر أحول سؤالك إلى خطة من 3–5 خطوات واضحة.";
-}
-</script>
-
-</body>
-</html>
+    document.getElementById("chatBox").innerHTML
