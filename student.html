@@ -111,6 +111,7 @@
     <div id="answer" class="answer"></div>
 </div>
 
+<!-- 🔥 كود Gemini API — ضعي مفتاحك هنا -->
 <script>
 async function askGemini() {
     let q = document.getElementById("question").value.trim();
@@ -129,8 +130,8 @@ async function askGemini() {
     ans.textContent = "⏳ جاري الحصول على الإجابة من Gemini...";
 
     // 🔥 ضعي مفتاح Gemini API هنا
-    const API_KEY = "YOUR_API_KEY_HERE";  // ← ضعي مفتاحك هنا
-AIzaSyCMux4tGIY_3cirqNR7r5xSrP_IjTm6smg
+    const API_KEY = "YOUR_API_KEY_HERE";AIzaSyAVsCzXcJjdXUTPmFZeQXd-2VqbTWm63Kg  // ← ضعي مفتاحك هنا
+
     const prompt = `
     أنت مساعد متخصص. أجب بإيجاز ووضوح.
     التخصص: ${type}
@@ -164,37 +165,10 @@ AIzaSyCMux4tGIY_3cirqNR7r5xSrP_IjTm6smg
     document.getElementById("question").value = "";
 }
 </script>
-<script>
-async function askGemini(question) {
-    const apiKey = "ضعـي_المفتاح_هنا"; // ← ضعي مفتاح Gemini API هنا
-
-    const response = await fetch(
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + apiKey,
-        {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                contents: [{ parts: [{ text: question }] }]
-            })
-        }
-    );
-
-    const data = await response.json();
-    return data.candidates?.[0]?.content?.parts?.[0]?.text || "⚠ لا يوجد رد من Gemini";
-}
-
-// ربط الدردشة بزر الإرسال
-document.getElementById("sendBtn").addEventListener("click", async () => {
-    const input = document.getElementById("questionInput").value;
-    const output = document.getElementById("answerBox");
-
-    output.innerHTML = "⏳ جاري الحصول على الإجابة من Gemini...";
-
-    const answer = await askGemini(input);
-    output.innerHTML = answer;
-});
-</script>
 
 </body>
 </html>
+
+
+
 
