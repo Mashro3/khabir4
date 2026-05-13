@@ -8,12 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $role = $_POST['role'];
 
-    // تشفير كلمة المرور
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
     // إضافة المستخدم
     $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $name, $email, $hashed_password, $role);
+    $stmt->bind_param("ssss", $name, $email,password, $role);
 
     if ($stmt->execute()) {
 
