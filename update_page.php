@@ -3,8 +3,7 @@ session_start();
 include "db.php";
 
 if (!isset($_SESSION['email'])) {
- header("Location: signup.php");
- 
+    header("Location: signup.php");
     exit();
 }
 
@@ -14,6 +13,7 @@ $sql = "SELECT * FROM users WHERE email='$email'";
 $result = mysqli_query($conn, $sql);
 $user = mysqli_fetch_assoc($result);
 ?>
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
