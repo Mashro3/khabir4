@@ -3,9 +3,8 @@ CREATE TABLE users (
     name VARCHAR(100) NOT NULL,
     email VARCHAR(150) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-  ALTER TABLE users ADD login_count INT DEFAULT 0;
-  
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    login_count INT DEFAULT 0
 );
 
 CREATE TABLE messages (
