@@ -2,9 +2,14 @@
 session_start();
 include "db.php";
 
+// إذا المستخدم غير مسجل دخول → تحويله لصفحة التسجيل
 if (!isset($_SESSION['email'])) {
     header("Location: signup.php");
     exit();
+}
+?>
+
+
 }
 
 $email = $_SESSION['email'];
