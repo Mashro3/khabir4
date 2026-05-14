@@ -1,145 +1,77 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>الدروس المتخصصة</title>
+<meta charset="UTF-8">
+<title>الدرس</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Cairo", sans-serif;
-            background: url("background.jpg") no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            text-align: center;
-        }
+<link rel="stylesheet" href="style.css">
 
-        /* الهيدر (نفس الصفحة الأصلية) */
-        header {
-            display: flex;
-            justify-content: flex-end;
-            padding: 20px 40px;
-        }
+<style>
+/* صندوق الدرس */
+.lesson-box {
+    width: 70%;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 40px;
+    border-radius: 15px;
+    color: #333;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    text-align: center;
+}
 
-        header a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-            text-shadow: 0 0 5px black;
-        }
+/* صندوق المرشد */
+.ask-box {
+    width: 70%;
+    margin: 30px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 15px;
+    color: #333;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    text-align: center;
+}
 
-        /* اللوقو (نفس الصفحة الأصلية) */
-        .logo {
-            text-align: center;
-            margin-top: 20px;
-        }
+/* زر المرشد */
+.ask-btn {
+    background-color: #1B4332;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(27, 67, 50, 0.6);
+    animation: glowBtn 1.5s infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
 
-        .logo img {
-            width: 150px;
-        }
+/* تأثير اللمعان */
+@keyframes glowBtn {
+    from {
+        box-shadow: 0 0 10px rgba(27, 67, 50, 0.4);
+        transform: scale(1);
+    }
+    to {
+        box-shadow: 0 0 25px rgba(27, 67, 50, 0.9);
+        transform: scale(1.05);
+    }
+}
 
-        /* عنوان الصفحة */
-        h1 {
-            margin-top: 20px;
-            font-size: 36px;
-            text-shadow: 0 0 8px black;
-        }
+.ask-btn:hover {
+    background-color: #145a41;
+}
+</style>
 
-        /* بطاقات الدروس */
-        .lessons-grid {
-            width: 80%;
-            margin: 40px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-        }
-
-        .lesson-card {
-            background: rgba(255,255,255,0.9);
-            padding: 25px;
-            border-radius: 15px;
-            color: #333;
-            box-shadow: 0 0 15px rgba(0,0,0,0.4);
-            transition: 0.3s;
-        }
-
-        .lesson-card:hover {
-            transform: scale(1.05);
-        }
-
-        .lesson-card h3 {
-            font-size: 24px;
-            color: #2e7d32;
-        }
-
-        .lesson-card p {
-            font-size: 18px;
-            color: #444;
-        }
-
-        .lesson-card a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: #2e7d32;
-            color: white;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        .lesson-card a:hover {
-            background: #256628;
-        }
-
-        .icon {
-            font-size: 50px;
-            margin-bottom: 10px;
-        }
-
-        /* صندوق الأسئلة (نفس الصفحة الأصلية) */
-        .ask-box {
-            width: 70%;
-            margin: 40px auto;
-            background: rgba(0,0,0,0.55);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px black;
-            text-align: center;
-        }
-
-        textarea {
-            width: 90%;
-            height: 80px;
-            border-radius: 10px;
-            border: none;
-            padding: 10px;
-            font-size: 18px;
-        }
-
-        button {
-            margin-top: 15px;
-            padding: 12px 25px;
-            background: #2e7d32;
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #256628;
-        }
-    </style>
 </head>
 
 <body>
 
-<!-- الهيدر -->
 <header>
     <a href="index.html">الرئيسية</a>
     <a href="about.html">تعرف على المنصة</a>
@@ -148,72 +80,27 @@
     <a href="class.html">الدرس</a>
 </header>
 
-<!-- اللوقو -->
 <div class="logo">
-    <img src="logo.jpg" alt="شعار المنصة">
+    <img src="logo.jpg">
 </div>
 
-<h1>الدروس المتخصصة</h1>
-
-<!-- شبكة الدروس -->
-<div class="lessons-grid">
-
-    <!-- درس تقني -->
-    <div class="lesson-card">
-        <div class="icon">💻</div>
-        <h3>الدرس التقني</h3>
-        <p>تعلم أساسيات التقنية والبرمجة والشبكات.</p>
-        <a href="lesson_tech.html">ابدأ الدرس</a>
-    </div>
-
-    <!-- درس طبي -->
-    <div class="lesson-card">
-        <div class="icon">🩺</div>
-        <h3>الدرس الطبي</h3>
-        <p>معلومات طبية مبسطة لفهم جسم الإنسان.</p>
-        <a href="lesson_medical.html">ابدأ الدرس</a>
-    </div>
-
-    <!-- درس إداري -->
-    <div class="lesson-card">
-        <div class="icon">📊</div>
-        <h3>الدرس الإداري</h3>
-        <p>أساسيات الإدارة واتخاذ القرار.</p>
-        <a href="lesson_management.html">ابدأ الدرس</a>
-    </div>
-
+<!-- صندوق الدرس -->
+<div class="lesson-box">
+    <h1>الدرس التعليمي</h1>
+    <p>
+        هنا يظهر محتوى الدرس الذي اختره الطالب،  
+        ويمكنك إضافة نصوص أو فيديو أو صور تعليمية.
+    </p>
 </div>
 
-<!-- صندوق الأسئلة -->
+<!-- صندوق المرشد -->
 <div class="ask-box">
-    <h2>اسأل مرشدك</h2>
+    <h2>لمزيد من الأسئلة اسأل مرشدك</h2>
 
-    <textarea id="question" placeholder="اكتب سؤالك هنا..."></textarea>
-    <br>
-    <button onclick="send()">إرسال</button>
-
-    <div id="msg" class="msg">✔ تم الإرسال بنجاح</div>
+    <button class="ask-btn" onclick="window.location.href='khabir2.html'">
+        🤖 اسأل مرشدك الآن
+    </button>
 </div>
-
-<script>
-function send() {
-    let q = document.getElementById("question").value.trim();
-    let msg = document.getElementById("msg");
-
-    if (q === "") {
-        msg.style.display = "block";
-        msg.style.background = "#b71c1c";
-        msg.textContent = "✖ الرجاء كتابة سؤال";
-        return;
-    }
-
-    msg.style.display = "block";
-    msg.style.background = "#2e7d32";
-    msg.textContent = "✔ تم الإرسال بنجاح";
-
-    document.getElementById("question").value = "";
-}
-</script>
 
 </body>
 </html>
