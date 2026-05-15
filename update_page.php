@@ -106,21 +106,22 @@
   <div class="container">
     <h2>تعديل بيانات الحساب</h2>
 
-    <form>
-      <label>الاسم الكامل</label>
-      <input type="text" placeholder="اكتب اسمك">
+   <form action="update_page.php" method="POST">
+    <label>الاسم الكامل</label>
+    <input type="text" name="name" required>
 
-      <label>البريد الإلكتروني</label>
-      <input type="email" placeholder="example@email.com">
+    <label>البريد الإلكتروني</label>
+    <input type="email" name="email" required>
 
-      <label>رقم الجوال</label>
-      <input type="text" placeholder="05xxxxxxxx">
+    <label>رقم الجوال</label>
+    <input type="text" name="phone" required>
 
-      <label>كلمة المرور الجديدة</label>
-      <input type="password" placeholder="••••••••">
+    <label>كلمة المرور الجديدة</label>
+    <input type="password" name="password" required>
 
-      <button type="submit">حفظ التعديلات</button>
-    </form>
+    <button type="submit">حفظ التعديلات</button>
+</form>
+ 
   </div>
 
 </body>
