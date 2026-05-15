@@ -7,6 +7,7 @@ CREATE TABLE users (
     login_count INT DEFAULT 0
 );
 
+
 CREATE TABLE messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
