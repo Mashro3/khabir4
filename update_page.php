@@ -19,12 +19,10 @@ $user = mysqli_fetch_assoc($result);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $name = $_POST['name'];
-    $phone = $_POST['phone'];
     $password = $_POST['password'];
 
     $update = "UPDATE users SET 
                 name='$name',
-                phone='$phone',
                 password='$password'
                WHERE email='$email'";
 
