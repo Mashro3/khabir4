@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 include "db.php";
@@ -21,9 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $password = $_POST['password'];
 
+    // تشفير كلمة المرور
+    $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
+
     $update = "UPDATE users SET 
                 name='$name',
-                password='$password'
+                password='$hashed_pass'
                WHERE email='$email'";
 
     if (mysqli_query($conn, $update)) {
