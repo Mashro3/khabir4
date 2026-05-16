@@ -13,7 +13,7 @@
             background-size: cover;
         }
 
-        /* شريط الروابط */
+        /* الهيدر */
         header {
             display: flex;
             justify-content: flex-end;
@@ -29,61 +29,51 @@
             text-shadow: 0 0 5px black;
         }
 
-        /* منطقة المحتوى */
-        .page-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: calc(100vh - 80px);
-        }
-
-        .form-box {
-            margin-top: 80px;
+        /* صندوق النموذج */
+        .container {
             width: 420px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px 25px 35px;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.6);
+            box-shadow: 0 0 15px rgba(0,0,0,0.7);
             text-align: center;
         }
 
-        .form-box img {
-            width: 120px;
-            height: auto;
+        .container img {
+            width: 150px;
             margin-bottom: 10px;
         }
 
-        .form-box h2 {
-            margin: 10px 0 20px;
-            font-size: 26px;
+        .container h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
             color: #2e7d32;
+            text-shadow: 0 0 5px white;
         }
 
-        .field-group {
-            text-align: right;
-            margin-bottom: 18px;
-        }
-
-        .field-group label {
+        label {
             display: block;
-            margin-bottom: 6px;
-            font-size: 15px;
-            color: #333;
+            text-align: right;
+            margin: 10px 0 5px;
+            font-size: 16px;
             font-weight: bold;
+            color: #333;
         }
 
-        .field-group input {
+        input {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border-radius: 8px;
             border: 1px solid #888;
-            font-size: 15px;
+            font-size: 16px;
+            margin-bottom: 15px;
             box-sizing: border-box;
         }
 
         button {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             background: #2e7d32;
             color: white;
             border: none;
@@ -109,32 +99,26 @@
     <a href="class.html">الدرس</a>
 </header>
 
-<div class="page-wrapper">
-    <div class="form-box">
-        <img src="logo.jpg" alt="شعار خبير">
+<div class="container">
 
-        <h2>تحديث بيانات الحساب</h2>
+    <img src="logo.jpg" alt="شعار خبير">
 
-        <form method="POST" action="update_page.php">
+    <h2>تحديث بيانات الحساب</h2>
 
-            <div class="field-group">
-                <label>الاسم:</label>
-                <input type="text" name="name" required>
-            </div>
+    <form method="POST" action="update_page.php">
 
-            <div class="field-group">
-                <label>البريد الإلكتروني:</label>
-                <input type="email" name="email" required>
-            </div>
+        <label>الاسم:</label>
+        <input type="text" name="name" required>
 
-            <div class="field-group">
-                <label>كلمة المرور الجديدة:</label>
-                <input type="password" name="password" required>
-            </div>
+        <label>البريد الإلكتروني:</label>
+        <input type="email" name="email" required>
 
-            <button type="submit">حفظ التعديلات</button>
-        </form>
-    </div>
+        <label>كلمة المرور الجديدة:</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">حفظ التعديلات</button>
+    </form>
+
 </div>
 
 </body>
