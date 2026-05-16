@@ -35,13 +35,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $update = "UPDATE users SET name = ?, password = ? WHERE email = ?";
     $stmt = mysqli_prepare($conn, $update);
     mysqli_stmt_bind_param($stmt, "sss", $name, $hashed_pass, $email);
-
-    if (mysqli_stmt_execute($stmt)) {
-        echo "<script>alert('تم تحديث البيانات بنجاح');</script>";
-    } else {
-        echo "<script>alert('حدث خطأ أثناء التحديث');</script>";
-    }
+if (mysqli_stmt_execute($stmt)) {
+    echo "<script>
+        alert('تم تحديث البيانات بنجاح');
+        window.location.href='index.html'; 
+    </script>";
+} else {
+    echo "<script>alert('حدث خطأ أثناء التحديث');</script>";
 }
+ 
+
 ?>
 
 <!DOCTYPE html>
