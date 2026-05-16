@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>حسابي | منصة خبير</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Cairo", sans-serif;
+            background: url("background.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* الهيدر */
+        header {
+            background: rgba(0, 0, 0, 0.45);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            height: 55px;
+        }
+
+        header nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 5px black;
+        }
+
+        /* صندوق البروفايل */
+        .profile-box {
+            width: 420px;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.7);
+            text-align: center;
+        }
+
+        .profile-box h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #2e7d32;
+        }
+
+        .info {
+            font-size: 18px;
+            margin: 12px 0;
+            color: #333;
+        }
+
+        a.btn {
+            display: block;
+            margin-top: 20px;
+            background: #2e7d32;
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.7);
+        }
+
+        a.btn:hover {
+            background: #256628;
+        }
+
+        .logout {
+            margin-top: 15px;
+            display: inline-block;
+            color: #d9534f;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .logout:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo.jpg" alt="شعار خبير">
+
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="class.html">الدرس</a>
+        <a href="student.html">الطالب</a>
+        <a href="khabir2.html">المرشد</a>
+    </nav>
+</header>
+
+<div class="profile-box">
+    <h2>بيانات حسابك</h2>
+
+    <!-- هنا الآن بيانات ثابتة، ويمكن لاحقًا ربطها بـ PHP -->
+    <div class="info">👤 الاسم: اسم المستخدم</div>
+    <div class="info">📧 البريد: user@example.com</div>
+
+    <a class="btn" href="update_page.php">تعديل البيانات</a>
+    <a class="logout" href="logout.php">تسجيل الخروج</a>
+</div>
+
+</body>
+</html>
