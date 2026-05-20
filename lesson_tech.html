@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
-    <title>درس تقني بسيط</title>
+    <title>درس التقنية والبرمجة</title>
 
     <style>
         body {
@@ -11,10 +12,10 @@
             font-family: "Cairo", sans-serif;
             background: url("background.jpg") no-repeat center center fixed;
             background-size: cover;
-            color: white;
+            text-align: center;
         }
 
-        /* الهيدر */
+        /* شريط الروابط */
         header {
             display: flex;
             justify-content: flex-end;
@@ -30,83 +31,75 @@
             text-shadow: 0 0 5px black;
         }
 
-        /* اللوقو */
-        .logo {
-            text-align: center;
-            margin-top: 20px;
-        }
-
+        /* لوقو */
         .logo img {
-            width: 150px;
+            width: 180px;
+            margin-top: 20px;
+            filter: drop-shadow(0 0 8px black);
         }
 
         /* صندوق الدرس */
-        .lesson-box {
-            width: 70%;
+        .lesson-container {
+            background: rgba(255, 255, 255, 0.92);
+            width: 75%;
             margin: 40px auto;
-            background: rgba(255,255,255,0.9);
-            padding: 40px;
+            padding: 30px;
             border-radius: 15px;
-            color: #333;
-            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+            box-shadow: 0 0 15px #00000070;
+            text-align: right;
         }
 
-        h1 {
-            text-align: center;
-            font-size: 32px;
-            color: #2c3e50;
-        }
-
+        h1,
         h2 {
-            color: #45a091;
-            margin-top: 25px;
+            color: #333;
         }
 
-        p, li {
+        p,
+        ul {
             font-size: 20px;
-            line-height: 1.8;
+            line-height: 1.9;
         }
 
-        /* صندوق الشات */
-        .chat-box {
-            width: 70%;
-            margin: 40px auto;
-            background: rgba(0,0,0,0.55);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px black;
+        /* صندوق الأسئلة */
+        .ask-box {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff8d1;
+            border: 2px solid #ffd000;
+            border-radius: 10px;
         }
 
         textarea {
-            width: 90%;
-            height: 80px;
-            border-radius: 10px;
-            border: none;
+            width: 100%;
+            height: 120px;
             padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
             font-size: 18px;
         }
 
-        button {
-            margin-top: 15px;
-            padding: 12px 25px;
+        .ask-btn {
+            margin-top: 10px;
             background: #2e7d32;
+            color: white;
+            padding: 12px 25px;
             border: none;
             border-radius: 10px;
-            color: white;
             font-size: 20px;
             cursor: pointer;
+            box-shadow: 0 0 8px black;
         }
 
-        button:hover {
+        .ask-btn:hover {
             background: #256628;
         }
 
-        .answer {
+        .ai-answer {
             margin-top: 20px;
-            background: #2e7d32;
             padding: 15px;
-            border-radius: 10px;
-            color: white;
+            background: #e8ffe8;
+            border-left: 5px solid #2e7d32;
+            border-radius: 8px;
             display: none;
             font-size: 18px;
         }
@@ -115,108 +108,108 @@
 
 <body>
 
-<!-- الهيدر -->
-<header>
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html">تعرف على المنصة</a>
-    <a href="khabir2.html">المرشد</a>
-    <a href="student.html">الطالب</a>
-    <a href="class.html">الدرس</a>
-</header>
+    <header>
+        <a href="index.html">الرئيسية</a>
+        <a href="login.html">التسجيل</a>
+        <a href="khabir2.html">المرشد</a>
+        <a href="student.html">الطالب</a>
+        <a href="class.html">الدرس</a>
+    </header>
 
-<!-- اللوقو -->
-<div class="logo">
-    <img src="logo.jpg" alt="شعار المنصة">
-</div>
+    <div class="logo">
+        <img src="logo.jpg" alt="شعار خبير">
+    </div>
 
-<!-- محتوى الدرس -->
-<div class="lesson-box">
-    <h1>درس تقني بسيط</h1>
+    <div class="lesson-container">
 
-    <p>
-        هذا درس تقني مبسط يساعدك على فهم أهم المفاهيم الأساسية في عالم التقنية.
-        الهدف هو أن تتعرف على معنى البرمجة، ما هو الحاسوب، وكيف تعمل التطبيقات.
-    </p>
+        <h1>درس: أساسيات التقنية والبرمجة</h1>
 
-    <h2>ما هي التقنية؟</h2>
-    <p>
-        التقنية هي استخدام الأدوات والبرامج والأجهزة لحل المشكلات وتسهيل الحياة.
-    </p>
+        <h2>ما هي التقنية؟</h2>
+        <p>
+            التقنية هي استخدام الأدوات والبرامج والأجهزة لحل المشكلات وتسهيل حياة الإنسان.
+            تشمل الهواتف، الحواسيب، التطبيقات، الإنترنت، الذكاء الاصطناعي، وغيرها.
+        </p>
 
-    <h2>ما هي البرمجة؟</h2>
-    <p>
-        البرمجة هي إعطاء أوامر للحاسوب ليقوم بمهام معينة مثل تشغيل لعبة أو تطبيق.
-    </p>
+        <h2>أساسيات التقنية</h2>
+        <ul>
+            <li>فهم مكونات الحاسوب (معالج – ذاكرة – تخزين)</li>
+            <li>التعامل مع أنظمة التشغيل مثل Windows و Android</li>
+            <li>استخدام الإنترنت والتطبيقات</li>
+            <li>معرفة أساسيات الأمن السيبراني</li>
+        </ul>
 
-    <h2>أمثلة على مجالات التقنية</h2>
-    <ul>
-        <li>تطوير المواقع</li>
-        <li>تطوير التطبيقات</li>
-        <li>الأمن السيبراني</li>
-        <li>الذكاء الاصطناعي</li>
-    </ul>
-</div>
+        <h2>ما هي البرمجة؟</h2>
+        <p>
+            البرمجة هي كتابة أوامر للحاسوب ليقوم بتنفيذ مهام معينة.
+            مثل إنشاء تطبيق، موقع، لعبة، أو نظام ذكي.
+        </p>
 
-<!-- صندوق الشات -->
-<div class="chat-box">
-    <h2>💬 اسأل عن الدرس</h2>
+        <h2>أساسيات البرمجة</h2>
+        <ul>
+            <li>المتغيرات (Variables)</li>
+            <li>الشروط (If Statements)</li>
+            <li>الحلقات (Loops)</li>
+            <li>الدوال (Functions)</li>
+            <li>المدخلات والمخرجات</li>
+        </ul>
 
-    <textarea id="question" placeholder="اكتب سؤالك عن الدرس..."></textarea>
-    <br>
-    <button onclick="reply()">إرسال</button>
+        <h2>مثال بسيط</h2>
+        <p>
+            إذا أردت أن تجعل الحاسوب يطبع كلمة “Hello”، فأنت تكتب له أمرًا مثل:
+            <br><br>
+            <code>print("Hello")</code>
+        </p>
 
-    <div id="answer" class="answer"></div>
-</div>
+        <div class="ask-box">
+            <h3>اسأل عن الدرس</h3>
+            <p>اكتب سؤالك وسيقوم الذكاء الصناعي بالإجابة عن الأسئلة المتعلقة بالدرس فقط.</p>
 
-<script>
-function reply() {
-    let q = document.getElementById("question").value.trim();
-    let ans = document.getElementById("answer");
+            <textarea id="question" placeholder="اكتب سؤالك هنا..."></textarea>
+            <button class="ask-btn" onclick="askAI()">اسأل مرشدك</button>
 
-    if (q === "") {
-        ans.style.display = "block";
-        ans.style.background = "#b71c1c";
-        ans.textContent = "✖ الرجاء كتابة سؤال";
-        return;
-    }
+            <div class="ai-answer" id="aiAnswer"></div>
+        </div>
 
-    let text = q.toLowerCase();
+    </div>
 
-    // ردود ذكية حسب الكلمات المفتاحية
-    if (text.includes("برمجة") || text.includes("programming")) {
-        ans.textContent = "البرمجة هي عملية كتابة أوامر للحاسوب باستخدام لغات مثل Python وJavaScript لتنفيذ مهام محددة.";
-    }
-    else if (text.includes("لغة") || text.includes("python") || text.includes("javascript")) {
-        ans.textContent = "لغات البرمجة هي أدوات للتواصل مع الحاسوب. Python مناسبة للمبتدئين، بينما JavaScript تُستخدم لتطوير المواقع.";
-    }
-    else if (text.includes("موقع") || text.includes("مواقع") || text.includes("ويب")) {
-        ans.textContent = "تطوير المواقع يعتمد على HTML وCSS وJavaScript. HTML للبناء، CSS للتصميم، وJavaScript للتفاعل.";
-    }
-    else if (text.includes("تطبيق") || text.includes("تطبيقات") || text.includes("app")) {
-        ans.textContent = "تطوير التطبيقات يتم باستخدام لغات مثل Flutter أو Swift أو Java حسب نوع التطبيق.";
-    }
-    else if (text.includes("شبكة") || text.includes("شبكات") || text.includes("network")) {
-        ans.textContent = "الشبكات هي ربط أجهزة معًا لتبادل البيانات. أهم المفاهيم: IP – Router – Switch – DNS.";
-    }
-    else if (text.includes("تقنية") || text.includes("التقنية") || text.includes("technology")) {
-        ans.textContent = "التقنية تشمل البرمجة، الذكاء الاصطناعي، الأمن السيبراني، تطوير المواقع، وتطوير التطبيقات.";
-    }
-    else if (text.includes("حاسوب") || text.includes("كمبيوتر")) {
-        ans.textContent = "الحاسوب يعمل عبر وحدة المعالجة CPU والذاكرة RAM والتخزين. البرمجة تعطيه أوامر لتنفيذها.";
-    }
-    else if (text.includes("ذكاء اصطناعي") || text.includes("ai")) {
-        ans.textContent = "الذكاء الاصطناعي هو قدرة الحاسوب على التعلم واتخاذ قرارات. يُستخدم في الروبوتات، الترجمة، والتعرف على الصور.";
-    }
-    else {
-        ans.textContent = "سؤال جميل! لكنه يحتاج شرحًا أكبر. حاول أن تسأل عن البرمجة، المواقع، التطبيقات، أو الشبكات.";
-    }
+    <script>
+        function askAI() {
+            let q = document.getElementById("question").value.trim();
+            let answerBox = document.getElementById("aiAnswer");
 
-    ans.style.display = "block";
-    ans.style.background = "#2e7d32";
-    document.getElementById("question").value = "";
-}
-</script>
+            if (q === "") {
+                answerBox.style.display = "block";
+                answerBox.innerHTML = "الرجاء كتابة سؤال أولاً.";
+                return;
+            }
 
+            let answer = "";
+
+            // ذكاء صناعي بسيط يعتمد على الكلمات المفتاحية
+            if (q.includes("ما هي التقنية") || q.includes("تعريف التقنية")) {
+                answer = "التقنية هي استخدام الأدوات والبرامج لحل المشكلات وتسهيل حياة الإنسان.";
+            }
+            else if (q.includes("أساسيات التقنية") || q.includes("التقنية")) {
+                answer = "أساسيات التقنية تشمل فهم مكونات الحاسوب، أنظمة التشغيل، الإنترنت، والأمن السيبراني.";
+            }
+            else if (q.includes("ما هي البرمجة") || q.includes("تعريف البرمجة")) {
+                answer = "البرمجة هي كتابة أوامر للحاسوب ليقوم بتنفيذ مهام معينة مثل إنشاء تطبيق أو موقع.";
+            }
+            else if (q.includes("أساسيات البرمجة") || q.includes("البرمجة")) {
+                answer = "أساسيات البرمجة تشمل المتغيرات، الشروط، الحلقات، الدوال، والمدخلات والمخرجات.";
+            }
+            else if (q.includes("مثال") || q.includes("كود")) {
+                answer = "مثال بسيط: print('Hello') يقوم بطباعة كلمة Hello على الشاشة.";
+            }
+            else {
+                answer = "سؤالك جميل، لكنه خارج نطاق الدرس. حاول أن يكون السؤال متعلقًا بالتقنية أو البرمجة.";
+            }
+
+            answerBox.style.display = "block";
+            answerBox.innerHTML = answer;
+        }
+    </script>
 
 </body>
+
 </html>
