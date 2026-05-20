@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>درس الرياضيات – التفاضل والتكامل</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Cairo", sans-serif;
+            background: url("background.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+
+        /* الهيدر */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+        }
+
+        header a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 5px black;
+        }
+
+        /* اللوقو */
+        .logo img {
+            width: 150px;
+            margin-top: 20px;
+        }
+
+        /* صندوق الدرس */
+        .lesson-box {
+            width: 75%;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 40px;
+            border-radius: 15px;
+            color: #333;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+            text-align: right;
+        }
+
+        .lesson-title {
+            font-size: 28px;
+            color: #1B4332;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .lesson-text {
+            font-size: 20px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
+
+        .lesson-points li {
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        /* صندوق الأسئلة */
+        .question-box {
+            background: #f4f6f7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            border: 1px solid #d5d8dc;
+            text-align: center;
+        }
+
+        .question-box input {
+            width: 75%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+            font-size: 16px;
+        }
+
+        .question-box button {
+            padding: 12px 25px;
+            background-color: #1B4332;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .answer-box {
+            margin-top: 15px;
+            padding: 12px;
+            background: #eaf2f8;
+            border-radius: 6px;
+            font-size: 17px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">تعرف على المنصة</a>
+        <a href="khabir2.html">المرشد</a>
+        <a href="student.html">الطالب</a>
+        <a href="class.html">الدرس</a>
+    </header>
+
+    <!-- اللوقو -->
+    <div class="logo">
+        <img src="logo.jpg">
+    </div>
+
+    <!-- محتوى الدرس -->
+    <div class="lesson-box">
+
+        <h2 class="lesson-title">📘 مقدمة في التفاضل والتكامل</h2>
+
+        <p class="lesson-text">
+            التفاضل والتكامل هما فرعان أساسيان من الرياضيات يُستخدمان لدراسة التغير والمساحات.
+            التفاضل يهتم بمعدل التغير، بينما التكامل يهتم بحساب المساحة والتجميع.
+        </p>
+
+        <h3>🔹 أولاً: التفاضل (Derivative)</h3>
+        <p class="lesson-text">
+            التفاضل يعني إيجاد معدل التغير اللحظي للدالة.
+            مثال: إذا كانت الدالة f(x) = x² فإن مشتقتها هي f'(x) = 2x.
+        </p>
+
+        <ul class="lesson-points">
+            <li>التفاضل = معدل التغير</li>
+            <li>المشتقة ترمز بـ f'(x)</li>
+            <li>قانون أساسي: مشتقة xⁿ = n·xⁿ⁻¹</li>
+        </ul>
+
+        <h3>🔹 ثانياً: التكامل (Integral)</h3>
+        <p class="lesson-text">
+            التكامل هو العملية العكسية للتفاضل، ويُستخدم لحساب المساحات تحت المنحنى.
+            مثال: إذا كانت f(x) = 2x فإن تكاملها هو ∫2x dx = x² + C.
+        </p>
+
+        <ul class="lesson-points">
+            <li>التكامل = تجميع أو مساحة</li>
+            <li>يرمز له بالرمز ∫</li>
+            <li>التكامل هو العملية العكسية للمشتقة</li>
+        </ul>
+
+        <h3>🧠 مثال بسيط</h3>
+        <p class="lesson-text">
+            احسب مشتقة الدالة: f(x) = 3x³
+            الحل: f'(x) = 9x²
+        </p>
+
+        <p class="lesson-text">
+            احسب تكامل الدالة: f(x) = 4x
+            الحل: ∫4x dx = 2x² + C
+        </p>
+
+        <!-- صندوق الأسئلة -->
+        <div class="question-box">
+            <h3>🤖 اسأل مرشدك عن الدرس</h3>
+            <input type="text" id="userQuestion" placeholder="اكتب سؤالك هنا...">
+            <button onclick="sendQuestion()">إرسال</button>
+
+            <div id="answerBox" class="answer-box"></div>
+        </div>
+
+    </div>
+
+    <script>
+        function sendQuestion() {
+            const q = document.getElementById("userQuestion").value.trim();
+            const answerBox = document.getElementById("answerBox");
+
+            if (q === "") {
+                answerBox.innerHTML = "❗ الرجاء كتابة سؤال.";
+                return;
+            }
+
+            // قاعدة المعرفة الخاصة بالدرس
+            const knowledge = {
+                "ما هو التفاضل": "التفاضل هو إيجاد معدل التغير اللحظي للدالة، مثل مشتقة x² = 2x.",
+                "ما هو التكامل": "التكامل هو العملية العكسية للتفاضل ويستخدم لحساب المساحات تحت المنحنى.",
+                "مشتقة": "المشتقة تعني معدل التغير. مثال: مشتقة 3x³ هي 9x².",
+                "تكامل": "التكامل هو عكس المشتقة. مثال: ∫4x dx = 2x² + C.",
+                "قانون المشتقة": "مشتقة xⁿ = n × xⁿ⁻¹.",
+                "مثال تفاضل": "مثال: إذا f(x)=3x³ فإن f'(x)=9x².",
+                "مثال تكامل": "مثال: إذا f(x)=4x فإن ∫4x dx = 2x² + C."
+            };
+
+            // البحث الذكي
+            let answer = "لم أجد إجابة دقيقة، حاول صياغة السؤال بطريقة مختلفة.";
+
+            for (let key in knowledge) {
+                if (q.includes(key)) {
+                    answer = knowledge[key];
+                    break;
+                }
+            }
+
+            answerBox.innerHTML = "🤖 " + answer;
+        }
+    </script>
+
+
+</body>
+
+</html>
