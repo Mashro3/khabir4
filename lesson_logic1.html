@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>درس التفكير المنطقي</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Cairo", sans-serif;
+            background: url("background.jpg") no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+        }
+
+        /* شريط الروابط */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+        }
+
+        header a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 5px black;
+        }
+
+        /* صندوق الدرس */
+        .lesson-container {
+            background: rgba(255, 255, 255, 0.92);
+            width: 75%;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #00000070;
+            text-align: right;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        p,
+        ul {
+            font-size: 20px;
+            line-height: 1.9;
+        }
+
+        /* صندوق الأسئلة */
+        .ask-box {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff8d1;
+            border: 2px solid #ffd000;
+            border-radius: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 18px;
+        }
+
+        .ask-btn {
+            margin-top: 10px;
+            background: #2e7d32;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 0 8px black;
+        }
+
+        .ask-btn:hover {
+            background: #256628;
+        }
+
+        .ai-answer {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8ffe8;
+            border-left: 5px solid #2e7d32;
+            border-radius: 8px;
+            display: none;
+            font-size: 18px;
+        }
+
+        /* لوقو */
+        .logo img {
+            width: 180px;
+            margin-top: 20px;
+            filter: drop-shadow(0 0 8px black);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">الرئيسية</a>
+        <a href="login.html">التسجيل</a>
+        <a href="khabir2.html">المرشد</a>
+        <a href="student.html">الطالب</a>
+        <a href="class.html">الدرس</a>
+    </header>
+
+    <div class="logo">
+        <img src="logo.jpg" alt="شعار خبير">
+    </div>
+
+    <div class="lesson-container">
+
+        <h1>درس: التفكير المنطقي</h1>
+
+        <h2>ما هو التفكير المنطقي؟</h2>
+        <p>
+            التفكير المنطقي هو القدرة على تحليل المعلومات، فهم العلاقات بين الأسباب والنتائج،
+            واتخاذ قرارات صحيحة مبنية على خطوات واضحة ومنطقية.
+        </p>
+
+        <h2>أهداف التفكير المنطقي</h2>
+        <ul>
+            <li>فهم المشكلات بطريقة واضحة ومنظمة</li>
+            <li>اتخاذ قرارات صحيحة</li>
+            <li>تحليل المعلومات قبل الحكم عليها</li>
+            <li>اكتشاف الأخطاء في التفكير</li>
+            <li>بناء حلول عملية وفعّالة</li>
+        </ul>
+
+        <h2>إيجابيات التفكير المنطقي</h2>
+        <ul>
+            <li>حل المشكلات بسرعة</li>
+            <li>تقليل الأخطاء في القرارات</li>
+            <li>زيادة الدقة في التحليل</li>
+            <li>رفع الثقة بالنفس</li>
+        </ul>
+
+        <h2>سلبيات التفكير المنطقي (عند الإفراط فيه)</h2>
+        <ul>
+            <li>تقليل الجانب الإبداعي</li>
+            <li>تجاهل المشاعر أو الحدس</li>
+            <li>البطء في اتخاذ القرار</li>
+        </ul>
+
+        <div class="ask-box">
+            <h3>اسأل عن الدرس</h3>
+            <p>اكتب سؤالك وسيقوم الذكاء الصناعي بالإجابة عن الأسئلة المتعلقة بالدرس فقط.</p>
+
+            <textarea id="question" placeholder="اكتب سؤالك هنا..."></textarea>
+            <button class="ask-btn" onclick="askAI()">اسأل مرشدك</button>
+
+            <div class="ai-answer" id="aiAnswer"></div>
+        </div>
+
+    </div>
+
+    <script>
+        function askAI() {
+            const q = document.getElementById("question").value.trim();
+            const answerBox = document.getElementById("aiAnswer");
+
+            if (q === "") {
+                answerBox.style.display = "block";
+                answerBox.innerHTML = "❗ الرجاء كتابة سؤال.";
+                return;
+            }
+
+            // قاعدة معرفة شاملة للدرس
+            const knowledge = [
+                {
+                    match: ["ما هو التفكير المنطقي", "تعريف", "يعني"],
+                    answer: "التفكير المنطقي هو القدرة على تحليل المعلومات، فهم العلاقات بين الأسباب والنتائج، واتخاذ قرارات صحيحة مبنية على خطوات واضحة."
+                },
+                {
+                    match: ["أهداف", "هدف", "لماذا", "فائدة"],
+                    answer: "أهداف التفكير المنطقي تشمل: فهم المشكلات، اتخاذ قرارات صحيحة، تحليل المعلومات، اكتشاف الأخطاء، وبناء حلول فعّالة."
+                },
+                {
+                    match: ["إيجابيات", "فوائد"],
+                    answer: "من إيجابيات التفكير المنطقي: حل المشكلات بسرعة، تقليل الأخطاء، زيادة الدقة في التحليل، ورفع الثقة بالنفس."
+                },
+                {
+                    match: ["سلبيات", "عيوب"],
+                    answer: "من سلبيات التفكير المنطقي عند الإفراط فيه: تقليل الإبداع، تجاهل المشاعر، والبطء في اتخاذ القرار."
+                },
+                {
+                    match: ["مثال", "اعطني مثال", "خطأ منطقي"],
+                    answer: "مثال على خطأ منطقي: شخص يقول 'كل الطلاب ممتازون لأنني أعرف طالبًا ممتازًا واحدًا'. هذا يسمى التعميم الخاطئ."
+                },
+                {
+                    match: ["خطوات", "كيف", "طريقة"],
+                    answer: "خطوات التفكير المنطقي: 1) تحديد المشكلة، 2) جمع المعلومات، 3) تحليل البيانات، 4) وضع فرضيات، 5) اختبار الفرضيات، 6) اتخاذ القرار."
+                },
+                {
+                    match: ["تحليل", "تحليل البيانات"],
+                    answer: "تحليل البيانات يعني ترتيب المعلومات، فهم العلاقات بينها، واستخلاص النتائج المنطقية."
+                }
+            ];
+
+            // البحث الذكي
+            let answer = "لم أجد إجابة دقيقة، حاول صياغة السؤال بشكل أوضح ضمن موضوع التفكير المنطقي.";
+
+            for (let item of knowledge) {
+                for (let key of item.match) {
+                    if (q.includes(key)) {
+                        answer = item.answer;
+                        break;
+                    }
+                }
+            }
+
+            answerBox.style.display = "block";
+            answerBox.innerHTML = "🤖 " + answer;
+        }
+    </script>
+
+
+
+</body>
+
+</html>
