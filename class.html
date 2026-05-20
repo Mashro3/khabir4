@@ -1,194 +1,193 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<title>الدروس</title>
+    <meta charset="UTF-8">
+    <title>الدروس</title>
 
-<style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Cairo", sans-serif;
-    background: url("background.jpg") no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    text-align: center;
-}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Cairo", sans-serif;
+            background: url("background.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
 
-header {
-    display: flex;
-    justify-content: flex-end;
-    padding: 20px 40px;
-}
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+        }
 
-header a {
-    margin-left: 25px;
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-shadow: 0 0 5px black;
-}
+        header a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 5px black;
+        }
 
-.logo img {
-    width: 150px;
-    margin-top: 20px;
-}
+        .logo img {
+            width: 150px;
+            margin-top: 20px;
+        }
 
-/* صندوق الدروس */
-.lesson-box {
-    width: 70%;
-    margin: 40px auto;
-    background: rgba(255,255,255,0.9);
-    padding: 40px;
-    border-radius: 15px;
-    color: #333;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    text-align: center;
-}
+        /* صندوق الدروس */
+        .lesson-box {
+            width: 70%;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            color: #333;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
 
-/* قائمة التخصصات */
-select {
-    width: 90%;
-    padding: 12px;
-    margin-top: 15px;
-    border-radius: 10px;
-    border: none;
-    font-size: 18px;
-}
+        /* قائمة التخصصات */
+        select {
+            width: 90%;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 10px;
+            border: none;
+            font-size: 18px;
+        }
 
-/* قائمة الدروس */
-.lesson-list {
-    margin-top: 25px;
-    text-align: right;
-    padding-right: 20px;
-}
+        /* قائمة الدروس */
+        .lesson-list {
+            margin-top: 25px;
+            text-align: right;
+            padding-right: 20px;
+        }
 
-.lesson-item {
-    background: #e8f5e9;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    font-size: 18px;
-    cursor: pointer;
-    border-right: 5px solid #1B4332;
-}
+        .lesson-item {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            border-right: 5px solid #1B4332;
+        }
 
-.lesson-item:hover {
-    background: #d7f0db;
-}
+        .lesson-item:hover {
+            background: #d7f0db;
+        }
 
-/* صندوق المرشد */
-.ask-box {
-    width: 70%;
-    margin: 30px auto;
-    background: rgba(255,255,255,0.9);
-    padding: 30px;
-    border-radius: 15px;
-    color: #333;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    text-align: center;
-}
+        /* صندوق المرشد */
+        .ask-box {
+            width: 70%;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            color: #333;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
 
-/* زر المرشد */
-.ask-btn {
-    background-color: #1B4332;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    margin-top: 15px;
-    width: 260px;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(27, 67, 50, 0.6);
-    animation: glowBtn 1.5s infinite alternate;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
+        /* زر المرشد */
+        .ask-btn {
+            background-color: #1B4332;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 260px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(27, 67, 50, 0.6);
+            animation: glowBtn 1.5s infinite alternate;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
 
-/* تأثير اللمعان */
-@keyframes glowBtn {
-    from {
-        box-shadow: 0 0 10px rgba(27, 67, 50, 0.4);
-        transform: scale(1);
-    }
-    to {
-        box-shadow: 0 0 25px rgba(27, 67, 50, 0.9);
-        transform: scale(1.05);
-    }
-}
+        /* تأثير اللمعان */
+        @keyframes glowBtn {
+            from {
+                box-shadow: 0 0 10px rgba(27, 67, 50, 0.4);
+                transform: scale(1);
+            }
 
-.ask-btn:hover {
-    background-color: #145a41;
-}
-</style>
+            to {
+                box-shadow: 0 0 25px rgba(27, 67, 50, 0.9);
+                transform: scale(1.05);
+            }
+        }
+
+        .ask-btn:hover {
+            background-color: #145a41;
+        }
+    </style>
 
 </head>
 
 <body>
 
-<header>
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html">تعرف على المنصة</a>
-    <a href="khabir2.html">المرشد</a>
-    <a href="student.html">الطالب</a>
-    <a href="class.html">الدرس</a>
-</header>
+    <header>
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">تعرف على المنصة</a>
+        <a href="khabir2.html">المرشد</a>
+        <a href="student.html">الطالب</a>
+        <a href="class.html">الدرس</a>
+    </header>
 
-<div class="logo">
-    <img src="logo.jpg">
-</div>
+    <div class="logo">
+        <img src="logo.jpg">
+    </div>
 
-<!-- صندوق الدروس -->
-<div class="lesson-box">
-    <h1>اختر تخصص الدروس</h1>
+    <!-- صندوق الدروس -->
+    <div class="lesson-box">
+        <h1>اختر تخصص الدروس</h1>
 
-    <select id="specialty" onchange="showLessons()">
-        <option value="">اختر التخصص</option>
-        <option value="logic">التفكير المنطقي</option>
-        <option value="math">الرياضيات</option>
-        <option value="tech">تقنية المعلومات</option>
-    </select>
+        <select id="specialty" onchange="showLessons()">
+            <option value="">اختر التخصص</option>
+            <option value="logic">تطويرالذات </option>
+            <option value="math">الرياضيات</option>
+            <option value="tech">تقنية المعلومات</option>
+        </select>
 
-    <div id="lessons" class="lesson-list"></div>
-</div>
+        <div id="lessons" class="lesson-list"></div>
+    </div>
 
-<!-- صندوق المرشد -->
-<div class="ask-box">
-    <button class="ask-btn" onclick="window.location.href='khabir2.html'">
-        🤖 اسأل مرشدك الآن
-    </button>
-</div>
 
-<script>
-function showLessons() {
-    let specialty = document.getElementById("specialty").value;
-    let box = document.getElementById("lessons");
 
-    if (specialty === "logic") {
-        box.innerHTML = `
-            <div class="lesson-item" onclick="window.location.href='lesson_logic1.html'">درس التفكير المنطقي 1</div>
-            <div class="lesson-item" onclick="window.location.href='lesson_logic2.html'">درس التفكير المنطقي 2</div>
+    <script>
+        function showLessons() {
+            let specialty = document.getElementById("specialty").value;
+            let box = document.getElementById("lessons");
+
+            if (specialty === "logic") {
+                box.innerHTML = `
+            <div class="lesson-item" onclick="window.location.href='lesson_logic1.html'">درس التفكير المنطقي </div>
+           
         `;
-    } else if (specialty === "math") {
-        box.innerHTML = `
-            <div class="lesson-item">درس الرياضيات 1</div>
-            <div class="lesson-item">درس الرياضيات 2</div>
+            } else if (specialty === "math") {
+                box.innerHTML = `
+          <div class="lesson-item" onclick="window.location.href='math1.html'">درس الرياضيات 1</div>
+  
+          
         `;
-    } else if (specialty === "tech") {
-        box.innerHTML = `
+            } else if (specialty === "tech") {
+                box.innerHTML = `
             <div class="lesson-item" onclick="window.location.href='lesson_tech.html'">مقدمة في التقنية</div>
-            <div class="lesson-item">أساسيات البرمجة</div>
+        
         `;
-    } else {
-        box.innerHTML = "";
-    }
-}
-</script>
+            } else {
+                box.innerHTML = "";
+            }
+        }
+    </script>
 
 </body>
+
 </html>
