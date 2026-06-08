@@ -131,14 +131,23 @@ function login() {
     let msg = document.getElementById("msg");
 
     if (user === "" || pass === "") {
-        msg.style.display = "block";
-        msg.style.background = "#b71c1c";
-        msg.textContent = "✖ الرجاء تعبئة جميع الحقول";
-        return;
-    }
+    msg.style.display = "block";
+    msg.style.background = "#b71c1c";
+    msg.textContent = "✖ الرجاء تعبئة جميع الحقول";
+    return;
+}
 
-    // حفظ حالة تسجيل الدخول
-    localStorage.setItem("loggedIn", "true");
+// شرط عدم وجود حساب
+if (user !== "mai" || pass !== "1234") {
+    msg.style.display = "block";
+    msg.style.background = "#b71c1c";
+    msg.textContent = "✖ لا يوجد حساب — الرجاء التسجيل أولاً";
+    return;
+}
+
+// حفظ حالة تسجيل الدخول
+localStorage.setItem("loggedIn", "true");
+
 
     msg.style.display = "block";
     msg.style.background = "#2e7d32";
